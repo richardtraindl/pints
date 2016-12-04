@@ -68,7 +68,7 @@ div[class*='row_'] {
     width: 7.33%;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 639px) {
     header, header * {
         display: inline-block;
     }
@@ -78,6 +78,9 @@ div[class*='row_'] {
         display: inline-block;
     }
     div[class*='row_'] {
+        width: 99%; 
+    }
+    img {
         width: 99%; 
     }
 }
