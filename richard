@@ -1,0 +1,19 @@
+---
+layout: default
+title: Richie
+id: richard
+---
+
+    <article>
+        <div class="grid">
+            <div class="row_12_of_12">
+                <figure>
+                    <p>Aufnahme ist vom Sommer 2015 bei einem Wiener Heurigen...</p>
+                    <p>
+                       <a class="gallery" href="img/richard1.jpg" target="_blank"><img src="img/richard1_small.jpg" alt="Richard"></a></td>
+                     </p>
+                </figure>
+            </div>
+        </div>
+    </article>
+
