@@ -9,7 +9,7 @@
   margin: 0px;
   padding: 0px;
   border: 0px;
-  text-align: justify;
+  text-align: left;
   font-family: Helvetica, 'Open Sans';
   font-weight: normal;
   font-size: 14px;
@@ -20,10 +20,6 @@
 body {
   background-color: White;
   height: auto;
-}
-
-* {
-  text-align: left;
 }
 
 .btn {
