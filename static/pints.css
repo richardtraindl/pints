@@ -2,8 +2,7 @@
 
 @font-face {
     font-family: 'Open Sans';
-    src: url('/fonts/OpenSans-Regular.ttf');
-    src: url('/fonts/OpenSans-Regular.woff');
+    src: url('/static/OpenSans-Regular.woff');
 }
 
 * {
