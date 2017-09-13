@@ -21,7 +21,7 @@
 
         <h1>Pints</h1>
 
-        <a id="nav-button" href="#mobile-nav"><img src="/img/nav_black.png"></a>
+        <a id="nav-button" href="#mobile-nav"><img id="nav-image" src="/img/nav_black.png"></a>
       </header>
 
       <nav id="mobile-nav">
@@ -38,8 +38,7 @@
     </div>
 
     <script>
-      $("#nav-button").on("click",function(){
-        // $("#ss-tables").hide();$("#ss-tablesButton").removeClass("active");
+      $("#nav-button").on("click", function(){
         $("#mobile-nav").toggle();
         return false;
       });
