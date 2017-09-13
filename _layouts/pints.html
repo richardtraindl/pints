@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+	<head>
+		<meta charset="utf-8">
+
+    <link rel="stylesheet" href="/static/mobile.css>
+
+    <script src="/static/jquery-1.11.1.min.js"></script>
+    
+		<title>Pints</title>
+	</head>
+
+	<body>
+		<div id="mobile-wrapper">
+			
+      <header id="mobile-header">
+				<h1>Pints</h1>
+        <a id="nav-button" href="#mobile-nav"><img src="nav.png"></a>
+			</header>
+
+			<nav id="mobile-nav">
+				<ul>
+					<li><a href="index.html">Pints</a></li>
+					<li><a href="#">...</a></li>
+				</ul>
+			</nav>
+
+			<div id="mobile-content">
+        {{ content }}
+			</div>
+		</div>
+
+    <script>
+      $("#nav-button").on("click",function(){
+        // $("#ss-tables").hide();$("#ss-tablesButton").removeClass("active");
+        $("#mobile-nav").toggle();
+        return false;
+      });
+    </script>
+
+	</body>
+
+</html>
