@@ -66,8 +66,9 @@ body {
   line-height: 16px;
 }
 
-#mobile-header img {
-  height: 240px;
+#logo {
+  width: 100%;
+  max-height: 240px;
 }
 
 #nav-image {
