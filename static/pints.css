@@ -86,10 +86,6 @@ table {
   letter-spacing: 1px;
 }
 
-.gap {
-  padding-bottom: 20px;
-}
-
 .tiny-gap {
   padding-bottom: 4px;
 }
@@ -98,145 +94,12 @@ table {
   padding-bottom: 10px;
 }
 
+.gap {
+  padding-bottom: 20px;
+}
+
 .huge-gap {
   padding-bottom: 30px;
-}
-
-header {
-  padding: 10px 0px 10px 0px;
-  margin-top: 20px;
-  margin-right: auto;
-  margin-bottom: 28px;
-  margin-left: auto;
-}
-
-header img {
-  width: 46px;
-  text-align: center;
-  margin: auto;
-}
-
-header h1, header h1 a {
-  font-size: 24px;
-  line-height: 24px;
-  text-align: center;
-  text-decoration: underline;
-}
-
-header p, header p a {
-  font-size: 20px;
-  line-height: 20px;
-  text-align: center;
-  font-style: italic;
-}
-
-#wrapper {
-  background-color: #FFFFE8;
-}
-
-article h1, article h2 {
-  text-align: left;
-  font-style: italic;
-}
-
-.spacer {
-  padding: 16px 0px 16px 0px;
-}
-
-section .spacer {
-  padding: 12px 0px 20px 0px;
-}
-
-.spacer img {
-  width: 40px;
-  height: 1px;
-}
-
-#mainnav {
-  height: 100%;
-  padding: 0px 0px 0px 0px;
-  text-align: left;
-}
-
-#mainnav a {
-  font-size: 14px;
-  line-height: 16px;
-}
-
-#mainnav a.nav-aktiv  {
-  color: #B22222;
-}
-
-#mainnav .menu-item {
-  padding: 20px 0px 0px 0px;
-  text-align: left;
-}
-
-#mainnav .submenu-item {
-  margin: 5px 0px 0px 10px;
-  text-align: left;
-  display: none;
-}
-
-#mainnav .submenu-item * {
-  font-size: 12px;
-  line-height: 14px;
-}
-
-#mainnav .submenu-item.aktiv {
-  display: block;
-}
-
-#news *{
-    text-align: left
-}
-
-#news h3{
-    color: red;
-    font-size: 18px
-}
-
-.gal4x4 table, .gal4x4 th, .gal4x4 td {
-  border: 2px solid darkgray;
-  border-bottom: 1px solid darkgray;
-}
-
-.gal4x4 table {
-  margin: 0 auto;
-}
-
-#homoe-links {
-    display: table-cell;
-    vertical-align: top;
-}
-
-#homoe-inner-links {
-    padding: 10px;
-}
-
-#homoe-links a {
-    color: DarkBlue;
-}
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-
-html {
-	overflow: -moz-scrollbars-vertical;
-	overflow: scroll;
-}
-
-* {
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-	font-family: 'Open Sans';
-	font-weight: normal;
-	font-size: 14px;
-	line-height: 20px;
 }
 
 #mobile-header, #mobile-nav, #mobile-content {
@@ -252,7 +115,6 @@ html {
   max-width: 640px;
   border-radius: 6px;
 }
-
 
 h1, h1 a {
 	font-size: 20px;
@@ -305,19 +167,6 @@ li {
 }
 
 #mobile-content {
-	padding: 20px;
+  padding: 20px;
   border-radius: 0px 0px 6px 6px;
 }
-
-.small-gap {
-	padding-bottom: 10px;
-}
-
-.big-gap {
-	padding-bottom: 20px;
-}
-
-.huge-gap {
-	padding-bottom: 40px;
-}
-
