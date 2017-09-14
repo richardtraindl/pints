@@ -14,7 +14,7 @@ function geoFindMe() {
     output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
 
     var img = new Image();
-    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+    img.src = "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAHDmag3kq2zgu8LWZDReFKSTZjGDe1btM?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
 
     output.appendChild(img);
   }
@@ -26,7 +26,7 @@ function geoFindMe() {
     var latitude  = 48.2083537;
     var longitude = 16.3725042;
     var img = new Image();
-    img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
+    img.src = "https://maps.googleapis.com/maps/api/staticmap?key=AIzaSyAHDmag3kq2zgu8LWZDReFKSTZjGDe1btM?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
 
     output.appendChild(img);
   }
