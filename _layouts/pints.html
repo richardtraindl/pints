@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/static/pints.css" media="all">
 
     <script src="/static/jquery-1.11.1.min.js"></script>
+    
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+
+    <script src="/static/pints.js"></script>
 
     <title>Pints</title>
   </head>
@@ -42,6 +46,8 @@
         $("#mobile-nav").toggle();
         return false;
       });
+      
+      geoFindMe();
     </script>
 
   </body>
