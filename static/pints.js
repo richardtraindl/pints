@@ -11,7 +11,7 @@ function geoFindMe() {
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
 
-    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
+    output.innerHTML = '<p>Latitude is ' + latitude + 'Â° <br>Longitude is ' + longitude + 'Â°</p>';
 
     var img = new Image();
     img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
@@ -23,15 +23,15 @@ function geoFindMe() {
     output.innerHTML = '<p>Unable to retrieve your location<br>' + 
                        'Set location to Centre Vienna</p>';
 
-    var latitude  = 48,2083537;
-    var longitude = 16,3725042;
+    var latitude  = 48.2083537;
+    var longitude = 16.3725042;
     var img = new Image();
     img.src = "https://maps.googleapis.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=13&size=300x300&sensor=false";
 
     output.appendChild(img);
   }
 
-  output.innerHTML = "<p>Locating…</p>";
+  output.innerHTML = "<p>Locatingâ€¦</p>";
 
   navigator.geolocation.getCurrentPosition(success, error);
 }
