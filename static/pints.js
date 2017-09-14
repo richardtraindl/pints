@@ -1,10 +1,12 @@
 function initMap() {
         
         console.log( "call initMap()" );
+        var latitude  = 48.2083537;
+        var longitude = 16.3725042;
         
         var map = new google.maps.Map(document.getElementById('map-vienna'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 6
+          center: {lat: latitude, lng: longitude},
+          zoom: 12
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
 
