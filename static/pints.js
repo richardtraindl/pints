@@ -6,12 +6,11 @@ function initMap() {
         
         var map = new google.maps.Map(document.getElementById('map-vienna'), {
           center: {lat: latitude, lng: longitude},
-          zoom: 12
+          zoom: 16
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
 
         
-/*        
         console.log( "before navigator gelocation" );
 
 
@@ -33,7 +32,7 @@ function initMap() {
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
-  */
+
   }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
