@@ -1,11 +1,19 @@
 function initMap() {
+        
+        console.log( "call initMap()" );
+        
         var map = new google.maps.Map(document.getElementById('map-vienna'), {
           center: {lat: -34.397, lng: 150.644},
           zoom: 6
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
 
-        // Try HTML5 geolocation.
+        
+/*        
+        console.log( "before navigator gelocation" );
+
+
+// Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
@@ -23,7 +31,8 @@ function initMap() {
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
-      }
+  */
+  }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
