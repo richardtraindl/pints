@@ -16,9 +16,11 @@
           console.log('nav availaible');
 
           if(browserChrome){
+            console.log('chrome');
             options={enableHighAccuracy: false, maximumAge: 15000, timeout: 30000};
           }
           else{
+            console.log('other browser');
             options={maximumAge:Infinity, timeout:0};
           }
 
