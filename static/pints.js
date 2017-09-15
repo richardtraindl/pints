@@ -11,6 +11,7 @@
 
         // Try HTML5 geolocation.
         if(navigator.geolocation){
+          console.log('nav availaible');
           navigator.geolocation.getCurrentPosition(function(position){
             var pos = {
               lat: position.coords.latitude,
@@ -21,10 +22,12 @@
             infoWindow.setContent('Location found.');
             map.setCenter(pos);
           }, function() {
+            console.log('error in function');
             handleLocationError(true, infoWindow, map.getCenter());
           });
         }
         else{
+          console.log('nav NOT availaible');
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
