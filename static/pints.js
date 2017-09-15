@@ -12,7 +12,10 @@
         // Try HTML5 geolocation.
         if(navigator.geolocation){
           console.log('nav availaible');
+          var location_timeout = setTimeout("handleLocationError", 10000);
+          
           navigator.geolocation.getCurrentPosition(function(position){
+            clearTimeout(location_timeout);
             var pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
