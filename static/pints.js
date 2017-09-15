@@ -23,6 +23,7 @@
           }
 
           navigator.geolocation.getCurrentPosition(function(position){
+            console.log('geolocation: ' + position.coords.latitude + " / " + position.coords.longitude);
             var pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
