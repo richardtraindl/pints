@@ -1,4 +1,5 @@
   function initMap() {
+        var options = null;
 
         var latitude  = 48.2083537;
         var longitude = 16.3725042;
@@ -7,15 +8,21 @@
           center: {lat: latitude, lng: longitude},
           zoom: 16
         });
+
         var infoWindow = new google.maps.InfoWindow({map: map});
 
         // Try HTML5 geolocation.
         if(navigator.geolocation){
           console.log('nav availaible');
-          var location_timeout = setTimeout("handleLocationError", 10000);
-          
+
+          if(browserChrome){
+            options={enableHighAccuracy: false, maximumAge: 15000, timeout: 30000};
+          }
+          else{
+            options={maximumAge:Infinity, timeout:0};
+          }
+
           navigator.geolocation.getCurrentPosition(function(position){
-            clearTimeout(location_timeout);
             var pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
@@ -27,11 +34,11 @@
           }, function() {
             console.log('error in function');
             handleLocationError(true, infoWindow, map.getCenter());
-          });
+          }, options);
         }
         else{
-          console.log('nav NOT availaible');
           // Browser doesn't support Geolocation
+          console.log('nav NOT availaible');
           handleLocationError(false, infoWindow, map.getCenter());
         }
 
