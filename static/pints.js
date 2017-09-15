@@ -1,8 +1,8 @@
   function initMap() {
         var options = {
-          enableHighAccuracy: true,
-          timeout: 30000,
-          maximumAge: 75000
+          enableHighAccuracy: false,
+          timeout: 10000,
+          maximumAge: 60000
         };
 
         var latitude  = 48.2083537;
