@@ -37,7 +37,7 @@ body {
 
 #mobile-wrapper {
   margin: 0px auto;
-  padding: 6px 0px;
+  padding: 6px;
   background-color: #FFE394;
   min-width: 320px;
   max-width: 640px;
@@ -45,20 +45,21 @@ body {
 }
 
 #mobile-header, #mobile-nav, #mobile-content {
-  margin: 6px 12px;
+  margin: 6px 0px;
   background-color: #FFFFE8;
 }
 
 #mobile-header {
   position: relative;
   text-align: center;
-  padding: 20px;
   border-radius: 6px 6px 0px 0px;
 }
 
 #mobile-header h1, #mobile-header h1 a {
-  font-size: 18px;
-  line-height: 18px;
+  padding: 20px;
+  text-align: center;
+  font-size: 22px;
+  line-height: 22px;
 }
 
 #mobile-header p, #mobile-header p a {
@@ -67,13 +68,13 @@ body {
 }
 
 #logo {
-  width: 96%;
+  width: 100%;
 }
 
 #nav-image {
   position: absolute;
   right: 8px;
-  bottom: 8px;
+  top: 20px;
 }
 
 #mobile-nav {
@@ -105,6 +106,22 @@ body {
 }
 
 #mobile-content {
-  padding: 20px;
   border-radius: 0px 0px 6px 6px;
 }
+
+#map-vienna {
+   min-width: 320px;
+   min-height: 160px;
+   max-width: 640px;
+   max-height: 320px;
+}
+
+.gap {
+  padding-bottom: 20px;
+}
+
+.small-gap {
+  padding-bottom: 10px;
+}
+
+
