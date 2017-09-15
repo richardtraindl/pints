@@ -1,5 +1,9 @@
   function initMap() {
-        var options = null;
+        var options = {
+          enableHighAccuracy: true,
+          timeout: 5000,
+          maximumAge: 0
+        };
 
         var latitude  = 48.2083537;
         var longitude = 16.3725042;
@@ -14,15 +18,6 @@
         // Try HTML5 geolocation.
         if(navigator.geolocation){
           console.log('nav availaible');
-
-          if(browserChrome){
-            console.log('chrome');
-            options={enableHighAccuracy: false, maximumAge: 15000, timeout: 30000};
-          }
-          else{
-            console.log('other browser');
-            options={maximumAge:Infinity, timeout:0};
-          }
 
           navigator.geolocation.getCurrentPosition(function(position){
             console.log('xxxx');
