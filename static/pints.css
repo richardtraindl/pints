@@ -111,9 +111,9 @@ body {
 
 #map-vienna {
    min-width: 320px;
-   min-height: 160px;
+   min-height: 320px;
    max-width: 640px;
-   max-height: 320px;
+   max-height: 640px;
 }
 
 .gap {
