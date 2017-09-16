@@ -1,0 +1,58 @@
+{
+"Red Lion": {
+	"Kategorie": "Brew Pub",
+	"Position": {
+		"Longitude": 16.3425042,
+		"Latitude": 48.2083537
+	}
+},
+"Irish Harp": {
+	"Kategorie": "Pub",
+	"Position": {
+		"Longitude": 16.3525042,
+		"Latitude": 48.2083537
+	}
+},
+"O'Connors": {
+	"Kategorie": "Pub",
+	"Position": {
+		"Longitude": 16.3625042,
+		"Latitude": 48.2083537
+	}
+},
+"Hawedere": {
+	"Kategorie": "Pub",
+	"Position": {
+		"Longitude": 16.4225042,
+		"Latitude": 48.2083537
+	}
+},
+"Brick Makers": {
+	"Kategorie": "Pub",
+	"Position": {
+		"Longitude": 16.418557,
+		"Latitude": 48.2083537
+	}
+},
+"Beaver Brewery": {
+	"Kategorie": "Brew Pub",
+	"Position": {
+		"Longitude": 16.4025042,
+		"Latitude": 48.2083537
+	}
+},
+"Pivothek": {
+	"Kategorie": "Pub",
+	"Position": {
+		"Longitude": 16.3925042,
+		"Latitude": 48.2083537
+	}
+},
+"Ü-Lokal": {
+	"Kategorie": "Pub",
+	"Position": {
+		"Longitude": 16.3825042,
+		"Latitude": 48.2083537
+	}
+}
+}

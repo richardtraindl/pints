@@ -44,13 +44,9 @@ body {
   border-radius: 6px;
 }
 
-#mobile-header, #mobile-nav, #mobile-content {
-  margin: 6px 0px;
-  background-color: #FFFFE8;
-}
-
 #mobile-header {
   position: relative;
+  margin: 6px 0px;
   text-align: center;
   border-radius: 6px 6px 0px 0px;
   background-image: url('/img/pints01.png');
@@ -59,18 +55,13 @@ body {
 #mobile-header h1, #mobile-header h1 a {
   padding: 20px;
   text-align: center;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 28px;
   color: White;
 }
 
-#mobile-header p, #mobile-header p a {
-  font-size: 16px;
-  line-height: 16px;
-}
-
-#logo {
-  width: 100%;
+#mobile-nav, #mobile-content {
+  margin: 6px 0px;
+  background-color: #FFFFE8;
 }
 
 #nav-image {
