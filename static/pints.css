@@ -53,6 +53,8 @@ body {
   position: relative;
   text-align: center;
   border-radius: 6px 6px 0px 0px;
+  background-image: url('/img/pints01.png');
+  color: White;
 }
 
 #mobile-header h1, #mobile-header h1 a {
