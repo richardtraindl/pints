@@ -40,7 +40,7 @@ body {
   padding: 6px;
   background-color: #FFE394;
   min-width: 320px;
-  max-width: 640px;
+  /* max-width: 640px; */
   border-radius: 6px;
 }
 
@@ -105,8 +105,8 @@ body {
 #map-vienna {
    min-width: 320px;
    min-height: 320px;
-   max-width: 640px;
-   max-height: 640px;
+   /* max-width: 640px;
+   max-height: 640px; */
 }
 
 .gap {
