@@ -124,7 +124,7 @@ function rank_pubs(){
     }
     else{
       console.log('nav NOT availaible');
-      return [-1, position.coords.latitude, position.coords.longitude];
+      return [0, null, null];
     }
   }
 
