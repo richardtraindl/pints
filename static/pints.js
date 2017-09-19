@@ -110,11 +110,12 @@ function rank_pubs(){
     if(navigator.geolocation){
       console.log('nav availaible');
 
-      window.setTimeout(navigator.geolocation.getCurrentPosition(
-        function(position){ return [-1, position.coords.latitude, position.coords.longitude]; }, 
-        function(){ console.log('error in function'); return [1, null, null]; }, 
-        options);
-        ), 8);
+      window.setTimeout(function(){
+        navigator.geolocation.getCurrentPosition(
+          function(position){ return [-1, position.coords.latitude, position.coords.longitude]; }, 
+          function(){ console.log('error in function'); return [1, null, null]; }, 
+          options);
+      }, 8);
     }
     else{
       console.log('nav NOT availaible');
