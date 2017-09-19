@@ -122,3 +122,9 @@ function rank_pubs(){
     }
   }
 
+function show_pubs(){
+    console.log(geo[0] + geo[1] + geo[2]);
+    var geo = rank_pubs();
+    alert(geo[0]);
+    
+}
