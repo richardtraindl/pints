@@ -5,6 +5,14 @@ id: index
 ---
 
   <article>
+    <button onclick="rankpubs()">Try it</button>
+
+    <section id="pub-list2">
+      <h2>closest Pubs...</h2>
+        <ul>
+          <!-- Wird dynamisch befüllt -->
+        </ul>
+    </section>
 
     <section id="pub-list">
       <h2>closest Pubs...</h2>
@@ -18,3 +26,9 @@ id: index
     </section>
 
   </article>
+
+  <script>
+    $(document).ready(function() {
+      // readpubs();
+     });
+  </script>
