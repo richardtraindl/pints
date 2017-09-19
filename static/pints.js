@@ -80,10 +80,6 @@ var calc_distance = function(long, lat, long1, lat1){
                 // window.scrollTo(0,1);
               });
             },1);
-            
-            
-            
-            
           }, function() {
             console.log('error in function');
             handleLocationError(true, infoWindow, map.getCenter());
@@ -94,7 +90,6 @@ var calc_distance = function(long, lat, long1, lat1){
           console.log('nav NOT availaible');
           handleLocationError(false, infoWindow, map.getCenter());
         }
-
   }
 
   function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -103,3 +98,43 @@ var calc_distance = function(long, lat, long1, lat1){
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
   }
+
+
+function rank_pubs(){
+    var options = {
+          enableHighAccuracy: true,
+          timeout: 70000,
+          maximumAge: 0
+        };
+
+    var geo = [ null, null, null ];
+
+    if(navigator.geolocation){
+      console.log('nav availaible');
+
+      window.setTimeout(function(){
+        navigator.geolocation.getCurrentPosition(
+          function(position){ 
+            geo[0] = -1;
+            geo[1] = position.coords.latitude;
+            geo[2] = position.coords.longitude;
+          }, 
+          function(){ 
+            console.log('error in function'); 
+            geo[0] = 1;
+          }, 
+          options);
+        }, 8);
+    }
+    else{
+      console.log('nav NOT availaible');
+      geo[0] = 0;
+    }
+    return geo;
+  }
+
+
+function show_pubs(){
+    var geo = rank_pubs();
+    console.log(geo[0] + " " + geo[1] + " " + geo[2]);
+}
