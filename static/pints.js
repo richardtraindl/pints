@@ -107,26 +107,32 @@ function rank_pubs(){
           maximumAge: 0
         };
 
+    var geo = [ null, null, null ];
+
     if(navigator.geolocation){
       console.log('nav availaible');
 
       window.setTimeout(function(){
         navigator.geolocation.getCurrentPosition(
           function(position){ 
-            return [-1, position.coords.latitude, position.coords.longitude]; 
+            geo[0] = -1;
+            geo[1] = position.coords.latitude;
+            geo[2] = position.coords.longitude;
           }, 
           function(){ 
             console.log('error in function'); 
-            return [1, null, null]; 
+            geo[0] = 1;
           }, 
           options);
         }, 8);
     }
     else{
       console.log('nav NOT availaible');
-      return [0, null, null];
+      geo[0] = 0;
     }
+    return geo;
   }
+
 
 function show_pubs(){
     var geo = rank_pubs();
