@@ -100,41 +100,58 @@ var calc_distance = function(long, lat, long1, lat1){
   }
 
 
-function rank_pubs(){
+  function rank_pubs(){
     var options = {
           enableHighAccuracy: true,
           timeout: 70000,
           maximumAge: 0
         };
 
-    var geo = [ null, null, null ];
+    var latitude  = 48.2083537;
+    var longitude = 16.3725042;
 
     if(navigator.geolocation){
-      console.log('nav availaible');
+        console.log('nav availaible');
 
-      window.setTimeout(function(){
-        navigator.geolocation.getCurrentPosition(
-          function(position){ 
-            geo[0] = -1;
-            geo[1] = position.coords.latitude;
-            geo[2] = position.coords.longitude;
-          }, 
-          function(){ 
-            console.log('error in function'); 
-            geo[0] = 1;
-          }, 
-          options);
-        }, 8);
+        navigator.geolocation.getCurrentPosition(function(position){
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+          window.setTimeout(function(){
+            $.getJSON('/data/pubs3.json?='+Date.now(), function(data){
+                var pubs = new Array();
+                $.each(data, function(index, pub){
+                  console.log("each");
+                  var distance = calc_distance(pos.lng, pos.lat, pub.location.longitude, pub.location.latitude);
+                  pubs.push([distance, pub]);
+                });
+
+                function compare_distance(a, b){
+                  if (a[0] < b[0]) return -1;
+                  if (a[0] > b[0]) return 1;
+                  return 0;
+                };
+                pubs.sort(compare_distance);
+
+                $('#pub-list2').find('ul').html('');            
+
+                for(i = 0; i < pubs.length; ++i){
+                  obj = pubs[i];
+                  var lst = "<li>";
+                  lst += obj[1].name;
+                  lst += "</li>";
+                  $('#pub-list2').find('ul').append(lst);
+                };
+            });
+          },1);
+        }, function(){
+            console.log('error in function');
+          }, options);
+        }
+        else{
+          // Browser doesn't support Geolocation
+          console.log('nav NOT availaible');
+        }
     }
-    else{
-      console.log('nav NOT availaible');
-      geo[0] = 0;
-    }
-    return geo;
-  }
-
-
-function show_pubs(){
-    var geo = rank_pubs();
-    console.log(geo[0] + " " + geo[1] + " " + geo[2]);
-}
