@@ -141,28 +141,55 @@ var calc_distance = function(long, lat, long1, lat1){
                 for (let ranked_pub of ranked_pubs){
                   var pub = ranked_pub[1];
                   var lst = "<li>";
+                  lst += "<div class='grid'>";
+                  
+                  lst += "<div class='row_4_of_12'>";
                   if(pub.website.length > 0){
                     lst += "<a href='" + pub.website + "' target='_blank'>" + pub.name + "</a>";
                   }
                   else{
                     lst += pub.name;
                   }
+                  lst += "</div>";
+                  
+                  lst += "<div class='row_4_of_12'>";
                   for (let category of pub.categories){
                     lst += category.category;
                   };
-                  lst += pub.food;
-                  lst += pub.location.address;
-                  lst += pub.location.longitude;
-                  lst += pub.location.latitude;
-                  lst += pub.opening;
+                  if(pub.feature.length > 0){
+                    lst += ", Features:" + pub.feature;
+                  }
+                  lst += "</div>";
+
+                  lst += "<div class='row_2_of_12'>";
+                    lst += pub.food;
+                  lst += "</div>";
+
+                  lst += "<div class='row_2_of_12'>";
+                    lst += ranked_pub[0] + " km";
+                  lst += "</div>";
+                  lst += "</div>";
+
+                  lst += "<div class='grid'>";
+                  lst += "<div class='row_4_of_12'>";
+                    lst += pub.opening;
+                  lst += "</div>";
+
+                  lst += "<div class='row_4_of_12'>";
+                  for(let phone of pub.phones){
+                    lst += phone.phone;
+                  };
+                  lst += "<br>";
                   for (let mail of pub.mails){
                     lst += mail.mail;
                   };
-                  for (let phone of pub.phones){
-                    lst += phone.phone;
-                  };
-                  lst += pub.feature;
-                  lst += pub.event;
+                  lst += "</div>";
+
+                  lst += "<div class='row_4_of_12'>";
+                  lst += pub.location.address;
+                  lst += "</div>";
+                  lst += "</div>";
+
                   lst += "</li>";
                   $('#pub-list2').find('ul').append(lst);
                 };
