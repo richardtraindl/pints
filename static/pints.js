@@ -144,7 +144,7 @@ var calc_distance = function(long, lat, long1, lat1){
 
                   var lst = "<li>";
                   lst += "<div class='table-cell' style='width: 95%'>";
-                  lst += "<a href='/pints/pub.html' id='" + pub.id + "'>";
+                  lst += "<a href='/pints/pub.html' id='" + pub.name + "'>";
                   lst += pub.name + " ";
                   for (let category of pub.categories){
                     lst += category.category + " ";
