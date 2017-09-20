@@ -141,7 +141,12 @@ var calc_distance = function(long, lat, long1, lat1){
                 for (let ranked_pub of ranked_pubs){
                   var pub = ranked_pub[1];
                   var lst = "<li>";
-                  lst += pub.name;
+                  if(pub.website.length > 0){
+                    lst += "<a href=" + pub.website + ">" pub.name + "</a>";
+                  }
+                  else{
+                    lst += pub.name;
+                  }
                   for (let category of pub.categories){
                     lst += category.category;
                   };
@@ -150,7 +155,6 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += pub.location.longitude;
                   lst += pub.location.latitude;
                   lst += pub.opening;
-                  lst += pub.website;
                   for (let mail of pub.mails){
                     lst += mail.mail;
                   };
