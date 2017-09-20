@@ -143,7 +143,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += obj[1].name;
                   for(i = 0; i < obj[1].categories.length; ++i){
                     lst += obj[1].categories[i].category;
-                  }
+                  };
                   lst += obj[1].food;
                   lst += obj[1].location.address;
                   lst += obj[1].location.longitude;
@@ -152,10 +152,10 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += obj[1].website;
                   for(i = 0; i < obj[1].mails.length; ++i){
                     lst += obj[1].mails[i].mail;
-                  }
+                  };
                   for(i = 0; i < obj[1].phones.length; ++i){
                     lst += obj[1].phones[i].phone;
-                  }
+                  };
                   lst += obj[1].feature;
                   lst += obj[1].event;
                   lst += "</li>";
