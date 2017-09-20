@@ -152,12 +152,12 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += obj[1].location.latitude;
                   lst += obj[1].opening;
                   lst += obj[1].website;
-                  for(i = 0; i < pub.mails.length; ++i){
+                  /* for(i = 0; i < pub.mails.length; ++i){
                     lst += pub.mails[i].mail;
                   };
                   for(i = 0; i < pub.phones.length; ++i){
                     lst += pub.phones[i].phone;
-                  };
+                  }; */
                   lst += obj[1].feature;
                   lst += obj[1].event;
                   lst += "</li>";
