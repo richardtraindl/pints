@@ -142,7 +142,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   var pub = ranked_pub[1];
                   var lst = "<li>";
                   if(pub.website.length > 0){
-                    lst += "<a href=" + pub.website + ">" + pub.name + "</a>";
+                    lst += "<a href=_" + pub.website + ">" + pub.name + "</a>";
                   }
                   else{
                     lst += pub.name;
