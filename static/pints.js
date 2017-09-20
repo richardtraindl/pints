@@ -142,7 +142,8 @@ var calc_distance = function(long, lat, long1, lat1){
                   var distance = ranked_pub[0];
                   var pub = ranked_pub[1];
 
-                  var lst = "<tr>";                  
+                  var lst = "<tr>";
+
                   lst += "<td>";
                   if(pub.website.length > 0){
                     lst += "<a href='" + pub.website + "' target='_blank'>" + pub.name + "</a>";
@@ -150,19 +151,26 @@ var calc_distance = function(long, lat, long1, lat1){
                   else{
                     lst += pub.name;
                   }
+                  lst += " <br>" + pub.location.address;                    
                   lst += "</td>";
                   
                   lst += "<td>";
                   for (let category of pub.categories){
-                    lst += category.category;
+                    lst += category.category + " ";
                   };
-                  if(pub.feature.length > 0){
-                    lst += ", " + pub.feature;
-                  }
+                  lst += pub.food + " ";
+                  lst += pub.feature;
                   lst += "</td>";
 
                   lst += "<td>";
-                    lst += pub.food;
+                  lst += pub.opening + "<br>";
+                  for(let phone of pub.phones){
+                    lst += phone.phone + " ";
+                  };
+                  lst += "<br>";
+                  for (let mail of pub.mails){
+                    lst += mail.mail + " ";
+                  };
                   lst += "</td>";
 
                   lst += "<td>";
@@ -170,25 +178,6 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += "</td>";
                   lst += "</tr>";
 
-                  lst += "<tr>";
-                  lst += "<td>";
-                    lst += pub.opening;
-                  lst += "</td>";
-
-                  lst += "<td>";
-                  for(let phone of pub.phones){
-                    lst += phone.phone;
-                  };
-                  lst += "<br>";
-                  for (let mail of pub.mails){
-                    lst += mail.mail;
-                  };
-                  lst += "</td>";
-
-                  lst += "<td>";
-                  lst += pub.location.address;
-                  lst += "</td>";
-                  lst += "</tr>";
                   $('#pubs').append(lst);
                 };
                 $('#pubs').append("</table>");
