@@ -136,16 +136,15 @@ var calc_distance = function(long, lat, long1, lat1){
                 };
                 ranked_pubs.sort(compare_distance);
 
-                $('#pubs').html('<table>');
+                $('#pub-list').find('ul').html('');
 
                 for (let ranked_pub of ranked_pubs){
                   var distance = ranked_pub[0];
                   var pub = ranked_pub[1];
 
-                  var lst = "<tr>";
-
-                  lst += "<td>";
-                  lst += "<a href='/pints/pub.html' id='" + pub.id + "'>"
+                  var lst = "<li>";
+                  lst += "<div class='table-cell' style='width: 95%'>";
+                  lst += "<a href='/pints/pub.html' id='" + pub.id + "'>";
                   lst += pub.name + " ";
                   for (let category of pub.categories){
                     lst += category.category + " ";
@@ -160,16 +159,15 @@ var calc_distance = function(long, lat, long1, lat1){
                   for (let mail of pub.mails){
                     lst += mail.mail + " ";
                   }; */
-                  lst += "</td>";
+                  lst += "</div>";
 
-                  lst += "<td>";
+                  lst += "<div class='table-cell' style='width: 5%'>";
                   lst += distance;
-                  lst += "</td>";
-                  lst += "</tr>";
+                  lst += "</div>";
+                  lst += "</li>";
 
-                  $('#pubs').append(lst);
+                  $('#pub-list').find('ul').append((lst);
                 };
-                $('#pubs').append("</table>");
             });
           },1);
         }, function(){
