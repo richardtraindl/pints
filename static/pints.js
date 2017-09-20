@@ -145,32 +145,21 @@ var calc_distance = function(long, lat, long1, lat1){
                   var lst = "<tr>";
 
                   lst += "<td>";
-                  if(pub.website.length > 0){
-                    lst += "<a href='" + pub.website + "' target='_blank'>" + pub.name + "</a>";
-                  }
-                  else{
-                    lst += pub.name;
-                  }
-                  lst += " <br>" + pub.location.address;                    
-                  lst += "</td>";
-                  
-                  lst += "<td>";
+                  lst += "<a href='/pints/pub.html' id='" + pub.id + "'>"
+                  lst += pub.name + " ";
                   for (let category of pub.categories){
                     lst += category.category + " ";
                   };
                   lst += pub.food + " ";
-                  lst += pub.feature;
-                  lst += "</td>";
-
-                  lst += "<td>";
-                  lst += pub.opening + "<br>";
-                  for(let phone of pub.phones){
+                  lst += pub.feature + " ";
+                  lst += pub.opening + " ";
+                  /* for(let phone of pub.phones){
                     lst += phone.phone + " ";
                   };
                   lst += "<br>";
                   for (let mail of pub.mails){
                     lst += mail.mail + " ";
-                  };
+                  }; */
                   lst += "</td>";
 
                   lst += "<td>";
