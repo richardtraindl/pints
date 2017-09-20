@@ -139,6 +139,7 @@ var calc_distance = function(long, lat, long1, lat1){
                 $('#pub-list2').find('ul').html('');            
 
                 for (let ranked_pub of ranked_pubs){
+                  var distance = ranked_pub[0];
                   var pub = ranked_pub[1];
                   var lst = "<li>";
                   lst += "<div class='grid'>";
@@ -166,7 +167,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += "</div>";
 
                   lst += "<div class='row_2_of_12'>";
-                    lst += ranked_pub[0] + " km";
+                  lst += distance;
                   lst += "</div>";
                   lst += "</div>";
 
