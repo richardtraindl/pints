@@ -136,14 +136,13 @@ var calc_distance = function(long, lat, long1, lat1){
                 };
                 ranked_pubs.sort(compare_distance);
 
-                $('#pub-list2').find('ul').html('');            
+                $('#pubs').html('');
 
                 for (let ranked_pub of ranked_pubs){
                   var distance = ranked_pub[0];
                   var pub = ranked_pub[1];
-                  var lst = "<li>";
-                  lst += "<div class='grid'>";
-                  
+
+                  var lst = "<div class='grid'>";                  
                   lst += "<div class='row_4_of_12'>";
                   if(pub.website.length > 0){
                     lst += "<a href='" + pub.website + "' target='_blank'>" + pub.name + "</a>";
@@ -190,9 +189,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += pub.location.address;
                   lst += "</div>";
                   lst += "</div>";
-
-                  lst += "</li>";
-                  $('#pub-list2').find('ul').append(lst);
+                  $('#pubs').append(lst);
                 };
             });
           },1);
