@@ -121,11 +121,12 @@ var calc_distance = function(long, lat, long1, lat1){
 
           window.setTimeout(function(){
             $.getJSON('/data/pubs3.json?='+Date.now(), function(data){
-                var pubs = new Array();
+                var ranked_pubs = new Array();
+
                 $.each(data, function(index, pub){
                   console.log("each");
                   var distance = calc_distance(pos.lng, pos.lat, pub.location.longitude, pub.location.latitude);
-                  pubs.push([distance, pub]);
+                  ranked_pubs.push([distance, pub]);
                 });
 
                 function compare_distance(a, b){
@@ -133,17 +134,18 @@ var calc_distance = function(long, lat, long1, lat1){
                   if (a[0] > b[0]) return 1;
                   return 0;
                 };
-                pubs.sort(compare_distance);
+                ranked_pubs.sort(compare_distance);
 
                 $('#pub-list2').find('ul').html('');            
 
-                for(i = 0; i < pubs.length; ++i){
-                  obj = pubs[i];
+                for(i = 0; i < ranked_pubs.length; ++i){
+                  var obj = ranked_pubs[i];
+                  var pub = obj[1];
                   var lst = "<li>";
                   lst += obj[1].name;
-                  /* for(i = 0; i < obj[1].categories.length; ++i){
-                    lst += obj[1].categories[i].category;
-                  }; */
+                  for(i = 0; i < pub.categories.length; ++i){
+                    lst += pub.categories[i].category;
+                  };
                   lst += obj[1].food;
                   lst += obj[1].location.address;
                   lst += obj[1].location.longitude;
