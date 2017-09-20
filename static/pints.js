@@ -136,46 +136,46 @@ var calc_distance = function(long, lat, long1, lat1){
                 };
                 ranked_pubs.sort(compare_distance);
 
-                $('#pubs').html('');
+                $('#pubs').html('<table>');
 
                 for (let ranked_pub of ranked_pubs){
                   var distance = ranked_pub[0];
                   var pub = ranked_pub[1];
 
-                  var lst = "<div class='grid'>";                  
-                  lst += "<div class='row_4_of_12'>";
+                  var lst = "<tr>";                  
+                  lst += "<td>";
                   if(pub.website.length > 0){
                     lst += "<a href='" + pub.website + "' target='_blank'>" + pub.name + "</a>";
                   }
                   else{
                     lst += pub.name;
                   }
-                  lst += "</div>";
+                  lst += "</td>";
                   
-                  lst += "<div class='row_4_of_12'>";
+                  lst += "<td>";
                   for (let category of pub.categories){
                     lst += category.category;
                   };
                   if(pub.feature.length > 0){
-                    lst += ", Features:" + pub.feature;
+                    lst += ", " + pub.feature;
                   }
-                  lst += "</div>";
+                  lst += "</td>";
 
-                  lst += "<div class='row_2_of_12'>";
+                  lst += "<td>";
                     lst += pub.food;
-                  lst += "</div>";
+                  lst += "</td>";
 
-                  lst += "<div class='row_2_of_12'>";
+                  lst += "<td>";
                   lst += distance;
-                  lst += "</div>";
-                  lst += "</div>";
+                  lst += "</td>";
+                  lst += "</tr>";
 
-                  lst += "<div class='grid'>";
-                  lst += "<div class='row_4_of_12'>";
+                  lst += "<tr>";
+                  lst += "<td>";
                     lst += pub.opening;
-                  lst += "</div>";
+                  lst += "</td>";
 
-                  lst += "<div class='row_4_of_12'>";
+                  lst += "<td>";
                   for(let phone of pub.phones){
                     lst += phone.phone;
                   };
@@ -183,14 +183,15 @@ var calc_distance = function(long, lat, long1, lat1){
                   for (let mail of pub.mails){
                     lst += mail.mail;
                   };
-                  lst += "</div>";
+                  lst += "</td>";
 
-                  lst += "<div class='row_4_of_12'>";
+                  lst += "<td>";
                   lst += pub.location.address;
-                  lst += "</div>";
-                  lst += "</div>";
+                  lst += "</td>";
+                  lst += "</tr>";
                   $('#pubs').append(lst);
                 };
+                $('#pubs').append("</table>");
             });
           },1);
         }, function(){
