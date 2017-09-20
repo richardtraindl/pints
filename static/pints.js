@@ -189,7 +189,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += pub.location.address;
                   lst += "</div>";
                   lst += "</div>";
-                  $('#pubs').append(lst);
+                  $('#pubs').html(lst);
                 };
             });
           },1);
