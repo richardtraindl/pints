@@ -157,7 +157,7 @@ var calc_distance = function(long, lat, long1, lat1){
                     lst += obj[1].phones[i].phone;
                   }; */
                   lst += obj[1].feature;
-                  /* lst += obj[1].event; */
+                  lst += obj[1].event;
                   lst += "</li>";
                   $('#pub-list2').find('ul').append(lst);
                 };
