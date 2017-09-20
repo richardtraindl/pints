@@ -138,5 +138,5 @@ body {
 }
 
 tr:nth-child(odd) {
-    background: Gray;
+  background-color: #FFFFE8;
 }
