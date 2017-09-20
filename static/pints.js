@@ -138,28 +138,27 @@ var calc_distance = function(long, lat, long1, lat1){
 
                 $('#pub-list2').find('ul').html('');            
 
-                for(i = 0; i < ranked_pubs.length; ++i){
-                  var obj = ranked_pubs[i];
-                  var pub = obj[1];
+                for (let ranked_pub of ranked_pubs){
+                  var pub = ranked_pub[1];
                   var lst = "<li>";
-                  lst += obj[1].name;
-                  for(i = 0; i < pub.categories.length; ++i){
-                    lst += pub.categories[i].category;
+                  lst += pub.name;
+                  for (let category of pub.categories){
+                    lst += category.category;
                   };
-                  lst += obj[1].food;
-                  lst += obj[1].location.address;
-                  lst += obj[1].location.longitude;
-                  lst += obj[1].location.latitude;
-                  lst += obj[1].opening;
-                  lst += obj[1].website;
+                  lst += pub.food;
+                  lst += pub.location.address;
+                  lst += pub.location.longitude;
+                  lst += pub.location.latitude;
+                  lst += pub.opening;
+                  lst += pub.website;
                   /* for(i = 0; i < pub.mails.length; ++i){
                     lst += pub.mails[i].mail;
                   };
                   for(i = 0; i < pub.phones.length; ++i){
                     lst += pub.phones[i].phone;
                   }; */
-                  lst += obj[1].feature;
-                  lst += obj[1].event;
+                  lst += pub.feature;
+                  lst += pub.event;
                   lst += "</li>";
                   $('#pub-list2').find('ul').append(lst);
                 };
