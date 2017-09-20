@@ -144,7 +144,8 @@ var calc_distance = function(long, lat, long1, lat1){
                   var lst = "<li>";
                   lst += obj[1].name;
                   for(i = 0; i < pub.categories.length; ++i){
-                    lst += pub.categories[i].category;
+                    //  lst += pub.categories[i].category;
+                    lst += "dummy";
                   };
                   lst += obj[1].food;
                   lst += obj[1].location.address;
