@@ -26,6 +26,12 @@ var calc_distance = function(long, lat, long1, lat1){
     }
 };
 
+  function show_pub1(id, srclng, srclat, dstlng, dstlat){
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAHDmag3kq2zgu8LWZDReFKSTZjGDe1btM&callback=initMap";
+    document.body.appendChild(script);
+  }
 
   function show_pub(id, srclng, srclat, dstlng, dstlat){
     var map = new google.maps.Map(document.getElementById('map-vienna'), {
@@ -170,7 +176,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   var lst = "<li>";
                   lst += "<div class='div-table'>";
                   lst += "<div class='div-row' style='height: 40px; text-overflow: ellipsis;'";
-                  lst += " onclick='show_pub(" + pub.id + ", " + pos.lng + ", " + pos.lat + ", " + pub.location.longitude + ", " + pub.location.latitude + ")'>";
+                  lst += " onclick='show_pub1(" + pub.id + ", " + pos.lng + ", " + pos.lat + ", " + pub.location.longitude + ", " + pub.location.latitude + ")'>";
                   lst += "<div class='div-cell' style='width: 90%; vertical-align: middle;'>";
                   lst += pub.name + " ";
                   for (let category of pub.categories){
