@@ -143,6 +143,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   var pub = ranked_pub[1];
 
                   var lst = "<li>";
+                  lst = "<span style='width: 90%; text-align: top;'>";
                   // lst += "<div class='table-cell' style='width: 95%'>";
                   lst += "<a href='/pints/pub.html' id='" + pub.name + "'>";
                   lst += pub.name + " ";
@@ -160,9 +161,10 @@ var calc_distance = function(long, lat, long1, lat1){
                     lst += mail.mail + " ";
                   }; */
                   lst += "</a>";
+                  lst += "</span>";
 
                   // lst += "<div class='table-cell' style='width: 5%'>";
-                  lst += "<span>";
+                  lst += "<span style='width: 10%; text-align: top;'>";
                   lst += distance;
                   lst += "</span>";
                   lst += "</li>";
