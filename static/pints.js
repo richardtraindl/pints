@@ -27,11 +27,10 @@ var calc_distance = function(long, lat, long1, lat1){
 };
 
 
-  function show_pub(id, srclng, srclat, dstlng, dstlat) {
+  function show_pub(id, srclng, srclat, dstlng, dstlat){
     var map = new google.maps.Map(document.getElementById('map-vienna'), {
-      center: { lat: srclat, 
-                lng: srclng,
-                zoom: 13
+      center: { lat: srclat, lng: srclng },
+      zoom: 13 
     });
 
     var infoWindow = new google.maps.InfoWindow({map: map});
