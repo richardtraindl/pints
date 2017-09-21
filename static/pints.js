@@ -151,8 +151,8 @@ var calc_distance = function(long, lat, long1, lat1){
                     lst += category.category + " ";
                   };
                   lst += pub.food + " ";
-                  lst += pub.feature + " ";
-                  lst += pub.opening + " ";
+                  lst += pub.features + " ";
+                  lst += pub.openings + " ";
                   /* for(let phone of pub.phones){
                     lst += phone.phone + " ";
                   };
