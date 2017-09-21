@@ -1,5 +1,6 @@
 [
     {
+        "id": 10000,
         "name": "Red Lion",
         "categories": [{ "category": "Pub" }, {"category": "Brew-Pub" }],
         "food": "snacks",
@@ -8,15 +9,15 @@
             "longitude": 16.3725042,
             "latitude": 48.2483537
         },
-        "opening": "Mo - Thu 18:00 – 01:00 | Friday 18:00 – 02:00 | Saturday 12:30 – 02:00 | Sunday 14:00 – 00:00",
+        "openings": "Mo - Thu 18:00 – 01:00 | Friday 18:00 – 02:00 | Saturday 12:30 – 02:00 | Sunday 14:00 – 00:00",
         "website": "http://www.redlion-vienna.at/",
         "mails": [{ "mail": "theredlionvienna@gmail.com" }],
         "phones": [{ "phone": "+43 - (0)676 560 53 53" },
                    { "phone": "+43 - (0)1 710 34 22" }],
-        "feature": "Live Football",
-        "event": "'Ozapft is', 17.10.2017, Winterbierverkostung, genauer Termin für Dezember wird noch bekanntgegeben"
+        "features": "Live Football, Ozapft is', 17.10.2017, Winterbierverkostung, genauer Termin für Dezember wird noch bekanntgegeben"
     },
     {
+        "id": 10001,
         "name": "Irish Harp",
         "categories": [{ "category": "Brew-Pub" }],
         "food": "small kitchen",
@@ -25,14 +26,14 @@
             "longitude": 16.3525042,
             "latitude": 48.2083537
         },
-        "opening": "",
+        "openings": "",
         "website": "http://www.orf.at",
         "mails": [{ "mail": "harp@nowhere.at" }],
         "phones": [{ "phone": "0676/562444" }],
-        "feature": "",
-        "event": "new Ale, Oktober 2017"
+        "features": "new Ale, Oktober 2017"
     },
     {
+        "id": 10002,
         "name": "O'Connors",
         "categories": [{  "category": "Pub" }],
         "food": "kitchen",
@@ -41,14 +42,14 @@
             "longitude": 16.2925042,
             "latitude": 48.2483537
         },
-        "opening": "",
+        "openings": "",
         "website": "https://www.oconnors.at/",
         "mails": [{  "mail": "info@oconnors.at" }],
         "phones": [{ "phone": "01 236 6721" }],
-        "feature": "",
-        "event": ""
+        "features": ""
     },
     {
+        "id": 10003,
         "name": "Hawidere",
         "categories": [{ "category": "Pub" }],
         "food": "kitchen",
@@ -57,14 +58,14 @@
             "longitude": 16.3225042,
             "latitude": 48.1983537
         },
-        "opening": "",
+        "openings": "",
         "website": "http://hawidere.at/",
         "mails": [{  "mail": "kowara@hawidere.at" }],
         "phones": [{ "phone": "+43 664 150 84 29 (ab mittag)" }],
-        "feature": "Darts",
-        "event": ""
+        "features": "Darts"
     },
     {
+        "id": 10004,
         "name": "Brick Makers",
         "categories": [{ "category": "Pub" }],
         "food": "kitchen",
@@ -73,14 +74,14 @@
             "longitude": 16.418557,
             "latitude": 48.1883537
         },
-        "opening": "",
+        "openings": "",
         "website": "http://www.brickmakers.at/",
         "mails": [{ "mail": "info@brickmakers.at" }],
         "phones": [{ "phone": "+43(0)19974414" }],
-        "feature": "Big Smoke",
-        "event": ""
+        "features": "Big Smoke"
     },
     {
+        "id": 10005,
         "name": "Beaver Brewery",
         "categories": [{ "category": "Brew-Pub" }],
         "food": "kitchen",
@@ -89,14 +90,14 @@
             "longitude": 16.4825042,
             "latitude": 48.2183537
         },
-        "opening": "Monday-Thursday: 16:00 - 24:00 | Friday:    16:00 - 1:00 | Saturday: 10:00 - 1:00 | Sunday: 10:00 -22:00 | kitchen closes at 22:00",
+        "openings": "Monday-Thursday: 16:00 - 24:00 | Friday:    16:00 - 1:00 | Saturday: 10:00 - 1:00 | Sunday: 10:00 -22:00 | kitchen closes at 22:00",
         "website": "https://www.beaverbrewing.at/",
         "mails": [{ "mail": "office@beaverbrewing.at" }],
         "phones": [{ "phone": "+43 (0) 677 610 122 53" }],
-        "feature": "",
-        "event": ""
+        "features": ""
     },
     {
+        "id": 10006,
         "name": "Pivothek",
         "categories": [{ "category": "Pub" }],
         "food": "kitchen",
@@ -105,14 +106,14 @@
             "longitude": 16.4025042,
             "latitude": 48.2283537
         },
-        "opening": "",
+        "openings": "",
         "website": "http://pivothek.at/",
         "mails": [{ "mail": "info@pivothek.at" }],
         "phones": [{ "phone": "0660/6989668" }],
-        "feature": "Tschechische Biere",
-        "event": ""
+        "features": "Tschechische Biere"
     },
     {
+        "id": 10007,
         "name": "Ü-Lokal",
         "categories": [{ "category": "Pub" }],
         "food": "kitchen",
@@ -121,11 +122,10 @@
             "longitude": 16.3825042,
             "latitude": 48.1783537
         },
-        "opening": "Dienstag bis Donnerstag 17:30 bis 0:00 | Freitag und Samstag 17:30 bis 2:00 | Gekocht wird jeweils bis 21:30 Uhr. | Sonntag, Montag und an Feiertagen geschlossen. ",
+        "openings": "Dienstag bis Donnerstag 17:30 bis 0:00 | Freitag und Samstag 17:30 bis 2:00 | Gekocht wird jeweils bis 21:30 Uhr. | Sonntag, Montag und an Feiertagen geschlossen. ",
         "website": "http://www.ue-lokal.at/",
         "mails": [{ "mail": "info@ue-lokal.at" }],
         "phones": [{ "phone": "01 9691013" }],
-        "feature": "Jeden Freitag Käsespätzle",
-        "event": ""
+        "features": "Jeden Freitag Käsespätzle"
     }
 ]
