@@ -159,7 +159,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   for (let mail of pub.mails){
                     lst += mail.mail + " ";
                   }; */
-                  lst += "</div>";
+                  lst += "</a></div>";
 
                   lst += "<div class='table-cell' style='width: 5%'>";
                   lst += distance;
