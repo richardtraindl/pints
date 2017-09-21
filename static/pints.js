@@ -166,7 +166,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += "</div>";
                   lst += "</li>";
 
-                  $('#pub-list').find('ul').append((lst);
+                  $('#pub-list').find('ul').append(lst);
                 };
             });
           },1);
