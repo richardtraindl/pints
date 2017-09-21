@@ -123,6 +123,10 @@ h2 {
   font-size: 24px;
 }
 
+a, a:link, a:visited, a:active, a:focus {
+  text-decoration: none;
+}
+
 .gap {
   padding-bottom: 20px;
 }
