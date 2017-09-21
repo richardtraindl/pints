@@ -143,8 +143,9 @@ var calc_distance = function(long, lat, long1, lat1){
                   var pub = ranked_pub[1];
 
                   var lst = "<li>";
-                  lst += "<div class='table-row'>";
-                  lst += "<div class='table-cell' style='width: 90%'>";
+                  lst += "<div class='div-table'>";
+                  lst += "<div class='div-row'>";
+                  lst += "<div class='div-cell' style='width: 90%'>";
                   lst += "<a href='/pints/pub.html' id='" + pub.id + "'>";
                   lst += pub.name + " ";
                   for (let category of pub.categories){
@@ -162,8 +163,9 @@ var calc_distance = function(long, lat, long1, lat1){
                   }; */
                   lst += "</a></div>";
 
-                  lst += "<div class='table-cell' style='width: 10%'>";
+                  lst += "<div class='div-cell' style='width: 10%'>";
                   lst += distance;
+                  lst += "</div>";
                   lst += "</div>";
                   lst += "</div>";
                   lst += "</li>";
