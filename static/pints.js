@@ -165,9 +165,9 @@ var calc_distance = function(long, lat, long1, lat1){
 
                   lst += "<div class='div-cell' style='width: 10%; vertical-align: middle;'>";
                   lst += distance;
-                  lst += "</div>";
-                  lst += "</div>";
-                  lst += "</div>";
+                  lst += "</div>"; // cell
+                  lst += "</div>"; // row
+                  lst += "</div>"; // table
                   lst += "</li>";
 
                   $('#pub-list').find('ul').append(lst);
