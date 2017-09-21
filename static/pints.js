@@ -26,6 +26,32 @@ var calc_distance = function(long, lat, long1, lat1){
     }
 };
 
+
+  function show_pub(id, srclng, srclat, dstlng, dstlat) {
+    var map = new google.maps.Map(document.getElementById('map-vienna'), {
+      center: { lat: srclat, 
+                lng: srclng,
+                zoom: 13
+    });
+
+    var infoWindow = new google.maps.InfoWindow({map: map});
+      /* var pos = { lat: position.coords.latitude,
+                     lng: position.coords.longitude
+                    };
+
+         infoWindow.setPosition(pos);
+         infoWindow.setContent('Location found.');
+         map.setCenter(pos); */
+
+    window.setTimeout(function(){
+      marker = new google.maps.Marker({
+        map: map,
+        animation: google.maps.Animation.DROP,
+        position: new google.maps.LatLng(dstlat, dstlng)
+      });
+    }, 1);
+  }
+
   function initMap() {
         var options = {
           enableHighAccuracy: true,
@@ -144,7 +170,8 @@ var calc_distance = function(long, lat, long1, lat1){
 
                   var lst = "<li>";
                   lst += "<div class='div-table'>";
-                  lst += "<div class='div-row' style='height: 40px; text-overflow: ellipsis;' onclick='show_pub(" + pub.id + ", " + pos.lng + ", " + pos.lat + ")'>";
+                  lst += "<div class='div-row' style='height: 40px; text-overflow: ellipsis;'";
+                  lst += " onclick='show_pub(" + pub.id + ", " + pos.lng + ", " + pos.lat + ", " + pub.location.longitude + ", " + pub.location.latitude + ")'>";
                   lst += "<div class='div-cell' style='width: 90%; vertical-align: middle;'>";
                   lst += pub.name + " ";
                   for (let category of pub.categories){
