@@ -13,23 +13,23 @@
         "website": "http://www.redlion-vienna.at/",
         "mails": [{ "mail": "theredlionvienna@gmail.com" }],
         "phones": [{ "phone": "+43 - (0)676 560 53 53" },
-                   { "phone": "+43 - (0)1 710 34 22" }],
+                   { "phone": "+43 - (0)1  34 22" }],
         "features": "Live Football, Ozapft is', 17.10.2017, Winterbierverkostung, genauer Termin für Dezember wird noch bekanntgegeben"
     },
     {
         "id": 10001,
-        "name": "Irish Harp",
-        "categories": [{ "category": "Brew-Pub" }],
-        "food": "small kitchen",
+        "name": "Flanagans's",
+        "categories": [{ "category": "Pub" }],
+        "food": "kitchen",
         "location": {
-            "address": "1070 Wien, Neustiftg. 18",
+            "address": "1010 Wien, Schwarzenbergstr. 1-3",
             "longitude": 16.3525042,
             "latitude": 48.2083537
         },
         "openings": "",
-        "website": "http://www.orf.at",
-        "mails": [{ "mail": "harp@nowhere.at" }],
-        "phones": [{ "phone": "0676/562444" }],
+        "website": "http://www.flanagans.at",
+        "mails": "",
+        "phones": [{ "phone": "+435137378" }],
         "features": "new Ale, Oktober 2017"
     },
     {
