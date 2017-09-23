@@ -26,14 +26,34 @@ var calc_distance = function(long, lat, long1, lat1){
     }
 };
 
-  function show_pub1(id, srclng, srclat, dstlng, dstlat){
+  function show_pub2(){
+    var txt = $(this).html();
+    console.log(txt);
+    var id = $(this).attr("id");
+    var srclng = $(this).attr("srclng");
+    var srclat = $(this).attr("srclat");
+    var dstlng = $(this).attr("dstlng");
+    var dstlat = $(this).attr("dstlat");
+    console.log(id + " " + srclng + " " + srclat + " " + dstlng + " " + dstlat);
+    $("#map-vienna").attr("id", id);
+    $("#map-vienna").attr("srclng", srclng);
+    $("#map-vienna").attr("srclat", srclat);
+    $("#map-vienna").attr("dstlng", dstlng);
+    $("#map-vienna").attr("dstlat", dstlat);
+
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAHDmag3kq2zgu8LWZDReFKSTZjGDe1btM&callback=initMap";
+    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAHDmag3kq2zgu8LWZDReFKSTZjGDe1btM&callback=show_pub";
     document.body.appendChild(script);
   }
 
-  function show_pub(id, srclng, srclat, dstlng, dstlat){
+  function show_pub(){
+    var id = $("#map-vienna").attr("id");
+    var srclng = $("#map-vienna").attr("srclng");
+    var srclat = $("#map-vienna").attr("srclat");
+    var dstlng = $("#map-vienna").attr("dstlng");
+    var dstlat = $("#map-vienna").attr("dstlat");
+
     var map = new google.maps.Map(document.getElementById('map-vienna'), {
       center: { lat: srclat, lng: srclng },
       zoom: 13 
@@ -176,7 +196,12 @@ var calc_distance = function(long, lat, long1, lat1){
                   var lst = "<li>";
                   lst += "<div class='div-table'>";
                   lst += "<div class='div-row' style='height: 40px; text-overflow: ellipsis;'";
-                  lst += " onclick='show_pub1(" + pub.id + ", " + pos.lng + ", " + pos.lat + ", " + pub.location.longitude + ", " + pub.location.latitude + ")'>";
+                  lst += " id='" + pub.id + "'";
+                  lst += " srclng='" + pos.lng + "'";
+                  lst += " srclat='" + pos.lat + "'";
+                  lst += " dstlng='" + pub.location.longitude + "'";
+                  lst += " dstlat='" + pub.location.latitude + "'";
+                  lst += " onclick='show_pub2()'>";
                   lst += "<div class='div-cell' style='width: 90%; vertical-align: middle;'>";
                   lst += pub.name + " ";
                   for (let category of pub.categories){
@@ -213,3 +238,42 @@ var calc_distance = function(long, lat, long1, lat1){
           console.log('nav NOT availaible');
         }
     }
+
+
+  function get_location(location){
+    var options = { enableHighAccuracy: true, timeout: 70000, maximumAge: 0 };
+
+    // var latitude;
+    // var longitude;
+
+    if(navigator.geolocation){
+      console.log('nav availaible');
+
+      navigator.geolocation.getCurrentPosition(function(position){
+          location.latitude = position.coords.latitude;
+          location.longitude = position.coords.longitude;
+          console.log("Your current position is:");
+          console.log("Latitude: " + location.latitude);
+          console.log("Longitude: " + location.longitude);
+        },
+        function(err){
+          console.warn("ERROR: " + err.code + " " + err.message);
+        }, 
+        options);
+    }
+    else{
+      // Browser doesn't support Geolocation
+      console.log('nav NOT availaible');
+    }
+  };
+
+  function dummy(){
+    var location = { latitude: null, longitude: null };
+    // setTimeout(function(){ get_location(location); }, 10000); 
+    get_location(location);
+    
+    setTimeout(function(){ 
+        console.log("Latitude : " + location.latitude); 
+        console.log("Longitude: " + location.longitude); 
+      }, 5000);
+  };
