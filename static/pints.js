@@ -18,66 +18,109 @@ var calc_distance = function(long, lat, long1, lat1){
 
     d = Math.sqrt((dx*dx) + (dy*dy));
 
-    if(d < 1){
-        return Math.round(d*1000) + " m";
-    }
-    else{
-        return Math.round(d*10)/10 + " km";
-    }
+    //if(d < 1){
+    //    return Math.round(d*1000) + " m";
+    //}
+    //else{
+    return Math.round(d*10)/10; //  + " km";
+    //}
 };
 
-  function show_pub2(){
-    var txt = $(this).html();
-    console.log(txt);
-    var id = $(this).attr("id");
-    var srclng = $(this).attr("srclng");
-    var srclat = $(this).attr("srclat");
-    var dstlng = $(this).attr("dstlng");
-    var dstlat = $(this).attr("dstlat");
-    console.log(id + " " + srclng + " " + srclat + " " + dstlng + " " + dstlat);
-    $("#map-vienna").attr("id", id);
-    $("#map-vienna").attr("srclng", srclng);
-    $("#map-vienna").attr("srclat", srclat);
-    $("#map-vienna").attr("dstlng", dstlng);
-    $("#map-vienna").attr("dstlat", dstlat);
+   function show_pubs(location){
+      // window.setTimeout(function(){
+        // $.getJSON('/data/pubs3.json?='+Date.now(), function(data){
+        $.getJSON('/data/pubs3.json', function(data){
+            var rpubs = new Array();
 
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAHDmag3kq2zgu8LWZDReFKSTZjGDe1btM&callback=show_pub";
-    document.body.appendChild(script);
-  }
+            $.each(data, function(index, pub){
+              var distance = calc_distance(location.longitude, location.latitude, pub.location.longitude, pub.location.latitude);
+              rpubs.push([distance, pub]);
+            });
 
-  function show_pub(){
-    var id = $("#map-vienna").attr("id");
-    var srclng = $("#map-vienna").attr("srclng");
-    var srclat = $("#map-vienna").attr("srclat");
-    var dstlng = $("#map-vienna").attr("dstlng");
-    var dstlat = $("#map-vienna").attr("dstlat");
+            function compare_distance(a, b){
+              if (a[0] < b[0]) return -1;
+              if (a[0] > b[0]) return 1;
+              return 0;
+            };
 
-    var map = new google.maps.Map(document.getElementById('map-vienna'), {
-      center: { lat: srclat, lng: srclng },
-      zoom: 13 
-    });
+            rpubs.sort(compare_distance);
 
-    var infoWindow = new google.maps.InfoWindow({map: map});
-      /* var pos = { lat: position.coords.latitude,
-                     lng: position.coords.longitude
-                    };
+            $('#pub-list').find('ul').html('');
 
-         infoWindow.setPosition(pos);
-         infoWindow.setContent('Location found.');
-         map.setCenter(pos); */
+            for(let rpub of rpubs){
+              var distance = rpub[0];
+              var pub = rpub[1];
 
-    window.setTimeout(function(){
-      marker = new google.maps.Marker({
-        map: map,
-        animation: google.maps.Animation.DROP,
-        position: new google.maps.LatLng(dstlat, dstlng)
-      });
-    }, 1);
-  }
+              var lst = "<li>";
+              lst += "<div class='div-table'>";
+              lst += "<div class='div-row' style='height: 40px; text-overflow: ellipsis;'";
+              lst += " id='" + pub.id + "'";
+              lst += " srclng='" + location.longitude + "'";
+              lst += " srclat='" + location.latitude + "'";
+              lst += " dstlng='" + pub.location.longitude + "'";
+              lst += " dstlat='" + pub.location.latitude + "'";
+              lst += " onclick='show_pub(" + pub.id + ")'>";
+              lst += "<div class='div-cell' style='width: 90%; vertical-align: middle;'>";
+              lst += pub.name + " ";
+              for (let category of pub.categories){
+                lst += category.category + " ";
+              };
+              lst += pub.food + " ";
+              lst += pub.features + " ";
+              lst += pub.openings + " ";
+              /* for(let phone of pub.phones){
+                lst += phone.phone + " ";
+              };
+              lst += "<br>";
+              for (let mail of pub.mails){
+                lst += mail.mail + " ";
+              }; */
+              lst += "</div>"; // cell
 
-  function initMap() {
+              lst += "<div class='div-cell' style='width: 10%; vertical-align: middle;'>";
+              lst += distance + " km";
+              lst += "</div>"; // cell
+              lst += "</div>"; // row
+              lst += "</div>"; // table
+              lst += "</li>";
+
+              $('#pub-list').find('ul').append(lst);
+            }
+        });
+      // },1);
+    };
+
+  function get_location(location){
+    var options = { enableHighAccuracy: true, timeout: 70000, maximumAge: 0 };
+
+    if(navigator.geolocation){
+      console.log('nav availaible');
+
+      navigator.geolocation.getCurrentPosition(function(position){
+          location.status = -1;
+          location.latitude = position.coords.latitude;
+          location.longitude = position.coords.longitude;
+          console.log("in function \"navigator.geolocation.getCurrentPosition\":");
+          console.log("Status: " + location.status);
+          console.log("Latitude: " + location.latitude);
+          console.log("Longitude: " + location.longitude);
+        },
+        function(err){
+          location.status = 1;
+          console.warn("ERROR: " + err.code + " " + err.message);
+        }, 
+        options);
+    }
+    else{
+      // Browser doesn't support Geolocation
+      location.status = 0;
+      console.log('nav NOT availaible');
+    }
+  };
+
+
+/*
+function initMap() {
         var options = {
           enableHighAccuracy: true,
           timeout: 70000,
@@ -149,131 +192,4 @@ var calc_distance = function(long, lat, long1, lat1){
                               'Error: The Geolocation service failed.' :
                               'Error: Your browser doesn\'t support geolocation.');
   }
-
-
-  function rank_pubs(){
-    var options = {
-          enableHighAccuracy: true,
-          timeout: 70000,
-          maximumAge: 0
-        };
-
-    var latitude  = 48.2083537;
-    var longitude = 16.3725042;
-
-    if(navigator.geolocation){
-        console.log('nav availaible');
-
-        navigator.geolocation.getCurrentPosition(function(position){
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-          window.setTimeout(function(){
-            $.getJSON('/data/pubs3.json?='+Date.now(), function(data){
-                var ranked_pubs = new Array();
-
-                $.each(data, function(index, pub){
-                  console.log("each");
-                  var distance = calc_distance(pos.lng, pos.lat, pub.location.longitude, pub.location.latitude);
-                  ranked_pubs.push([distance, pub]);
-                });
-
-                function compare_distance(a, b){
-                  if (a[0] < b[0]) return -1;
-                  if (a[0] > b[0]) return 1;
-                  return 0;
-                };
-                ranked_pubs.sort(compare_distance);
-
-                $('#pub-list').find('ul').html('');
-
-                for (let ranked_pub of ranked_pubs){
-                  var distance = ranked_pub[0];
-                  var pub = ranked_pub[1];
-
-                  var lst = "<li>";
-                  lst += "<div class='div-table'>";
-                  lst += "<div class='div-row' style='height: 40px; text-overflow: ellipsis;'";
-                  lst += " id='" + pub.id + "'";
-                  lst += " srclng='" + pos.lng + "'";
-                  lst += " srclat='" + pos.lat + "'";
-                  lst += " dstlng='" + pub.location.longitude + "'";
-                  lst += " dstlat='" + pub.location.latitude + "'";
-                  lst += " onclick='show_pub2()'>";
-                  lst += "<div class='div-cell' style='width: 90%; vertical-align: middle;'>";
-                  lst += pub.name + " ";
-                  for (let category of pub.categories){
-                    lst += category.category + " ";
-                  };
-                  lst += pub.food + " ";
-                  lst += pub.features + " ";
-                  lst += pub.openings + " ";
-                  /* for(let phone of pub.phones){
-                    lst += phone.phone + " ";
-                  };
-                  lst += "<br>";
-                  for (let mail of pub.mails){
-                    lst += mail.mail + " ";
-                  }; */
-
-                  lst += "<div class='div-cell' style='width: 10%; vertical-align: middle;'>";
-                  lst += distance;
-                  lst += "</div>"; // cell
-                  lst += "</div>"; // row
-                  lst += "</div>"; // table
-                  lst += "</li>";
-
-                  $('#pub-list').find('ul').append(lst);
-                };
-            });
-          },1);
-        }, function(){
-            console.log('error in function');
-          }, options);
-        }
-        else{
-          // Browser doesn't support Geolocation
-          console.log('nav NOT availaible');
-        }
-    }
-
-
-  function get_location(location){
-    var options = { enableHighAccuracy: true, timeout: 70000, maximumAge: 0 };
-
-    // var latitude;
-    // var longitude;
-
-    if(navigator.geolocation){
-      console.log('nav availaible');
-
-      navigator.geolocation.getCurrentPosition(function(position){
-          location.latitude = position.coords.latitude;
-          location.longitude = position.coords.longitude;
-          console.log("Your current position is:");
-          console.log("Latitude: " + location.latitude);
-          console.log("Longitude: " + location.longitude);
-        },
-        function(err){
-          console.warn("ERROR: " + err.code + " " + err.message);
-        }, 
-        options);
-    }
-    else{
-      // Browser doesn't support Geolocation
-      console.log('nav NOT availaible');
-    }
-  };
-
-  function dummy(){
-    var location = { latitude: null, longitude: null };
-    // setTimeout(function(){ get_location(location); }, 10000); 
-    get_location(location);
-    
-    setTimeout(function(){ 
-        console.log("Latitude : " + location.latitude); 
-        console.log("Longitude: " + location.longitude); 
-      }, 5000);
-  };
+*/
