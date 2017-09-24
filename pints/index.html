@@ -1,19 +1,8 @@
 ---
-layout: pints
-title: Pints
-id: index
+layout: pints2
+title: Start
+id: start
 ---
-
-  <article>
-    <h2>Welcome</h2>
-    
-    <div class="gap"></div>
-
-    <button class="btn" onclick="dummy()">Find closest Pubs...</button>
-    
-    <button class="btn" onclick="initMap()">Show Map...</button>
-
-    <div class="gap"></div>
 
     <section id="pub-list">
       <ul>
@@ -21,14 +10,73 @@ id: index
       </ul>
     </section>
 
-    <section id="map-vienna">
-      <!-- Wird dynamisch befüllt -->
-    </section>
-
-  </article>
+    <div id="mapid" style="width: 640px; height: 480px;"></div>
 
   <script>
     $(document).ready(function() {
-      // readpubs();
-     });
-  </script>
+      $("#nav-button").on("click",function(){
+        $("#mobile-nav").toggle();
+        return false;
+      });
+
+    var location = { status: null, latitude: null, longitude: null };
+    get_location(location);
+
+    setTimeout(function(){ 
+        console.log(" stat: " + location.status + " lat: " + location.latitude + " lon: " + location.longitude);
+
+        show_pubs(location, 5);
+
+        var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
+
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            id: 'mapbox.streets'
+        }).addTo(mymap);
+
+
+        $.getJSON('/data/pubs3.json', function(data){
+            var rpubs = new Array();
+
+            $.each(data, function(index, pub){
+              var distance = calc_distance(location.longitude, location.latitude, pub.location.longitude, pub.location.latitude);
+              rpubs.push([distance, pub]);
+            });
+
+            function compare_distance(a, b){
+              if (a[0] < b[0]) return -1;
+              if (a[0] > b[0]) return 1;
+              return 0;
+            };
+
+            rpubs.sort(compare_distance);
+
+            var count = 0;            
+            for(let rpub of rpubs){
+              count += 1;
+              if(count <= 5){
+                var pub = rpub[1];
+
+                var pub1 = L.marker([pub.location.latitude, pub.location.longitude]).addTo(mymap);
+                var popup = pub.name + " ";
+                for(let category of pub.categories){
+                  popup += category.category + " ";
+                }
+                popup += "<br>";
+                popup += pub.openings + ", ";
+                popup += pub.location.address + ", ";              
+                for(let phone of pub.phones){
+                  popup += phone.phone + " ";
+                }
+                pub1.bindPopup(popup);
+              }
+            }
+            var userlocation = L.marker([location.latitude, location.longitude]).addTo(mymap);
+            userlocation.bindPopup("Here you are!").openPopup();
+        });
+    }, 1000); 
+  });
+</script>
