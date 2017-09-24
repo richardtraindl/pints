@@ -87,8 +87,8 @@
         "food": "kitchen",
         "location": {
             "address": "Liechtensteinstraße 69 1090 Vienna, Austria",
-            "longitude": 16.4825042,
-            "latitude": 48.2183537
+            "longitude": 16.3825042,
+            "latitude": 48.2083537
         },
         "openings": "Monday-Thursday: 16:00 - 24:00 | Friday:    16:00 - 1:00 | Saturday: 10:00 - 1:00 | Sunday: 10:00 -22:00 | kitchen closes at 22:00",
         "website": "https://www.beaverbrewing.at/",

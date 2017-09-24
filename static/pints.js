@@ -26,7 +26,7 @@ var calc_distance = function(long, lat, long1, lat1){
     //}
 };
 
-   function show_pubs(location){
+   function show_pubs(location, count){
       // window.setTimeout(function(){
         // $.getJSON('/data/pubs3.json?='+Date.now(), function(data){
         $.getJSON('/data/pubs3.json', function(data){
@@ -47,44 +47,48 @@ var calc_distance = function(long, lat, long1, lat1){
 
             $('#pub-list').find('ul').html('');
 
+            var cnt = 0;
             for(let rpub of rpubs){
-              var distance = rpub[0];
-              var pub = rpub[1];
+              cnt += 1;
+              if(cnt <= count){
+                  var distance = rpub[0];
+                  var pub = rpub[1];
 
-              var lst = "<li>";
-              lst += "<div class='div-table'>";
-              lst += "<div class='div-row' style='height: 40px; text-overflow: ellipsis;'";
-              lst += " id='" + pub.id + "'";
-              lst += " srclng='" + location.longitude + "'";
-              lst += " srclat='" + location.latitude + "'";
-              lst += " dstlng='" + pub.location.longitude + "'";
-              lst += " dstlat='" + pub.location.latitude + "'";
-              lst += " onclick='show_pub(" + pub.id + ")'>";
-              lst += "<div class='div-cell' style='width: 90%; vertical-align: middle;'>";
-              lst += pub.name + " ";
-              for (let category of pub.categories){
-                lst += category.category + " ";
-              };
-              lst += pub.food + " ";
-              lst += pub.features + " ";
-              lst += pub.openings + " ";
-              /* for(let phone of pub.phones){
-                lst += phone.phone + " ";
-              };
-              lst += "<br>";
-              for (let mail of pub.mails){
-                lst += mail.mail + " ";
-              }; */
-              lst += "</div>"; // cell
+                  var lst = "<li>";
+                  lst += "<div class='div-table'>";
+                  lst += "<div class='div-row' style='height: 40px; text-overflow: ellipsis;'";
+                  lst += " id='" + pub.id + "'";
+                  lst += " srclng='" + location.longitude + "'";
+                  lst += " srclat='" + location.latitude + "'";
+                  lst += " dstlng='" + pub.location.longitude + "'";
+                  lst += " dstlat='" + pub.location.latitude + "'";
+                  lst += " onclick='show_pub(" + pub.id + ")'>";
+                  lst += "<div class='div-cell' style='width: 90%; vertical-align: middle;'>";
+                  lst += pub.name + " ";
+                  for (let category of pub.categories){
+                    lst += category.category + " ";
+                  };
+                  lst += pub.food + " ";
+                  lst += pub.features + " ";
+                  lst += pub.openings + " ";
+                  /* for(let phone of pub.phones){
+                    lst += phone.phone + " ";
+                  };
+                  lst += "<br>";
+                  for (let mail of pub.mails){
+                    lst += mail.mail + " ";
+                  }; */
+                  lst += "</div>"; // cell
 
-              lst += "<div class='div-cell' style='width: 10%; vertical-align: middle;'>";
-              lst += distance + " km";
-              lst += "</div>"; // cell
-              lst += "</div>"; // row
-              lst += "</div>"; // table
-              lst += "</li>";
+                  lst += "<div class='div-cell' style='width: 10%; vertical-align: middle;'>";
+                  lst += distance + " km";
+                  lst += "</div>"; // cell
+                  lst += "</div>"; // row
+                  lst += "</div>"; // table
+                  lst += "</li>";
 
-              $('#pub-list').find('ul').append(lst);
+                  $('#pub-list').find('ul').append(lst);
+                }
             }
         });
       // },1);

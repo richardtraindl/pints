@@ -14,6 +14,10 @@ id: start
 
   <script>
     $(document).ready(function() {
+      $("#nav-button").on("click",function(){
+        $("#mobile-nav").toggle();
+        return false;
+      });
 
     var location = { status: null, latitude: null, longitude: null };
     get_location(location);
@@ -21,7 +25,7 @@ id: start
     setTimeout(function(){ 
         console.log(" stat: " + location.status + " lat: " + location.latitude + " lon: " + location.longitude);
 
-        show_pubs(location);
+        show_pubs(location, 5);
 
         var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
 
@@ -36,13 +40,8 @@ id: start
 
         $.getJSON('/data/pubs3.json', function(data){
             var rpubs = new Array();
-            var count = 0;
 
             $.each(data, function(index, pub){
-              if(count >= 5){
-                return false;
-              }
-              count += 1;
               var distance = calc_distance(location.longitude, location.latitude, pub.location.longitude, pub.location.latitude);
               rpubs.push([distance, pub]);
             });
@@ -54,13 +53,29 @@ id: start
             };
 
             rpubs.sort(compare_distance);
-            
-            for(let rpub of rpubs){
-              var pub = rpub[1];
 
-              var pub1 = L.marker([pub.location.latitude, pub.location.longitude]).addTo(mymap);
-              pub1.bindPopup("<b>Hello Richard!</b>").openPopup();
+            var count = 0;            
+            for(let rpub of rpubs){
+              count += 1;
+              if(count <= 5){
+                var pub = rpub[1];
+
+                var pub1 = L.marker([pub.location.latitude, pub.location.longitude]).addTo(mymap);
+                var popup = pub.name + " ";
+                for(let category of pub.categories){
+                  popup += category.category + " ";
+                }
+                popup += "<br>";
+                popup += pub.openings + ", ";
+                popup += pub.location.address + ", ";              
+                for(let phone of pub.phones){
+                  popup += phone.phone + " ";
+                }
+                pub1.bindPopup(popup);
+              }
             }
+            var userlocation = L.marker([location.latitude, location.longitude]).addTo(mymap);
+            userlocation.bindPopup("Here you are!").openPopup();
         });
     }, 1000); 
   });
