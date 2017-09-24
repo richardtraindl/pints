@@ -45,7 +45,17 @@ var calc_distance = function(long, lat, long1, lat1){
 
             rpubs.sort(compare_distance);
 
-            $('#pub-list').find('ul').html('');
+            if(location.status == 1){
+              $('#pub-list').html('');
+              var msg = "<p class='msg'>You have denied geolocation prompt. <br>Pints assumes the center of the city as your current location!</p>";
+              $('#pub-list').append(msg);
+            }
+            else{
+              // $('#pub-list').find('ul').html('');
+              $('#pub-list').html('');
+            }
+
+            $('#pub-list').append("<ul></ul>");
 
             var cnt = 0;
             for(let rpub of rpubs){

@@ -5,9 +5,7 @@ id: start
 ---
 
     <section id="pub-list">
-      <ul>
-          <!-- Wird dynamisch befüllt -->
-      </ul>
+        <!-- Wird dynamisch befüllt -->
     </section>
 
     <div class="small-gap" style="background-color: #FFE394;"></div>
@@ -23,13 +21,28 @@ id: start
         return false;
       });
 
+    var count = 5;
     var location = { status: null, latitude: null, longitude: null };
     get_location(location);
+    
 
     setTimeout(function(){ 
         console.log(" stat: " + location.status + " lat: " + location.latitude + " lon: " + location.longitude);
 
-        show_pubs(location, 5);
+        if(location.status == 0){
+          $('#pub-list').html('');
+          var msg = "<p class='msg'>Navigation is NOT availaible. <br>Please check GPS-support!</p>";
+          $('#pub-list').append(msg);
+          return false;
+        }
+
+        if(location.status == 1){
+          count = 10;
+          location.latitude = 48.2083537;
+          location.longitude = 16.3725042;
+        }
+
+        show_pubs(location, count);
 
         var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
 
@@ -58,10 +71,10 @@ id: start
 
             rpubs.sort(compare_distance);
 
-            var count = 0;            
+            var cnt = 0;            
             for(let rpub of rpubs){
-              count += 1;
-              if(count <= 5){
+              cnt += 1;
+              if(cnt <= count){
                 var pub = rpub[1];
 
                 var pub1 = L.marker([pub.location.latitude, pub.location.longitude]).addTo(mymap);
