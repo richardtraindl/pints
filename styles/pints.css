@@ -102,14 +102,6 @@ body {
   border-radius: 0px 0px 6px 6px;
 }
 
-#map-vienna {
-   min-width: 320px;
-   min-height: 320px;
-   height: auto;
-   /* max-width: 640px;
-   max-height: 640px; */
-}
-
 h1, h2 {
   padding: 20px 0px;
   text-align: center;
