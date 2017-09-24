@@ -1,60 +1,48 @@
+
 <!DOCTYPE html>
 
 <html lang="de">
 
-  <head>
-    <meta charset="utf-8">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/styles/pints.css" media="all">
+        <!-- link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" / -->
+        
+        <link rel="stylesheet" href="/styles/leaflet.css" >
 
-    <link rel="stylesheet" href="/styles/responding.css" media="all">
+        <link rel="stylesheet" href="/styles/pints.css" media="all">
 
-    <link rel="stylesheet" href="/styles/pub_list.css" media="all">
+        <link rel="stylesheet" href="/styles/pub_list.css" media="all">
 
-    <script src="/static/jquery-1.11.1.min.js"></script>
-    
-    <script src="/static/pints.js"></script>
+        <script src="/static/jquery-1.11.1.min.js"></script>
 
-    <title>Pints</title>
-  </head>
+        <script src="/static/pints.js"></script>
 
-  <body>
+        <script src="/static/leaflet.js" ></script>
 
-    <div id="mobile-wrapper">
+        <title>Pints</title>
+    </head>
 
-      <header id="mobile-header">
-        <h1>Pints</h1>
+    <body>
+        <div id="mobile-wrapper">
+          <header id="mobile-header">
+            <h1>Pints</h1>
 
-        <a id="nav-button" href="#mobile-nav"><img id="nav-image" src="/img/nav_white.png"></a>
-      </header>
+            <a id="nav-button" href="#mobile-nav"><img id="nav-image" src="/img/nav_white.png"></a>
+          </header>
 
-      <nav id="mobile-nav">
-        <ul>
-          <li><a href="/pints/index.html">Pints</a></li>
-          <li><a href="/pints/index.html">...</a></li>
-        </ul>
-      </nav>
+          <nav id="mobile-nav">
+            <ul>
+              <li><a href="/pints/index.html">Pints</a></li>
+              <li><a href="/pints/index.html">...</a></li>
+            </ul>
+          </nav>
 
-      <div id="mobile-content">
-        {{ content }}
-      </div>
-
-    </div>
-
-    <script>
-      $(document).ready(function(){
-
-        $("#nav-button").on("click", function(){
-          $("#mobile-nav").toggle();
-          return false;
-        });
-
-      });
-    </script>
-
-    <!-- script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHDmag3kq2zgu8LWZDReFKSTZjGDe1btM&callback=initMap"></script -->
-
-  </body>
+          <div id="mobile-content">
+            {{ content }}
+          </div>
+        </div>
+    </body>
 
 </html>
-
