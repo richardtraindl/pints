@@ -47,7 +47,7 @@ var calc_distance = function(long, lat, long1, lat1){
 
             if(location.status == 1){
               $('#msg').html('');
-              var msg = "<p class='msg'>You have denied geolocation prompt. <br>Pints assumes the center of the city as your current location!</p>";
+              var msg = "<p>You have denied geolocation prompt. <br>Pints assumes the center of the city as your current location!</p>";
               $('#msg').append(msg);
             }
 
