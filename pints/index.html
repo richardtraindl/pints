@@ -36,9 +36,9 @@ id: index
           console.log(" stat: " + location.status + " lat: " + location.latitude + " lon: " + location.longitude);
 
           if(location.status == 0){
-            $('#pub-list').html('');
-            var msg = "<p class='msg'>Navigation is NOT availaible. <br>Please check GPS-support!</p>";
-            $('#pub-list').append(msg);
+            $('#msg').html('');
+            var msg = "<p>Navigation is NOT availaible. <br>Please check GPS-support!</p>";
+            $('#msg').append(msg);
             return false;
           }
 
