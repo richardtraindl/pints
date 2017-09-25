@@ -41,6 +41,9 @@ id: index
           }
 
           if(location.status == 1){
+            $('#msg').html('');
+            var msg = "<p>You have denied geolocation prompt. <br>Pints assumes the center of the city as your current location!</p>";
+            $('#msg').append(msg);
             count = 10;
             location.latitude = 48.2083537;
             location.longitude = 16.3725042;
