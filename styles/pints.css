@@ -146,8 +146,8 @@ a, a:link, a:visited, a:active, a:focus {
   height: 100%;
 }
 
-.msg {
-  padding: 10px 0px;
+#msg {
+  /* padding: 10px 0px; */
   /* background-color: Blue; */
   color: Red;
   font-weight: bold;
