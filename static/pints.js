@@ -102,7 +102,7 @@ var calc_distance = function(long, lat, long1, lat1){
     };
 
   function get_location(location){
-    var options = { enableHighAccuracy: true, timeout: 3000, maximumAge: 0 };
+    var options = { enableHighAccuracy: true, timeout: 2000, maximumAge: 0 };
 
     if(navigator.geolocation){
       console.log('nav availaible');
