@@ -44,6 +44,15 @@
             {{ content }}
           </div>
         </div>
+
+      <script>
+        $(document).ready(function() {
+          $("#nav-button").on("click",function(){
+            $("#mobile-nav").toggle();
+            return false;
+          });
+        });
+      </script>
     </body>
 
 </html>
