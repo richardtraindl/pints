@@ -1,0 +1,31 @@
+###
+#  Pubs in Wien
+
+________________
+Red Lion
+1030 Wien // Löwengasse 6        ## lng: 16.3725042, lat: 48.2483537
+web        : www.redlion-vienna.at
+mail       : theredlionvienna@gmail.com
+tel        : +43 - (0)676 560 53 53
+tel        : +43 - (0)1  34 22
+
+tags : Pub, Brew-Pub
+food : Snacks
+
+openings: Mo - Thu 18:00 – 01:00 | Friday 18:00 – 02:00 | Saturday 12:30 – 02:00 | Sunday 14:00 – 00:00
+        
+features: Live Football, Ozapft is', 17.10.2017, Winterbierverkostung, genauer Termin für Dezember wird noch bekanntgegeben
+
+
+__________________
+Flanagans's
+1010 Wien // Schwarzenbergstr. 1-3   ## lng: 16.3525042, lat: 48.2083537
+web   : www.flanagans.at
+tags  : Pub
+
+food  : Kitchen
+tel   : +435137378
+
+features :  new Ale, Oktober 2017
+
+
