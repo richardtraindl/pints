@@ -59,7 +59,7 @@ id: index
               id: 'mapbox.streets'
           }).addTo(mymap);
 
-          $.getJSON('/data/pubs3.json', function(data){
+          $.getJSON('/data/pubs.json', function(data){
             var rpubs = new Array();
 
             $.each(data, function(index, pub){

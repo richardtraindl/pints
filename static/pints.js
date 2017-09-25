@@ -29,7 +29,7 @@ var calc_distance = function(long, lat, long1, lat1){
    function show_pubs(location, count){
       // window.setTimeout(function(){
         // $.getJSON('/data/pubs3.json?='+Date.now(), function(data){
-        $.getJSON('/data/pubs3.json', function(data){
+        $.getJSON('/data/pubs.json', function(data){
             var rpubs = new Array();
 
             $.each(data, function(index, pub){
