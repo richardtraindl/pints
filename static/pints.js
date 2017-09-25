@@ -33,7 +33,7 @@ var calc_distance = function(long, lat, long1, lat1){
             var rpubs = new Array();
 
             $.each(data, function(index, pub){
-              var distance = calc_distance(location.longitude, location.latitude, pub.location.longitude, pub.location.latitude);
+              var distance = calc_distance(location.longitude, location.latitude, pub.longitude, pub.latitude);
               rpubs.push([distance, pub]);
             });
 
@@ -57,28 +57,29 @@ var calc_distance = function(long, lat, long1, lat1){
 
                   var lst = "<li>";
                   lst += "<div class='div-table'>";
-                  lst += "<div class='div-row' style='height: 40px; text-overflow: ellipsis;'";
-                  lst += " id='" + pub.id + "'";
-                  lst += " srclng='" + location.longitude + "'";
-                  lst += " srclat='" + location.latitude + "'";
-                  lst += " dstlng='" + pub.location.longitude + "'";
-                  lst += " dstlat='" + pub.location.latitude + "'";
-                  lst += " onclick='show_pub(" + pub.id + ")'>";
-                  lst += "<div class='div-cell' style='width: 90%; vertical-align: middle;'>";
-                  lst += pub.name + " ";
-                  for (let category of pub.categories){
-                    lst += category.category + " ";
-                  };
-                  lst += pub.food + " ";
-                  lst += pub.features + " ";
-                  lst += pub.openings + " ";
-                  /* for(let phone of pub.phones){
-                    lst += phone.phone + " ";
+                  lst += "<div class='div-row' style='height: 40px; text-overflow: ellipsis;'>";
+                  
+                  lst += "<div class='div-cell' style='width: 5%; vertical-align: middle;'>";
+                  lst += "<span style='font-size: 20px'>" + cnt.toString() + "&nbsp;</span>";
+                  lst += "</div>"; // cell
+                  
+                  lst += "<div class='div-cell' style='width: 25%; vertical-align: middle;'>";
+                  lst += pub.name + "<br>";
+                  for(let tag of pub.tags){
+                    lst += tag.tag + " ";
                   };
                   lst += "<br>";
-                  for (let mail of pub.mails){
-                    lst += mail.mail + " ";
-                  }; */
+                  lst += pub.food;
+                  lst += "</div>"; // cell
+                  
+                  lst += "<div class='div-cell' style='width: 60%; vertical-align: middle;'>";
+                  if(pub.features.length > 0){
+                    lst += pub.features + "<br>";
+                  }
+                  if(pub.openings.length > 0){
+                    lst += pub.openings + "<br>";
+                  }
+                  lst += pub.tel;
                   lst += "</div>"; // cell
 
                   lst += "<div class='div-cell' style='width: 10%; vertical-align: middle;'>";
@@ -96,7 +97,7 @@ var calc_distance = function(long, lat, long1, lat1){
     };
 
   function get_location(location){
-    var options = { enableHighAccuracy: true, timeout: 2000, maximumAge: 0 };
+    var options = { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 };
 
     if(navigator.geolocation){
       console.log('nav availaible');
@@ -123,78 +124,3 @@ var calc_distance = function(long, lat, long1, lat1){
     }
   };
 
-
-/*
-function initMap() {
-        var options = {
-          enableHighAccuracy: true,
-          timeout: 70000,
-          maximumAge: 0
-        };
-
-        var latitude  = 48.2083537;
-        var longitude = 16.3725042;
-
-        var map = new google.maps.Map(document.getElementById('map-vienna'), {
-          center: {lat: latitude, lng: longitude},
-          zoom: 13
-        });
-
-        var infoWindow = new google.maps.InfoWindow({map: map});
-
-        // Try HTML5 geolocation.
-        if(navigator.geolocation){
-          console.log('nav availaible');
-
-          navigator.geolocation.getCurrentPosition(function(position){
-            console.log('xxxx');
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            map.setCenter(pos);
-            
-            window.setTimeout(function(){
-              $.getJSON('/data/pubs.json?='+Date.now(), function(data){
-                $('#pub-list').find('ul').html('');
-
-                $.each(data, function(pub, pubdata){
-                  $('#pub-list').find('ul').append('<li class="' + 
-                    pubdata.Kategorie + '"><img src="http://maps.google.com/maps/api/staticmap?center=' +
-                    pubdata.Position.Latitude + ',' + pubdata.Position.Longitude + '&zoom=13&size=50x50&markers=color:blue|size:tiny|' + 
-                    pubdata.Position.Latitude + ',' + pubdata.Position.Longitude + '&sensor=true"/>' + 
-                    pub + '<span>' + 
-                    calc_distance(pos.lng, pos.lat, pubdata.Position.Longitude, pubdata.Position.Latitude) + 
-                    '</span></li>');
-
-                  marker = new google.maps.Marker({
-                    map: map,
-                    animation: google.maps.Animation.DROP,
-                    position: new google.maps.LatLng(pubdata.Position.Latitude, pubdata.Position.Longitude)
-                  });
-                });
-                // window.scrollTo(0,1);
-              });
-            },1);
-          }, function() {
-            console.log('error in function');
-            handleLocationError(true, infoWindow, map.getCenter());
-          }, options);
-        }
-        else{
-          // Browser doesn't support Geolocation
-          console.log('nav NOT availaible');
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-  }
-
-  function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-  }
-*/

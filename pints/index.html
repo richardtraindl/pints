@@ -63,7 +63,7 @@ id: index
             var rpubs = new Array();
 
             $.each(data, function(index, pub){
-              var distance = calc_distance(location.longitude, location.latitude, pub.location.longitude, pub.location.latitude);
+              var distance = calc_distance(location.longitude, location.latitude, pub.longitude, pub.latitude);
               rpubs.push([distance, pub]);
             });
 
@@ -81,17 +81,19 @@ id: index
               if(cnt <= count){
                 var pub = rpub[1];
 
-                var pub1 = L.marker([pub.location.latitude, pub.location.longitude]).addTo(mymap);
-                var popup = pub.name + " ";
-                for(let category of pub.categories){
-                  popup += category.category + " ";
+                var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(mymap);
+                var popup = cnt.toString() + ") &nbsp;"
+                popup += pub.name + ", ";
+                for(let tag of pub.tags){
+                  popup += tag.tag + " ";
                 }
                 popup += "<br>";
-                popup += pub.openings + ", ";
-                popup += pub.location.address + ", ";              
-                for(let phone of pub.phones){
-                  popup += phone.phone + " ";
+                popup += pub.location + "<br>";
+                popup += pub.tel;
+                if(pub.openings.length > 0){
+                  popup += "<br>" + pub.openings;
                 }
+
                 pub1.bindPopup(popup);
               }
             }
