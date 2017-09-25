@@ -45,12 +45,6 @@ var calc_distance = function(long, lat, long1, lat1){
 
             rpubs.sort(compare_distance);
 
-            $('#msg').html('');
-            if(location.status == 1){
-              var msg = "<p>You have denied geolocation prompt. <br>Pints assumes the center of the city as your current location!</p>";
-              $('#msg').append(msg);
-            }
-
             $('#pub-list').html('');
             $('#pub-list').append("<ul></ul>");
 
