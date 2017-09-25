@@ -16,17 +16,12 @@ id: start
 
   <script>
     $(document).ready(function() {
-      $("#nav-button").on("click",function(){
-        $("#mobile-nav").toggle();
-        return false;
-      });
-
-    var count = 5;
-    var location = { status: null, latitude: null, longitude: null };
-    get_location(location);
+      var count = 5;
+      var location = { status: null, latitude: null, longitude: null };
+      get_location(location);
     
 
-    setTimeout(function(){ 
+      setTimeout(function(){ 
         console.log(" stat: " + location.status + " lat: " + location.latitude + " lon: " + location.longitude);
 
         if(location.status == 0){
