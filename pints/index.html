@@ -82,10 +82,10 @@ id: index
 
             rpubs.sort(compare_distance);
 
-            var cnt = 50;            
+            var cnt = 0;
             for(let rpub of rpubs){
               cnt += 1;
-              if(cnt <= count){
+              if(cnt <= 50){
                 var pub = rpub[1];
 
                 var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(mymap);
