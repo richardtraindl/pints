@@ -82,7 +82,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += pub.tel;
                   lst += "</div>"; // cell
 
-                  lst += "<div class='div-cell' style='width: 10%; height: 40px; max-height: 40px; vertical-align: middle;'>";
+                  lst += "<div class='div-cell' style='width: 10%; height: 40px; max-height: 40px; vertical-align: middle; overflow: scroll'>";
                   lst += distance + " km";
                   lst += "</div>"; // cell
                   lst += "</div>"; // row
