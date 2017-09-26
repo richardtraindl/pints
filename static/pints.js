@@ -55,7 +55,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   var distance = rpub[0];
                   var pub = rpub[1];
 
-                  var lst = "<li>";
+                  var lst = "<li style='height: 40px; max-height: 40px; overflow: scroll'>";
                   lst += "<div class='div-table'>";
                   lst += "<div class='div-row' style='height: 40px; max-height: 40px; overflow: scroll;'>";
                   
