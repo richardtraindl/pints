@@ -66,9 +66,11 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += "<div class='div-cell' style='width: 20%; vertical-align: middle'>";
                   lst += pub.name + "<br>";
                   for(category of pub.categories){
-                    lst += category + "<br>";
+                    lst += category + " ";
                   }
-                  lst += pub.food;
+                  if(pub.food.length > 0){
+                    lst += "<br>" + pub.food;
+                  }
                   lst += "</div>"; // cell
 
                   lst += "<div class='div-cell' style='width: 66%; vertical-align: middle'>";
