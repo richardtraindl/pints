@@ -55,15 +55,15 @@ var calc_distance = function(long, lat, long1, lat1){
                   var distance = rpub[0];
                   var pub = rpub[1];
 
-                  var lst = "<li style='height: 40px; max-height: 40px; overflow: scroll'>";
+                  var lst = "<li>";
                   lst += "<div class='div-table'>";
-                  lst += "<div class='div-row' style='height: 40px; max-height: 40px; overflow: scroll;'>";
+                  lst += "<div class='div-row'>";
                   
-                  lst += "<div class='div-cell' style='width: 5%; vertical-align: middle;'>";
+                  lst += "<div class='div-cell' style='width: 5%; vertical-align: middle'>";
                   lst += "<span style='font-size: 20px'>" + cnt.toString() + "&nbsp;</span>";
                   lst += "</div>"; // cell
                   
-                  lst += "<div class='div-cell' style='width: 25%; height: 40px; max-height: 40px; vertical-align: middle; overflow: scroll;'>";
+                  lst += "<div class='div-cell' style='width: 25%; vertical-align: middle'>";
                   lst += pub.name + "<br>";
                   for(let tag of pub.tags){
                     lst += tag.tag + " ";
@@ -72,7 +72,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += pub.food;
                   lst += "</div>"; // cell
                   
-                  lst += "<div class='div-cell' style='width: 60%; height: 40px; max-height: 40px; vertical-align: middle; overflow: scroll;'>";
+                  lst += "<div class='div-cell' style='width: 65%; vertical-align: middle'>";
                   if(pub.features.length > 0){
                     lst += pub.features + "<br>";
                   }
@@ -84,7 +84,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   }
                   lst += "</div>"; // cell
 
-                  lst += "<div class='div-cell' style='width: 10%; height: 40px; max-height: 40px; vertical-align: middle; overflow: scroll'>";
+                  lst += "<div class='div-cell' style='width: 5%; vertical-align: middle'>";
                   lst += distance + " km";
                   lst += "</div>"; // cell
                   lst += "</div>"; // row
