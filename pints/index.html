@@ -88,8 +88,8 @@ id: index
                   popup += category + " ";
                 }
                 popup += pub.address;
-                if(pub.tel.length > 0){
-                  popup += "<br>" + pub.tel;
+                for(tel in pub.tel){
+                  popup += tel + " ";
                 }
                 if(pub.open.length > 0){
                   popup += "<br>" + pub.open;
