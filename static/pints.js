@@ -85,7 +85,7 @@ var calc_distance = function(long, lat, long1, lat1){
                     lst += pub.open + "<br>";
                   }
                   for(tel of pub.tel){
-                    lst += "<a href='tel:" + tel + "' style='color: #000080'>" + tel + "</a> &nbsp; ";
+                    lst += "<a href='tel:" + tel + "' style='color: #FF69B4'>" + tel + "</a> &nbsp; ";
                   }
                   lst += "</div>"; // cell
 
