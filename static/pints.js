@@ -61,9 +61,14 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += "<div style='width: 4%; margin: 0px;'>";
                   lst += "<span style='font-size: 20px'>" + cnt.toString() + "</span>";
                   lst += "</div>"; // cell
-
+                  
                   lst += "<div style='width: 20%; margin: 0px;'>";
-                  lst += "<span style='font-weight: bold'>" + pub.name + "</span><br>";
+                  if(pub.website.length > 0){
+                    lst += "<a href='" + pub.website "' style='font-weight: bold'>" + pub.name + "</a><br>";
+                  }
+                  else{
+                    lst += "<span style='font-weight: bold'>" + pub.name + "</span><br>";
+                  }
                   for(category of pub.categories){
                     lst += category + " ";
                   }
