@@ -57,7 +57,7 @@ var calc_distance = function(long, lat, long1, lat1){
 
                   var lst = "<li>";
                   lst += "<div class='div-table'>";
-                  lst += "<div class='div-row' style='height: 40px; max-height: 40px; text-overflow: ellipsis;'>";
+                  lst += "<div class='div-row' style='height: 40px; max-height: 40px; overflow: scroll;'>";
                   
                   lst += "<div class='div-cell' style='width: 5%; vertical-align: middle;'>";
                   lst += "<span style='font-size: 20px'>" + cnt.toString() + "&nbsp;</span>";
