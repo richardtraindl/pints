@@ -1,91 +1,89 @@
 ###
 #  Pubs in Wien
 
----
-name       : Red Lion                    # required   
-location   : 1030 Wien // Löwengasse 6   # required 
-#longitude  : xx.xxx                      # required
-#latitude   : xx.xxx                      # required 
-tag        : Pub         # required, only one of these entities: Brewery-with-Lounge, Brew-Pub, Pub, Shop-with-Lounge
-food       : Snacks      # only one of these entities: Snacks, Small-Kitchen, Kitchen
-features   : Live Football, Ozapft is', 17.10.2017, Winterbierverkostung, genauer Termin für Dezember wird noch bekanntgegeben
-openings   : Mo - Thu 18:00 – 01:00 | Friday 18:00 – 02:00 | Saturday 12:30 – 02:00 | Sunday 14:00 – 00:00
-website    : www.redlion-vienna.at
-tel        : +43 - (0)676 560 53 53
+### schema
+# ---         --> record begin
+# id          --> required, uniqa, generated random number
+# name        --> required, string
+# address     --> required, string; "//" == new line
+# longitude   --> required, num
+# latitude    --> required, num
+# catergories --> required, array, one or more these entities: Brewery-with-Lounge, Brew-Pub, Pub, Shop-with-Lounge
+# food        --> optional, only one of these entities: Snacks, Small-Kitchen, Kitchen
+# features    --> optional, string
+# open        --> optional, string
+# website     --> optional, string
+# tel         --> optional, array, zero or more string
 
 ---
-name       : Flanagans's
-location   : 1010 Wien // Schwarzenbergstr. 1-3
-#longitude  : xx.xxx
-#latitude   : xx.xxx
-tag        : Pub
-food       : Kitchen
-features   : New Ales in Oktober 2017
-website    : www.flanagans.at
-tel        : +435137378
+Red Lion
+1030 Wien // Löwengasse 6
+catergories : Pub Brew-Pub
+food        : Snacks
+features    : Live Football, Ozapft is', 17.10.2017, Winterbierverkostung, genauer Termin für Dezember wird noch bekanntgegeben
+open        : Mo - Thu 18:00 – 01:00 | Friday 18:00 – 02:00 | Saturday 12:30 – 02:00 | Sunday 14:00 – 00:00
+website     : www.redlion-vienna.at
+tel         : +43 - (0)676 560 53 53
 
 ---
-name       : O'Connors
-location   : 1030 Wien // Rennweg 95/2/1
-# longitude : xx.xxx
-# latitude" : xx.xxx
-tag        : Pub
-food       : Kitchen
-website    : www.oconnors.at
-tel:       : 01 236 6721
+Flanagans's
+1010 Wien // Schwarzenbergstr. 1-3
+catergories : Pub
+food        : Kitchen
+features    : New Ales in Oktober 2017
+website     : www.flanagans.at
+tel         : +435137378
 
 ---
-name       : Hawidere
-location   : 1150 Wien // Ullmannstraße 31
-# longitude : xx.xxx
-# latitude" : xx.xxx
-tag        : Pub
-food       : Kitchen
-features   : Darts
-website    : hawidere.at
-tel:       : +43 664 150 84 29
+O'Connors
+1030 Wien // Rennweg 95/2/1
+catergories : Pub
+food        : Kitchen
+website     : www.oconnors.at
+tel:        : 01 236 6721
+
+---
+Hawidere
+1150 Wien // Ullmannstraße 31
+catergories : Pub
+food        : Kitchen
+features    : Darts
+website     : hawidere.at
+tel:        : +43 664 150 84 29
 
 ---
 name       : Brick Makers
 location   : 1070 Wien // Zieglergasse 42
-# longitude : xx.xxx
-# latitude" : xx.xxx
-tag        : Pub
-food       : Kitchen
-features   : Big Smoke
-website    : www.brickmakers.at
-tel:       : +43(0)19974414
+catergories : Pub
+food        : Kitchen
+features    : Big Smoke
+website     : www.brickmakers.at
+tel:        : +43(0)19974414
 
 ---
-name       : Beaver Brewery
-location   : 1090 Wien // Liechtensteinstraße 69
-# longitude : xx.xxx
-# latitude" : xx.xxx
-tag        : Brew-Pub, Pub
-food       : Kitchen
-openings   : Monday-Thursday: 16:00 - 24:00 | Friday:    16:00 - 1:00 | Saturday: 10:00 - 1:00 | Sunday: 10:00 -22:00 | kitchen closes at 22:00
-website    : www.beaverbrewing.at
-tel:       : +43 (0) 677 610 122 53
+Beaver Brewery
+1090 Wien // Liechtensteinstraße 69
+catergories : Brew-Pub, Pub
+food        : Kitchen
+open        : Monday-Thursday: 16:00 - 24:00 | Friday:    16:00 - 1:00 | Saturday: 10:00 - 1:00 | Sunday: 10:00 -22:00 | kitchen closes at 22:00
+website     : www.beaverbrewing.at
+tel:        : +43 (0) 677 610 122 53
 
 ---
-name       : Pivothek
-location   : 1030 Wien // Landstraßer Gürtel 19
-# longitude : xx.xxx
-# latitude" : xx.xxx
-tag        : Pub
-food       : Small-Kitchen
-features   : Tschechische Biere
-website    : pivothek.at
-tel:       : 0660/6989668
+Pivothek
+1030 Wien // Landstraßer Gürtel 19
+catergories : Pub
+food        : Small-Kitchen
+features    : Tschechische Biere
+website     : pivothek.at
+tel:        : 0660/6989668
 
 ---
-name       : Ü-Lokal
-location   : 1020 Wien // Obere Augartenstraße 46
-# longitude : xx.xxx
-# latitude" : xx.xxx
-tag        : Pub
-food       : Kitchen
-features   : Jeden Freitag Käsespätzle
-openings   : Dienstag bis Donnerstag 17:30 bis 0:00 | Freitag und Samstag 17:30 bis 2:00 | Gekocht wird jeweils bis 21:30 Uhr. | Sonntag, Montag und an Feiertagen geschlossen.
-website    : www.ue-lokal.at
-tel:       : 01 9691013
+Ü-Lokal
+1020 Wien // Obere Augartenstraße 46
+catergories : Pub
+food        : Kitchen
+features    : Jeden Freitag Käsespätzle
+open        : Dienstag bis Donnerstag 17:30 bis 0:00 | Freitag und Samstag 17:30 bis 2:00 | Gekocht wird jeweils bis 21:30 Uhr. | Sonntag, Montag und an Feiertagen geschlossen.
+website     : www.ue-lokal.at
+tel:        : 01 9691013
