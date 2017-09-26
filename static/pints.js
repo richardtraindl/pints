@@ -63,7 +63,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += "<span style='font-size: 20px'>" + cnt.toString() + "&nbsp;</span>";
                   lst += "</div>"; // cell
                   
-                  lst += "<div class='div-cell' style='width: 25%; height: 40px; max-height: 40px; vertical-align: middle; text-overflow: ellipsis;'>";
+                  lst += "<div class='div-cell' style='width: 25%; height: 40px; max-height: 40px; vertical-align: middle; overflow: scroll;'>";
                   lst += pub.name + "<br>";
                   for(let tag of pub.tags){
                     lst += tag.tag + " ";
@@ -72,7 +72,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += pub.food;
                   lst += "</div>"; // cell
                   
-                  lst += "<div class='div-cell' style='width: 60%; height: 40px; max-height: 40px; vertical-align: middle; text-overflow: ellipsis;'>";
+                  lst += "<div class='div-cell' style='width: 60%; height: 40px; max-height: 40px; vertical-align: middle; overflow: scroll;'>";
                   if(pub.features.length > 0){
                     lst += pub.features + "<br>";
                   }
