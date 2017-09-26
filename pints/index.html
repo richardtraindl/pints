@@ -24,7 +24,7 @@ id: index
 
     <script>
       $(document).ready(function() {
-        var count = 5;
+        var count = 3;
         var location = { status: null, latitude: null, longitude: null };
         get_location(location);
 
@@ -42,7 +42,7 @@ id: index
             $('#msg').html('');
             var msg = "<p>You have denied geolocation prompt. <br>Pints assumes the center of the city as your current location!</p>";
             $('#msg').append(msg);
-            count = 10;
+            count = 0;
             location.latitude = 48.2083537;
             location.longitude = 16.3725042;
           }
