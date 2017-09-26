@@ -64,7 +64,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   
                   lst += "<div style='width: 20%; margin: 0px;'>";
                   if(pub.website.length > 0){
-                    lst += "<a href='" + pub.website "' style='font-weight: bold'>" + pub.name + "</a><br>";
+                    lst += "<a href='" + pub.website + "' style='font-weight: bold'>" + pub.name + "</a><br>";
                   }
                   else{
                     lst += "<span style='font-weight: bold'>" + pub.name + "</span><br>";
