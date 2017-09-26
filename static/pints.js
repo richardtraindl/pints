@@ -65,7 +65,9 @@ var calc_distance = function(long, lat, long1, lat1){
 
                   lst += "<div class='div-cell' style='width: 20%; vertical-align: middle'>";
                   lst += pub.name + "<br>";
-                  lst += pub.tag + "<br>";
+                  for(category of pub.categories){
+                    lst += category + "<br>";
+                  }
                   lst += pub.food;
                   lst += "</div>"; // cell
 
@@ -73,11 +75,11 @@ var calc_distance = function(long, lat, long1, lat1){
                   if(pub.features.length > 0){
                     lst += pub.features + "<br>";
                   }
-                  if(pub.openings.length > 0){
-                    lst += pub.openings + "<br>";
+                  if(pub.open.length > 0){
+                    lst += pub.open + "<br>";
                   }
-                  if(pub.tel.length > 0){
-                    lst += "<tel>" + pub.tel + "</tel>";
+                  for(tel of pub.tel){
+                    lst += "<a href='tel:" + tel + "'>" + tel + "</a> &nbsp; ";
                   }
                   lst += "</div>"; // cell
 
