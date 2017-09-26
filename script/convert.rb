@@ -9,7 +9,7 @@
 #    will read in data/pubs.txt and convert data/pubs2.json
 
 
-require 'pp'#
+require 'pp'
 require 'json'
 
 
