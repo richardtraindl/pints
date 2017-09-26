@@ -84,12 +84,11 @@ id: index
                 var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(mymap);
                 var popup = cnt.toString() + ") &nbsp;"
                 popup += pub.name + ", ";
-                for(let tag of pub.tags){
-                  popup += tag.tag + " ";
+                popup += pub.tag + "<br>";
+                popup += pub.location;
+                if(pub.tel.length > 0){
+                  popup += "<br>" + pub.tel;
                 }
-                popup += "<br>";
-                popup += pub.location + "<br>";
-                popup += pub.tel;
                 if(pub.openings.length > 0){
                   popup += "<br>" + pub.openings;
                 }
