@@ -79,7 +79,9 @@ var calc_distance = function(long, lat, long1, lat1){
                   if(pub.openings.length > 0){
                     lst += pub.openings + "<br>";
                   }
-                  lst += pub.tel;
+                  if(pub.tel.length > 0){
+                    lst += "<tel>" + pub.tel + "</tel>";
+                  }
                   lst += "</div>"; // cell
 
                   lst += "<div class='div-cell' style='width: 10%; height: 40px; max-height: 40px; vertical-align: middle; overflow: scroll'>";
