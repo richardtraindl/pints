@@ -26,12 +26,13 @@ ul li:last-child {
 	border-bottom-right-radius: 8px;
 	border-bottom-width: 0;
 }
+/*
 ul li span {
 	float: right;
 	display: block;
 	color: #999;
 	font-weight: normal;
-}
+} */
 
 /* Übersicht Liste */
 #pub-list ul {
