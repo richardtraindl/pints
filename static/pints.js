@@ -56,14 +56,13 @@ var calc_distance = function(long, lat, long1, lat1){
                   var pub = rpub[1];
 
                   var lst = "<li>";
-                  lst += "<div class='div-table'>";
-                  lst += "<div class='div-row'>";
+                  lst += "<div style='display: flex; align-items: center'>";
 
-                  lst += "<div class='div-cell' style='width: 4%; text-align: center; vertical-align: middle'>";
+                  lst += "<div style='width: 4%; margin: 0px;'>";
                   lst += "<span style='font-size: 20px'>" + cnt.toString() + "&nbsp;</span>";
                   lst += "</div>"; // cell
 
-                  lst += "<div class='div-cell' style='width: 20%; vertical-align: middle'>";
+                  lst += "<div style='width: 20%; margin: 0px;'>";
                   lst += pub.name + "<br>";
                   for(category of pub.categories){
                     lst += category + " ";
@@ -73,7 +72,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   }
                   lst += "</div>"; // cell
 
-                  lst += "<div class='div-cell' style='width: 66%; vertical-align: middle'>";
+                  lst += "<div class='div-cell' style='width: 66%; margin: 0px;'>";
                   if(pub.features.length > 0){
                     lst += pub.features + "<br>";
                   }
@@ -85,11 +84,10 @@ var calc_distance = function(long, lat, long1, lat1){
                   }
                   lst += "</div>"; // cell
 
-                  lst += "<div class='div-cell' style='width: 10%; text-align: center; vertical-align: middle'>";
+                  lst += "<div class='div-cell' style='width: 10%; margin: 0px;'>";
                   lst += distance + " km";
                   lst += "</div>"; // cell
                   lst += "</div>"; // row
-                  lst += "</div>"; // table
                   lst += "</li>";
 
                   $('#pub-list').find('ul').append(lst);
