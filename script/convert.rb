@@ -164,4 +164,4 @@ File.open( "./data/pubs2.json", "w:utf-8") do |f|
   f.write generate_json( pubs )
 end
 
-puts "hye"
+puts "bye"
