@@ -24,27 +24,16 @@ class Pub
   attr_accessor :website       ## e.g. www.redlion-vienna.at
   attr_accessor :tel           ## e.g.+43 - (0)676 560 53 53
 
-  def initialize
-    @name       = ""
-    @address    = ""
-    @categories = []
-    @food       = ""
-    @features   = ""
-    @open       = ""
-    @website    = ""
-    @tel        = []
-  end
-
-  def to_hash    ## used for json conversion
+  def as_json    ## used for json conversion
     {
-      name:       name,
-      address:    address,
-      categories: categories,
-      food:       food,
-      features:   features,
-      open:       open,
-      website:    website,
-      tel:        tel
+      name:       name         || "",
+      address:    address      || "",
+      categories: categories   || [],
+      food:       food         || "",
+      features:   features     || "",
+      open:       open         || "",
+      website:    website      || "", 
+      tel:        tel          || []
     }
   end
 
@@ -61,7 +50,7 @@ end  # class Pub
 
 def generate_json( pubs )
   ## convert to hash
-  pubs = pubs.map { |pub| pub.to_hash }
+  pubs = pubs.map { |pub| pub.as_json }
   JSON.pretty_generate( pubs )
 end
 
