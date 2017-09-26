@@ -59,7 +59,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += "<div class='div-table'>";
                   lst += "<div class='div-row'>";
                   
-                  lst += "<div class='div-cell' style='width: 4%; margin: 0px auto; vertical-align: middle'>";
+                  lst += "<div class='div-cell' style='width: 4%; text-align: center; vertical-align: middle'>";
                   lst += "<span style='font-size: 20px'>" + cnt.toString() + "&nbsp;</span>";
                   lst += "</div>"; // cell
                   
@@ -72,7 +72,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   lst += pub.food;
                   lst += "</div>"; // cell
                   
-                  lst += "<div class='div-cell' style='width: 68%; margin: 0px auto; vertical-align: middle'>";
+                  lst += "<div class='div-cell' style='width: 68%; vertical-align: middle'>";
                   if(pub.features.length > 0){
                     lst += pub.features + "<br>";
                   }
@@ -84,7 +84,7 @@ var calc_distance = function(long, lat, long1, lat1){
                   }
                   lst += "</div>"; // cell
 
-                  lst += "<div class='div-cell' style='width: 8%; vertical-align: middle'>";
+                  lst += "<div class='div-cell' style='width: 8%; text-align: center; vertical-align: middle'>";
                   lst += distance + " km";
                   lst += "</div>"; // cell
                   lst += "</div>"; // row
