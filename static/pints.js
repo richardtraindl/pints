@@ -1,4 +1,3 @@
-
 var calc_distance = function(long, lat, long1, lat1){
     erdRadius = 6371;
 
@@ -25,6 +24,35 @@ var calc_distance = function(long, lat, long1, lat1){
     return Math.round(d*10)/10; //  + " km";
     //}
 };
+
+  function get_location(location){
+    var options = { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 };
+
+    if(navigator.geolocation){
+      console.log('nav availaible');
+
+      navigator.geolocation.getCurrentPosition(function(position){
+          location.status = -1;
+          location.latitude = position.coords.latitude;
+          location.longitude = position.coords.longitude;
+          console.log("in function \"navigator.geolocation.getCurrentPosition\":");
+          console.log("Status: " + location.status);
+          console.log("Latitude: " + location.latitude);
+          console.log("Longitude: " + location.longitude);
+        },
+        function(err){
+          location.status = 1;
+          console.warn("ERROR: " + err.code + " " + err.message);
+        }, 
+        options);
+    }
+    else{
+      // Browser doesn't support Geolocation
+      location.status = 0;
+      console.log('nav NOT availaible');
+    }
+  };
+
 
    function show_pubs(location, count){
       // window.setTimeout(function(){
@@ -102,31 +130,59 @@ var calc_distance = function(long, lat, long1, lat1){
       // },1);
     };
 
-  function get_location(location){
-    var options = { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 };
 
-    if(navigator.geolocation){
-      console.log('nav availaible');
+  function show_map(location, count){
+    var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
 
-      navigator.geolocation.getCurrentPosition(function(position){
-          location.status = -1;
-          location.latitude = position.coords.latitude;
-          location.longitude = position.coords.longitude;
-          console.log("in function \"navigator.geolocation.getCurrentPosition\":");
-          console.log("Status: " + location.status);
-          console.log("Latitude: " + location.latitude);
-          console.log("Longitude: " + location.longitude);
-        },
-        function(err){
-          location.status = 1;
-          console.warn("ERROR: " + err.code + " " + err.message);
-        }, 
-        options);
-    }
-    else{
-      // Browser doesn't support Geolocation
-      location.status = 0;
-      console.log('nav NOT availaible');
-    }
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+      maxZoom: 18,
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                   '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                   'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      id: 'mapbox.streets'
+    }).addTo(mymap);
+
+    $.getJSON('/data/pubs.json', function(data){
+      var rpubs = new Array();
+
+      $.each(data, function(index, pub){
+        var distance = calc_distance(location.longitude, location.latitude, pub.longitude, pub.latitude);
+        rpubs.push([distance, pub]);
+      });
+
+      function compare_distance(a, b){
+        if(a[0] < b[0]) return -1;
+        if(a[0] > b[0]) return 1;
+        return 0;
+      };
+
+      rpubs.sort(compare_distance);
+
+      var cnt = 0;
+      for(let rpub of rpubs){
+        cnt += 1;
+        if(cnt <= 50){
+          var pub = rpub[1];
+
+          var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(mymap);
+          var popup = cnt.toString() + ") &nbsp;"
+          popup += pub.name + ", ";
+          for(category of pub.categories){
+            popup += category + " ";
+          }
+          popup += "<br>" + pub.address + "<br>";
+          for(tel of pub.tel){
+            popup += tel + " ";
+          }
+          if(pub.open.length > 0){
+            popup += "<br>" + pub.open;
+          }
+
+          pub1.bindPopup(popup);
+        }
+      }
+
+      var userlocation = L.marker([location.latitude, location.longitude]).addTo(mymap);
+      userlocation.bindPopup("Here you are!").openPopup();
+    });
   };
-
