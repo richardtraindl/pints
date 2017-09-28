@@ -47,14 +47,13 @@ id: index
 
         tabify( '#tabs' );  
 
-        $('#tab-list').click(function() { show_all_pubs(1); });
-        $('#tab-map').click(function() { show_all_pubs(2); });
+        show_pubs(1);
 
-        show_all_pubs(1);
+        $('#tab-list').click(function() { show_pubs(1); });
+        $('#tab-map').click(function() { show_pubs(2); });
     });
   </script>   
-
-        
+      
         
         
 
