@@ -40,6 +40,9 @@ id: index
 
     <script>
       $(document).ready(function() {
+
+        tabify( '#tabs' );  
+
         if($('#tab-list').is(':visible') | $('#tab-map').is(':visible')){
           var count = 3;
           var location = { status: null, latitude: null, longitude: null };
