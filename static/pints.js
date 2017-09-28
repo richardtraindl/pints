@@ -183,28 +183,28 @@
   };
 
 
-  function show_all_pubs(flag){
+  function show_pubs(flag){
     var location = { status: null, latitude: null, longitude: null };
     get_location(location);
 
     setTimeout(function(){ 
       console.log(" stat: " + location.status + " lat: " + location.latitude + " lon: " + location.longitude);
       if(location.status == null){
-        $('#msg').html('');
+        $('.msg').html('');
         var msg = "<p>Navigation did work. <br>Please check GPS-support and reload page!</p>";
-        $('#msg').append(msg);
+        $('.msg').append(msg);
         return false;
       }
       if(location.status == 0){
-        $('#msg').html('');
+        $('.msg').html('');
         var msg = "<p>Navigation is NOT availaible. <br>Please check GPS-support!</p>";
-        $('#msg').append(msg);
+        $('.msg').append(msg);
         return false;
       }
       if(location.status == 1){
-        $('#msg').html('');
+        $('.msg').html('');
         var msg = "<p>You have denied geolocation prompt. <br>Pints assumes the center of the city as your current location!</p>";
-        $('#msg').append(msg);
+        $('.msg').append(msg);
         location.latitude = 48.2083537;
         location.longitude = 16.3725042;
       }
