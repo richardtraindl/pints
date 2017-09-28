@@ -208,7 +208,7 @@
         location.latitude = 48.2083537;
         location.longitude = 16.3725042;
       }
-      // show_list(location, 10);
+      show_list(location, 10);
 
       show_map(location, 10);
     }, 3000); 
