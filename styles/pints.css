@@ -59,46 +59,9 @@ body {
   /* color: White; */
 }
 
-#mobile-nav, #mobile-content {
+#mobile-content {
   margin: 6px 0px;
   background-color: #FFFFE8;
-}
-
-#nav-image {
-  position: absolute;
-  right: 8px;
-  top: 20px;
-}
-
-#mobile-nav {
-  text-align: right;
-  padding: 0px;
-  display: none;
-}
-
-#mobile-nav ul {
-  text-align: right;
-  margin: 0px;
-  padding: 0px;
-}
-
-#mobile-nav li {
-  text-align: right;
-  margin: 0px 0px 2px 0px;
-  padding: 8px;
-  background-color: LightBlue;
-  list-style: none;
-}
-
-.non-active {
-  display: none;
-}
-
-.active {
-  display: display;
-}
-
-#mobile-content {
   border-radius: 0px 0px 6px 6px;
 }
 
@@ -127,26 +90,14 @@ a, a:link, a:visited, a:active, a:focus {
   padding-bottom: 10px;
 }
 
-.div-table {
-  display: table;
-  border-collapse: collapse;
-  width: 100%;
-  height: 100%;
+#mapid {
+  min-width: 448px;
+  max-width: 448px; 
+  width: 448px; 
+  height: 448px;
 }
 
-.div-row {
-  display: table-row;
-  width: 100%;
-  height: 100%;
-}
-
-.div-cell {	
-  display: table-cell;
-  vertical-align: top;
-  height: 100%;
-}
-
-#msg * {
+.msg * {
   /* padding: 10px 0px; */
   /* background-color: Blue; */
   color: Red;
