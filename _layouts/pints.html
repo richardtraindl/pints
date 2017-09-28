@@ -30,31 +30,12 @@
         <div id="mobile-wrapper">
           <header id="mobile-header">
             <h1><a href="/pints/index.html">Pints</a></h1>
-
-            <a id="nav-button" href="#mobile-nav"><img id="nav-image" src="/img/nav_white.png"></a>
           </header>
-
-          <nav id="mobile-nav">
-            <ul>
-              <li><a href="/pints/index.html">Pints</a></li>
-              <li><a href="/pints/settings.html">Settings</a></li>
-              <li><a href="/pints/about.html">about Pints</a></li>
-            </ul>
-          </nav>
 
           <div id="mobile-content">
             {{ content }}
           </div>
         </div>
-
-      <script>
-        $(document).ready(function() {
-          $("#nav-button").on("click",function(){
-            $("#mobile-nav").toggle();
-            return false;
-          });
-        });
-      </script>
     </body>
 
 </html>
