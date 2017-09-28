@@ -8,12 +8,12 @@ id: index
 
       <div id='tabs'>
         <ul> <!-- auto-adds class tabs-nav for styling -->
-          <li>Tab 1</li> <!-- auto-adds class selected for styling (if tab li selected) -->
-          <li>Tab 2</li>
-          <li>Tab 3</li>
+          <li id='tab-list'>Pubs List</li> <!-- auto-adds class selected for styling (if tab li selected) -->
+          <li id='tab-map'>Pubs Map</li>
+          <li id='tab-settings'>Settings</li>
         </ul>
 
-        <div id='tab-list'> <!-- Pub List -->
+        <div> <!-- Pub List -->
           <h2>Choose Your Pub</h2>
           
           <div id="msg">
@@ -25,13 +25,13 @@ id: index
           </div>  
         </div>
 
-        <div id='tab-map'> <!-- Pub Map -->
+        <div> <!-- Pub Map -->
           <div id="mapid" style="min-width: 320px; max-width: 640px; width: 640px; height: 480px;">
             <!-- Wird dynamisch befüllt -->
           </div>
         </div>
 
-        <div id='tab-settings'> <!-- Settings -->
+        <div> <!-- Settings -->
           bla bla bla bla bla
         </div>
       </div>
@@ -43,7 +43,8 @@ id: index
 
         tabify( '#tabs' );  
 
-        if($('#tab-list').is(':visible') | $('#tab-map').is(':visible')){
+        $('#tab-map').click(function({alert("kkkkk");});
+        if($('#tab-map').is(':visible') | $('#tab-map').is(':visible')){
           var count = 3;
           var location = { status: null, latitude: null, longitude: null };
           get_location(location);
