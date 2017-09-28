@@ -183,7 +183,7 @@
   };
 
 
-  function show_pubs(flag){
+  function show_pubs(){
     var location = { status: null, latitude: null, longitude: null };
     get_location(location);
 
@@ -208,11 +208,8 @@
         location.latitude = 48.2083537;
         location.longitude = 16.3725042;
       }
-      if(flag == 1){
-        show_list(location, 10);
-      }
-      else{
-        show_map(location, 10);
-      }
+      show_list(location, 10);
+
+      show_map(location, 10);
     }, 3000); 
   };
