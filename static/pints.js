@@ -52,7 +52,7 @@
   };
 
 
-  function show_publist(location, count){
+  function show_list(location, count){
     $.getJSON('/data/pubs.json', function(data){
       var rpubs = new Array();
 
@@ -156,7 +156,7 @@
       var cnt = 0;
       for(let rpub of rpubs){
         cnt += 1;
-        if(cnt <= 50){
+        if(cnt <= count){
           var pub = rpub[1];
 
           var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(mymap);
@@ -209,7 +209,7 @@
         location.longitude = 16.3725042;
       }
       if(flag == 1){
-        show_publist(location, 5);
+        show_list(location, 10);
       }
       else{
         show_map(location, 10);
