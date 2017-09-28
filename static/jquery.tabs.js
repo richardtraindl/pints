@@ -59,7 +59,7 @@ var tabs_new = function( tabs_id, opts ) {
        "  border-bottom: none;  \n"+
        "} \n"+
        ".tabs-panel { \n"+
-       "  padding: 10px; \n"+
+       "  padding: 0px; \n"+
        "} \n"+
        "</style>" );
     }
@@ -82,7 +82,7 @@ var tabs_new = function( tabs_id, opts ) {
     });
 
     // auto-select first tab on init/startup
-    _select( 0 );
+    _select( 1 );
 
 
   } // function _init
