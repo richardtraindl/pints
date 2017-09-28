@@ -90,13 +90,6 @@ a, a:link, a:visited, a:active, a:focus {
   padding-bottom: 10px;
 }
 
-#mapid {
-  min-width: 448px;
-  max-width: 448px; 
-  width: 448px; 
-  height: 448px;
-}
-
 .msg * {
   /* padding: 10px 0px; */
   /* background-color: Blue; */
