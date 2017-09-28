@@ -183,8 +183,7 @@
   };
 
 
-  function show_all_pubs(location, count, flag){
-    var count = 3;
+  function show_all_pubs(flag){
     var location = { status: null, latitude: null, longitude: null };
     get_location(location);
 
@@ -206,15 +205,14 @@
         $('#msg').html('');
         var msg = "<p>You have denied geolocation prompt. <br>Pints assumes the center of the city as your current location!</p>";
         $('#msg').append(msg);
-        count = 0;
         location.latitude = 48.2083537;
         location.longitude = 16.3725042;
       }
       if(flag == 1){
-        show_publist(location, count);
+        show_publist(location, 5);
       }
       else{
-        show_map(location, count);
+        show_map(location, 10);
       }
     }, 3000); 
   };
