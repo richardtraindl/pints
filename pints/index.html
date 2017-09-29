@@ -50,28 +50,29 @@ id: index
 
         show_pubs(10);
 
-        $('#tab-map').hide();
-        $('#tab-settings').hide();
+        $('#tab-map').attr("display", "none");
+        $('#tab-settings').attr("display", "none");
 
         $('.tab').click(function(){ 
             console.log("href: " + $(this).attr("href"));
             var id = $(this).attr("href");
             console.log( "id: " + id);
 
-            $(id).show(); // attr("display", "block");
-
             if(id == '#tab-list'){
-              $('#tab-map').hide();
-              $('#tab-settings').hide();
+              $('#tab-map').attr("display", "none");
+              $('#tab-settings').attr("display", "none");
             }
             else if(id == '#tab-map'){
-              $('#tab-list').hide();
-              $('#tab-settings').hide();
+              $('#tab-list').attr("display", "none");
+              $('#tab-settings').attr("display", "none");
             }
             else{
-              $('#tab-list').hide();
-              $('#tab-map').hide();
+              $('#tab-list').attr("display", "none");
+              $('#tab-map').attr("display", "none");
             }
+
+            $(id).attr("display", "block");
+
             return false; 
         });
     });
