@@ -6,48 +6,60 @@ id: index
 
     <article>
 
-      <div id='tabs'>
-        <ul> <!-- auto-adds class tabs-nav for styling -->
-          <li id='tab-list'>Pubs List</li> <!-- auto-adds class selected for styling (if tab li selected) -->
-          <li id='tab-map'>Pubs Map</li>
-          <li id='tab-settings'>Settings</li>
+      <nav>
+        <ul>
+          <li><a class="tab" id="tab1" href="#tab-list">Pubs List</a></li>
+          <li><a class="tab" id="tab2" href="#tab-map">Pubs List</a></li>
+          <li><a class="tab" id="tab3" href="#tab-settings">Pubs List</a></li>
         </ul>
-
-        <div> <!-- Pub List -->
+      </nav>
+      
+        <div id='tab-list'>
           <h2>Choose Your Pub</h2>
           
-          <div class="msg">
+          <p class="msg">
             <!-- Wird dynamisch befüllt -->
-          </div>
+          </p>
 
-          <div id="pub-list">
+          <p id="pub-list">
             <!-- Wird dynamisch befüllt -->
-          </div>  
+          </p>  
         </div>
 
-        <div> <!-- Pub Map -->
+        <div id='tab-map'>
           <h2>Choose Your Pub</h2>
 
-          <div class="msg">
+          <p class="msg">
             <!-- Wird dynamisch befüllt -->
-          </div>
+          </p>
 
-          <div id="mapid" style="min-width: 320px; max-width: 468px; width: 468px; height: 468px;">
+          <p id="mapid" style="width: 400px; height: 400px;">
             <!-- Wird dynamisch befüllt -->
-          </div>
+          </p>
         </div>
 
-        <div> <!-- Settings -->
-          bla bla bla bla bla
+        <div id='tab-settings'>
+          <p>bla bla bla bla bla</p>
         </div>
-      </div>
-
     </article>
 
     <script>
       $(document).ready(function() {
+        // tabify( '#tabs' );  
+        $('#tab-map').hide();
+        $('#tab-settings').hide();
 
-        tabify( '#tabs' );  
+        $('.tab').click(function(){ 
+            console.log("href: " + $(this).attr("href"));
+            var id = $(this).attr("href");
+            console.log( " " + $(id).html() );
+            
+            $('#tab-list').hide();
+            $('#tab-map').hide();
+            $('#tab-settings').hide();
+            $(id).show();
+            return false; 
+        });
 
         show_pubs();
 

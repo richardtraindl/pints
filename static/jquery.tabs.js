@@ -82,7 +82,7 @@ var tabs_new = function( tabs_id, opts ) {
     });
 
     // auto-select first tab on init/startup
-    _select( 1 );
+    _select( 0 );
 
 
   } // function _init
