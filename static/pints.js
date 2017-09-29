@@ -52,7 +52,7 @@
   };
 
 
-  function show_pubs(location, count){
+  function show_pubs(count){
     
     var location = { status: null, latitude: null, longitude: null };
     get_location(location);
