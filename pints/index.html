@@ -50,8 +50,8 @@ id: index
 
         show_pubs(10);
 
-        $('#tab-map').attr("display", "none");
-        $('#tab-settings').attr("display", "none");
+        $('#tab-map').css("display", "none");
+        $('#tab-settings').css("display", "none");
 
         $('.tab').click(function(){ 
             console.log("href: " + $(this).attr("href"));
@@ -59,19 +59,19 @@ id: index
             console.log( "id: " + id);
 
             if(id == '#tab-list'){
-              $('#tab-map').attr("display", "none");
-              $('#tab-settings').attr("display", "none");
+              $('#tab-map').css("display", "none");
+              $('#tab-settings').css("display", "none");
             }
             else if(id == '#tab-map'){
-              $('#tab-list').attr("display", "none");
-              $('#tab-settings').attr("display", "none");
+              $('#tab-list').css("display", "none");
+              $('#tab-settings').css("display", "none");
             }
             else{
-              $('#tab-list').attr("display", "none");
-              $('#tab-map').attr("display", "none");
+              $('#tab-list').css("display", "none");
+              $('#tab-map').css("display", "none");
             }
 
-            $(id).attr("display", "block");
+            $(id).css("display", "block");
 
             return false; 
         });
