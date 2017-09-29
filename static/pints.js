@@ -175,7 +175,7 @@
 
             pub1.bindPopup(popup);
           }
-        } 
+        }
         var userlocation = L.marker([location.latitude, location.longitude]).addTo(mymap);
         userlocation.bindPopup("Here you are!").openPopup();
       });
