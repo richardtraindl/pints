@@ -1,34 +1,17 @@
 ---
 layout: pints
-title: Index
+title: Pints
 id: index
 ---
 
     <article>
-
       <nav>
         <ul>
-          <li class="tab" id="list">Pubs List</li>
           <li class="tab" id="map">Pubs Map</li>
+          <li class="tab" id="list">Pubs List</li>
           <li class="tab" id="settings">Settings</li>
-
-          <!-- li><a class="tab" id="tab1" href="#tab-list">Pubs List</a></li>
-          <li><a class="tab" id="tab2" href="#tab-map">Pubs Map</a></li>
-          <li><a class="tab" id="tab3" href="#tab-settings">Settings</a></li -->
         </ul>
       </nav>
-      
-        <div id='tab-list'>
-          <h2>Choose Your Pub</h2>
-          
-          <p class="msg">
-            <!-- Wird dynamisch befüllt -->
-          </p>
-
-          <p id="pub-list">
-            <!-- Wird dynamisch befüllt -->
-          </p>  
-        </div>
 
         <div id='tab-map'>
           <h2>Choose Your Pub</h2>
@@ -42,6 +25,18 @@ id: index
           </p>
         </div>
 
+        <div id='tab-list'>
+          <h2>Choose Your Pub</h2>
+          
+          <p class="msg">
+            <!-- Wird dynamisch befüllt -->
+          </p>
+
+          <p id="pub-list">
+            <!-- Wird dynamisch befüllt -->
+          </p>  
+        </div>
+
         <div id='tab-settings'>
           <h2>Settings</h2>
 
@@ -52,9 +47,9 @@ id: index
     <script>
       $(document).ready(function() {
 
-        show_pubs(10);
+        display_map();
 
-        $('#tab-map').css("visibility", "hidden");
+        $('#tab-list').css("display", "none");
         $('#tab-settings').css("display", "none");
 
         $('.tab').click(function(){ 
@@ -66,20 +61,9 @@ id: index
             var id = $(this).attr("href");
             console.log( "id: " + id); */
 
-            if(id == '#tab-list'){
-              $('#tab-map').css("display", "none");
-              $('#tab-settings').css("display", "none");
-            }
-            else if(id == '#tab-map'){
-              $('#tab-list').css("display", "none");
-              $('#tab-settings').css("display", "none");
-            }
-            else{
-              $('#tab-list').css("display", "none");
-              $('#tab-map').css("display", "none");
-            }
-
-            $(id).css("visibility", "visible");
+            $('#tab-list').css("display", "none");
+            $('#tab-map').css("display", "none");
+            $('#tab-settings').css("display", "none");
             $(id).css("display", "block");
 
             return false; 
