@@ -119,7 +119,7 @@
             var pub = rpub[1];
 
             // map marker start
-            var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(mymap);
+            /* var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(mymap);
             var popup = cnt.toString() + ") &nbsp;"
             popup += pub.name + ", ";
             for(category of pub.categories){
@@ -132,7 +132,7 @@
             if(pub.open.length > 0){
               popup += "<br>" + pub.open;
             }
-            // pub1.bindPopup(popup);
+            pub1.bindPopup(popup); */
             // map marker end
             
             // list-item start
