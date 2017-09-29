@@ -80,16 +80,6 @@
         location.longitude = 16.3725042;
         return false;
       }
-    
-      var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
-
-      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-        maxZoom: 18,
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                     '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                     'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-        id: 'mapbox.streets'
-      }).addTo(mymap);
 
       $.getJSON('/data/pubs.json', function(data){
         var rpubs = new Array();
@@ -107,6 +97,17 @@
 
         rpubs.sort(compare_distance);
 
+        // map
+        var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
+        L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+          maxZoom: 18,
+          attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                       '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                       'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+          id: 'mapbox.streets'
+        }).addTo(mymap);
+
+        // list
         $('#pub-list').html('');
         $('#pub-list').append("<ul></ul>");
 
@@ -117,6 +118,24 @@
             var distance = rpub[0];
             var pub = rpub[1];
 
+            // map marker start
+            var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(mymap);
+            var popup = cnt.toString() + ") &nbsp;"
+            popup += pub.name + ", ";
+            for(category of pub.categories){
+              popup += category + " ";
+            }
+            popup += "<br>" + pub.address + "<br>"
+            for(tel of pub.tel){
+              popup += tel + " ";
+            }
+            if(pub.open.length > 0){
+              popup += "<br>" + pub.open;
+            }
+            pub1.bindPopup(popup);
+            // map marker end
+            
+            // list-item start
             var lst = "<li>";
             lst += "<div style='display: flex; align-items: center'>";
 
@@ -158,22 +177,7 @@
             lst += "</li>";
 
             $('#pub-list').find('ul').append(lst);
-
-            var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(mymap);
-            var popup = cnt.toString() + ") &nbsp;"
-            popup += pub.name + ", ";
-            for(category of pub.categories){
-              popup += category + " ";
-            }
-            popup += "<br>" + pub.address + "<br>"
-            for(tel of pub.tel){
-              popup += tel + " ";
-            }
-            if(pub.open.length > 0){
-              popup += "<br>" + pub.open;
-            }
-
-            pub1.bindPopup(popup);
+            // list-item end
           }
         }
         var userlocation = L.marker([location.latitude, location.longitude]).addTo(mymap);
