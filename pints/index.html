@@ -50,15 +50,15 @@ id: index
 
         show_pubs(10);
 
-        $('#tab-map').attr("display", "none");
-        $('#tab-settings').attr("display", "none");
+        $('#tab-map').hide();
+        $('#tab-settings').hide();
 
         $('.tab').click(function(){ 
             console.log("href: " + $(this).attr("href"));
             var id = $(this).attr("href");
             console.log( "id: " + id);
 
-            $(id).attr("display", "block");
+            $(id).show(); // attr("display", "block");
 
             if(id == '#tab-list'){
               $('#tab-map').hide();
