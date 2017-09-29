@@ -45,8 +45,6 @@ id: index
 
     <script>
       $(document).ready(function() {
-        $('#tab-map').hide();
-        $('#tab-settings').hide();
 
         $('.tab').click(function(){ 
             console.log("href: " + $(this).attr("href"));
@@ -62,15 +60,11 @@ id: index
 
         show_pubs(10);
 
+        $('#tab-map').hide();
+        $('#tab-settings').hide();
+
         /* $('#tab-list').click(function() { show_pubs(1); });
         $('#tab-map').click(function() { show_pubs(2); }); */
     });
-  </script>   
-      
-        
-        
+  </script>
 
-
-        
-        
-      
