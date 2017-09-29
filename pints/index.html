@@ -39,6 +39,8 @@ id: index
         </div>
 
         <div id='tab-settings'>
+          <h2>Settings</h2>
+
           <p>bla bla bla bla bla</p>
         </div>
     </article>
@@ -46,25 +48,32 @@ id: index
     <script>
       $(document).ready(function() {
 
+        show_pubs(10);
+
+        $('#tab-map').hide();
+        $('#tab-settings').hide();
+
         $('.tab').click(function(){ 
             console.log("href: " + $(this).attr("href"));
             var id = $(this).attr("href");
-            console.log( " " + $(id).html() );
-            
-            $('#tab-list').hide();
-            $('#tab-map').hide();
-            $('#tab-settings').hide();
+            console.log( "id: " + id);
+
             $(id).show();
+
+            if(id == '#tab-list'){
+              $('#tab-map').hide();
+              $('#tab-settings').hide();
+            }
+            elif(id == '#tab-map'){
+              $('#tab-list').hide();
+              $('#tab-settings').hide();
+            }
+            else{
+              $('#tab-list').hide();
+              $('#tab-map').hide();
+            }
             return false; 
         });
-
-        setTimeout(function(){ 
-          show_pubs(10);
-        }, 3000);
-
-        // $('#tab-map').hide();
-        // $('#tab-settings').hide();
-
     });
   </script>
 
