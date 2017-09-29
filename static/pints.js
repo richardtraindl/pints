@@ -177,7 +177,7 @@
           }
         }
         var userlocation = L.marker([location.latitude, location.longitude]).addTo(mymap);
-        userlocation.bindPopup("Here you are!").openPopup();
+        userlocation.bindPopup("Here you are!"); // .openPopup();
       });
     }, 3000);
   };
