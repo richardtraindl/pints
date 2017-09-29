@@ -8,9 +8,13 @@ id: index
 
       <nav>
         <ul>
-          <li><a class="tab" id="tab1" href="#tab-list">Pubs List</a></li>
+          <li class="tab" id="list">Pubs List</li>
+          <li class="tab" id="map">Pubs Map</li>
+          <li class="tab" id="settings">Settings</li>
+
+          <!-- li><a class="tab" id="tab1" href="#tab-list">Pubs List</a></li>
           <li><a class="tab" id="tab2" href="#tab-map">Pubs Map</a></li>
-          <li><a class="tab" id="tab3" href="#tab-settings">Settings</a></li>
+          <li><a class="tab" id="tab3" href="#tab-settings">Settings</a></li -->
         </ul>
       </nav>
       
@@ -54,9 +58,13 @@ id: index
         $('#tab-settings').css("display", "none");
 
         $('.tab').click(function(){ 
-            console.log("href: " + $(this).attr("href"));
-            var id = $(this).attr("href");
+            console.log("id: " + $(this).attr("id"));
+            var id = "#tab-" + $(this).attr("id");
             console.log( "id: " + id);
+
+            /* console.log("href: " + $(this).attr("href"));
+            var id = $(this).attr("href");
+            console.log( "id: " + id); */
 
             if(id == '#tab-list'){
               $('#tab-map').css("display", "none");
