@@ -9,8 +9,8 @@ id: index
       <nav>
         <ul>
           <li><a class="tab" id="tab1" href="#tab-list">Pubs List</a></li>
-          <li><a class="tab" id="tab2" href="#tab-map">Pubs List</a></li>
-          <li><a class="tab" id="tab3" href="#tab-settings">Pubs List</a></li>
+          <li><a class="tab" id="tab2" href="#tab-map">Pubs Map</a></li>
+          <li><a class="tab" id="tab3" href="#tab-settings">Settings</a></li>
         </ul>
       </nav>
       
@@ -46,7 +46,7 @@ id: index
     <script>
       $(document).ready(function() {
 
-        $('.tab').click(function(){ 
+        /* $('.tab').click(function(){ 
             console.log("href: " + $(this).attr("href"));
             var id = $(this).attr("href");
             console.log( " " + $(id).html() );
@@ -56,15 +56,13 @@ id: index
             $('#tab-settings').hide();
             $(id).show();
             return false; 
-        });
+        }); */
 
         show_pubs(10);
 
-        $('#tab-map').hide();
-        $('#tab-settings').hide();
+        // $('#tab-map').hide();
+        // $('#tab-settings').hide();
 
-        /* $('#tab-list').click(function() { show_pubs(1); });
-        $('#tab-map').click(function() { show_pubs(2); }); */
     });
   </script>
 
