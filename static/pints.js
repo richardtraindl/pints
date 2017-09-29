@@ -52,33 +52,45 @@
   };
 
 
-  function read_pubs(){
-    var rpubs = new Array();
+  function show_pubs(location, count){
+    
+    var location = { status: null, latitude: null, longitude: null };
+    get_location(location);
+
+    setTimeout(function(){ 
+      console.log(" stat: " + location.status + " lat: " + location.latitude + " lon: " + location.longitude);
+      if(location.status == null){
+        $('.msg').html('');
+        var msg = "<p>Navigation did work. <br>Please check GPS-support and reload page!</p>";
+        $('.msg').append(msg);
+        return false;
+      }
+      if(location.status == 0){
+        $('.msg').html('');
+        var msg = "<p>Navigation is NOT availaible. <br>Please check GPS-support!</p>";
+        $('.msg').append(msg);
+        return false;
+      }
+      if(location.status == 1){
+        $('.msg').html('');
+        var msg = "<p>You have denied geolocation prompt. <br>Pints assumes the center of the city as your current location!</p>";
+        $('.msg').append(msg);
+        location.latitude = 48.2083537;
+        location.longitude = 16.3725042;
+        return false;
+      }
+    
+    var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+      maxZoom: 18,
+      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+                   '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+                   'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      id: 'mapbox.streets'
+    }).addTo(mymap);
 
     $.getJSON('/data/pubs.json', function(data){
-      $.each(data, function(index, pub){
-        var distance = calc_distance(location.longitude, location.latitude, pub.longitude, pub.latitude);
-        rpubs.push([distance, pub]);
-      });
-
-      function compare_distance(a, b){
-        if (a[0] < b[0]) return -1;
-        if (a[0] > b[0]) return 1;
-        return 0;
-      };
-
-      rpubs.sort(compare_distance);
-    });
-
-    // return rpubs;
-  };
-
-
-  function show_list(location, count){
-    var rpubs = read_pubs();
-    
-    console.log("length " + rpubs.length);
-    /* $.getJSON('/data/pubs.json', function(data){
       var rpubs = new Array();
 
       $.each(data, function(index, pub){
@@ -93,7 +105,6 @@
       };
 
       rpubs.sort(compare_distance);
-    */
 
       $('#pub-list').html('');
       $('#pub-list').append("<ul></ul>");
@@ -146,52 +157,14 @@
           lst += "</li>";
 
           $('#pub-list').find('ul').append(lst);
-        }
-      }
-    // });
-  };
-
-
-  function show_map(location, count){
-    var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
-
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-      maxZoom: 18,
-      attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-                   '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-                   'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-      id: 'mapbox.streets'
-    }).addTo(mymap);
-
-    $.getJSON('/data/pubs.json', function(data){
-      var rpubs = new Array();
-
-      $.each(data, function(index, pub){
-        var distance = calc_distance(location.longitude, location.latitude, pub.longitude, pub.latitude);
-        rpubs.push([distance, pub]);
-      });
-
-      function compare_distance(a, b){
-        if(a[0] < b[0]) return -1;
-        if(a[0] > b[0]) return 1;
-        return 0;
-      };
-
-      rpubs.sort(compare_distance);
-
-      var cnt = 0;
-      for(let rpub of rpubs){
-        cnt += 1;
-        if(cnt <= count){
-          var pub = rpub[1];
-
+          
           var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(mymap);
           var popup = cnt.toString() + ") &nbsp;"
           popup += pub.name + ", ";
           for(category of pub.categories){
             popup += category + " ";
           }
-          popup += "<br>" + pub.address + "<br>";
+          popup += "<br>" + pub.address + "<br>"
           for(tel of pub.tel){
             popup += tel + " ";
           }
@@ -200,43 +173,14 @@
           }
 
           pub1.bindPopup(popup);
+
         }
-      }
+      } 
 
-      var userlocation = L.marker([location.latitude, location.longitude]).addTo(mymap);
-      userlocation.bindPopup("Here you are!").openPopup();
+     }, 3000);
     });
+
+    var userlocation = L.marker([location.latitude, location.longitude]).addTo(mymap);
+    userlocation.bindPopup("Here you are!").openPopup();
   };
 
-
-  function show_pubs(){
-    var location = { status: null, latitude: null, longitude: null };
-    get_location(location);
-
-    setTimeout(function(){ 
-      console.log(" stat: " + location.status + " lat: " + location.latitude + " lon: " + location.longitude);
-      if(location.status == null){
-        $('.msg').html('');
-        var msg = "<p>Navigation did work. <br>Please check GPS-support and reload page!</p>";
-        $('.msg').append(msg);
-        return false;
-      }
-      if(location.status == 0){
-        $('.msg').html('');
-        var msg = "<p>Navigation is NOT availaible. <br>Please check GPS-support!</p>";
-        $('.msg').append(msg);
-        return false;
-      }
-      if(location.status == 1){
-        $('.msg').html('');
-        var msg = "<p>You have denied geolocation prompt. <br>Pints assumes the center of the city as your current location!</p>";
-        $('.msg').append(msg);
-        location.latitude = 48.2083537;
-        location.longitude = 16.3725042;
-        return false;
-      }
-      show_list(location, 10);
-
-      show_map(location, 10);
-    }, 3000); 
-  };
