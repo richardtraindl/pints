@@ -132,7 +132,7 @@
             if(pub.open.length > 0){
               popup += "<br>" + pub.open;
             }
-            pub1.bindPopup(popup);
+            // pub1.bindPopup(popup);
             // map marker end
             
             // list-item start
@@ -180,8 +180,8 @@
             // list-item end
           }
         }
-        var userlocation = L.marker([location.latitude, location.longitude]).addTo(mymap);
-        userlocation.bindPopup("Here you are!"); // .openPopup();
+        // var userlocation = L.marker([location.latitude, location.longitude]).addTo(mymap);
+        // userlocation.bindPopup("Here you are!"); // .openPopup();
       });
     }, 3000);
   };
