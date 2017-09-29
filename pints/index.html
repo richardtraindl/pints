@@ -55,7 +55,7 @@ id: index
         show_pubs(10);
 
         $('#tab-map').css("visibility", "hidden");
-        $('#tab-settings').css("visibility", "hidden");
+        $('#tab-settings').css("display", "none");
 
         $('.tab').click(function(){ 
             console.log("id: " + $(this).attr("id"));
@@ -67,19 +67,20 @@ id: index
             console.log( "id: " + id); */
 
             if(id == '#tab-list'){
-              $('#tab-map').css("visibility", "hidden");
-              $('#tab-settings').css("visibiliy", "hidden");
+              $('#tab-map').css("display", "none");
+              $('#tab-settings').css("display", "none");
             }
             else if(id == '#tab-map'){
-              $('#tab-list').css("visibility", "hidden");
-              $('#tab-settings').css("visibility", "hidden");
+              $('#tab-list').css("display", "none");
+              $('#tab-settings').css("display", "none");
             }
             else{
-              $('#tab-list').css("visibility", "hidden");
-              $('#tab-map').css("visibility", "hidden");
+              $('#tab-list').css("display", "none");
+              $('#tab-map').css("display", "none");
             }
 
             $(id).css("visibility", "visible");
+            $(id).css("display", "block");
 
             return false; 
         });
