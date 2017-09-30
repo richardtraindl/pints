@@ -22,31 +22,17 @@ body {
   height: auto;
 }
 
-.btn {
-  display: inline-block;
-  padding: 4px 4px 4px 4px;
-  text-align: center;
-  color: #333;
-  background-color: #E6E6E6;
-  background-image: linear-gradient(top, white 0%, #E6E6E6 100%);
-  border-radius: 4px;
-  cursor: pointer;
-  border: 1px solid darkgray;
-  white-space: nowrap; 
-}
-
 #mobile-wrapper {
   margin: 0px auto;
   padding: 6px;
-  background-color: #FFE394;
   min-width: 468px;
   max-width: 468px;
   width: 468px;
   border-radius: 6px;
+  background-color: #FFE394;
 }
 
 #mobile-header {
-  position: relative;
   margin: 6px 0px;
   text-align: center;
   border-radius: 6px 6px 0px 0px;
@@ -57,7 +43,6 @@ body {
   padding: 10px;
   text-align: center;
   font-size: 28px;
-  /* color: White; */
 }
 
 #mobile-content {
@@ -71,19 +56,29 @@ body {
 }
 
 #mobile-nav ul {
-  list-style: none;
-}
-
-li.tab {
-  background-color: LightBlue;
-}
-
-li.active {
-  background-color: inherit;
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid #999;
 }
 
 #mobile-nav li {
   display: inline-block;
+  margin: 0px 0px 0px 0px;
+  padding: 5px 15px 0px 5px;
+  border: 1px solid #999;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  background-color: #ffffcc;
+  border-radius: 8px 8px 0px 0px;
+}
+
+#mobile-nav li.selected {
+  padding-bottom: 4px;
+  margin-bottom: -1px;
+  border: 1px solid #999;
+  border-bottom: 2px solid #FFFFE8;
+  background-color: inherit;
 }
 
 h1, h2 {

@@ -7,41 +7,41 @@ id: index
     <article>
       <nav id="mobile-nav">
         <ul>
-          <li class="tab active" id="map">Pubs Map</li>
-          <li class="tab" id="list">Pubs List</li>
+          <li class="tab selected" id="map" style="width: 120px;">Pubs Map</li>
+          <li class="tab" id="list" style="width: 120px;">Pubs List</li>
           <li class="tab" id="settings">Settings</li>
         </ul>
       </nav>
 
-        <div id='tab-map'>
+        <section id='section-map'>
           <h2>Choose Your Pub</h2>
 
-          <p class="msg">
+          <div class="msg">
             <!-- Wird dynamisch befüllt -->
-          </p>
+          </div>
 
-          <p id='mapid' style="height: 468px; width: 468px; padding: 0px; margin: 0px;">
+          <div id='mapid' style="height: 468px; width: 468px; padding: 0px; margin: 0px;">
             <!-- Wird dynamisch befüllt -->
-          </p>
-        </div>
+          </div>
+        </section>
 
-        <div id='tab-list'>
+        <section id='section-list'>
           <h2>Choose Your Pub</h2>
           
-          <p class="msg">
+          <div class="msg">
             <!-- Wird dynamisch befüllt -->
-          </p>
+          </div>
 
-          <p id='pub-list'>
+          <div id='pub-list'>
             <!-- Wird dynamisch befüllt -->
-          </p>  
-        </div>
+          </div>  
+        </section>
 
-        <div id='tab-settings'>
+        <section id='section-settings'>
           <h2>Settings</h2>
 
-          <p>bla bla bla bla bla</p>
-        </div>
+          <div>bla bla bla bla bla</div>
+        </section>
     </article>
 
     <script>
@@ -49,18 +49,18 @@ id: index
 
         display_map();
 
-        $('#tab-list').css("display", "none");
-        $('#tab-settings').css("display", "none");
+        $('#section-list').css("display", "none");
+        $('#section-settings').css("display", "none");
 
         $('.tab').click(function(){ 
-            $('.tab').removeClass("active");
-            $(this).addClass("active");
+            $('.tab').removeClass("selected");
+            $(this).addClass("selected");
 
-            var id = "#tab-" + $(this).attr("id");
+            var id = "#section-" + $(this).attr("id");
 
-            $('#tab-list').css("display", "none");
-            $('#tab-map').css("display", "none");
-            $('#tab-settings').css("display", "none");
+            $('#section-list').css("display", "none");
+            $('#section-map').css("display", "none");
+            $('#section-settings').css("display", "none");
 
             $(id).css("display", "block");
 
