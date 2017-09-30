@@ -24,11 +24,9 @@
         <script src="/static/pints.js"></script>
 
         <script>
-          var url = document.referrer;
-          console.log(url.indexOf("https://")); 
-          if(url.indexOf("https://") == -1){
+          if(window.location.protocol != "https"){
             window.location.href = 'https://richardtraindl.github.io/pints';
-          }
+          }  
         </script>
 
         <title>Pints</title>
