@@ -106,7 +106,16 @@
           // map marker end
         }
       }
-      var userlocation = L.marker([location.latitude, location.longitude]).addTo(mymap);
+      var redIcon = L.icon({
+        iconUrl: '/styles/images/marker-red-icon.png',
+        shadowUrl: '/styles/images/marker-shadow.png',
+        iconSize:     [30, 40], // size of the icon
+        shadowSize:   [41, 41], // size of the shadow
+        iconAnchor:   [4, 38], // point of the icon which will correspond to marker's location
+        shadowAnchor: [4, 39],  // the same for the shadow
+        popupAnchor:  [10, -40] // point from which the popup should open relative to the iconAnchor
+      });
+      var userlocation = L.marker([location.latitude, location.longitude], {icon: redIcon}).addTo(mymap);
       userlocation.bindPopup("Here you are!").openPopup();
     });
   };
