@@ -66,6 +66,10 @@ body {
   border-radius: 0px 0px 6px 6px;
 }
 
+#mobile-nav, #mobile-nav ul {
+  background-color: inherit;
+}
+
 #mobile-nav ul {
   list-style: none;
 }
@@ -73,8 +77,6 @@ body {
 #mobile-nav li {
   display: inline-block;
 }
-
-
 
 h1, h2 {
   padding: 10px 0px;
