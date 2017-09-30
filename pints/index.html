@@ -7,7 +7,7 @@ id: index
     <article>
       <nav id="mobile-nav">
         <ul>
-          <li class="tab" id="map">Pubs Map</li>
+          <li class="tab active" id="map">Pubs Map</li>
           <li class="tab" id="list">Pubs List</li>
           <li class="tab" id="settings">Settings</li>
         </ul>
@@ -20,7 +20,7 @@ id: index
             <!-- Wird dynamisch befüllt -->
           </p>
 
-          <p id="mapid" style="height: 468px; width: 468px; padding: 0px; margin: 0px;">
+          <p id='mapid' style="height: 468px; width: 468px; padding: 0px; margin: 0px;">
             <!-- Wird dynamisch befüllt -->
           </p>
         </div>
@@ -32,7 +32,7 @@ id: index
             <!-- Wird dynamisch befüllt -->
           </p>
 
-          <p id="pub-list">
+          <p id='pub-list'>
             <!-- Wird dynamisch befüllt -->
           </p>  
         </div>
@@ -53,6 +53,9 @@ id: index
         $('#tab-settings').css("display", "none");
 
         $('.tab').click(function(){ 
+            $('.tab').removeClass("active");
+            $(this).addClass("active");
+
             var id = "#tab-" + $(this).attr("id");
 
             $('#tab-list').css("display", "none");

@@ -74,6 +74,14 @@ body {
   list-style: none;
 }
 
+li.tab {
+  background-color: LightBlue;
+}
+
+li.active {
+  background-color: inherit;
+}
+
 #mobile-nav li {
   display: inline-block;
 }
