@@ -53,17 +53,12 @@ id: index
         $('#tab-settings').css("display", "none");
 
         $('.tab').click(function(){ 
-            console.log("id: " + $(this).attr("id"));
             var id = "#tab-" + $(this).attr("id");
-            console.log( "id: " + id);
-
-            /* console.log("href: " + $(this).attr("href"));
-            var id = $(this).attr("href");
-            console.log( "id: " + id); */
 
             $('#tab-list').css("display", "none");
             $('#tab-map').css("display", "none");
             $('#tab-settings').css("display", "none");
+
             $(id).css("display", "block");
 
             return false; 
