@@ -86,6 +86,10 @@ h1, h2 {
   text-align: center;
 }
 
+h1 a {
+  text-decoration: none;
+}
+
 h1 {
   font-size: 28px;
 }
@@ -97,10 +101,6 @@ h2 {
 /* a, a:link, a:visited, a:active, a:focus {
   text-decoration: none;
 } */
-
-a:focus, a:hover {
-  text-decoration: none;
-}
 
 .gap {
   padding-bottom: 20px;
