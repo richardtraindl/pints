@@ -177,14 +177,7 @@
             lst += "<p><a href='tel:" + tel + "' style='color: Black'>" + tel + "</a></p>";
           }
           if(pub.website.length > 0){
-            var strarray = pub.website.split("//");
-            if(strarray.length == 1){
-              var url = strarray[0];
-            }
-            else{
-              var url = strarray[1];
-            }
-            lst += "<p><a href='" + pub.website + "' target='_blank' style='font-weight: bold'>" + url + "</a></p>";
+            lst += "<p><a href='" + pub.website + "' target='_blank' style='font-weight: bold'>" + pub.website + "</a></p>";
           }
           lst += "</div>"; // cell
 

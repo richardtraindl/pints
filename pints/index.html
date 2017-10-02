@@ -55,6 +55,11 @@ id: index
 
     <script>
       $(document).ready(function() {
+          
+        if(location.protocol !== "https:"){
+          location.href = location.href.replace(/^http:/, 'https:')
+          // location.href = "https://richardtraindl.gitgub.io/pints/index.html"
+        }
 
         display_pubs();
 

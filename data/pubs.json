@@ -9,7 +9,7 @@
         "food": "Snacks",
         "features": "Live Football, Ozapft is', 17.10.2017, Winterbierverkostung, genauer Termin für Dezember wird noch bekanntgegeben",
         "open": "Mo - Thu 18:00 – 01:00 | Friday 18:00 – 02:00 | Saturday 12:30 – 02:00 | Sunday 14:00 – 00:00",
-        "website": "http://www.redlion-vienna.at/",
+        "website": "www.redlion-vienna.at/",
         "tel": ["+43 - (0)676 560 53 53"]
     },
     {
@@ -22,7 +22,7 @@
         "food": "Kitchen",
         "features": "new Ales in October 2017",
         "open": "",
-        "website": "http://www.flanagans.at",
+        "website": "www.flanagans.at",
         "tel": ["+435137378"]
         
     },
@@ -36,7 +36,7 @@
         "food": "Kitchen",
         "features": "",
         "open": "",
-        "website": "https://www.oconnors.at/",
+        "website": "www.oconnors.at/",
         "tel": ["01 236 6721"]
     },
     {
@@ -62,7 +62,7 @@
         "food": "Kitchen",
         "features": "Big Smoke",
         "open": "",
-        "website": "http://www.brickmakers.at/",
+        "website": "www.brickmakers.at/",
         "tel": ["+43(0)19974414"]
     },
     {
@@ -75,7 +75,7 @@
         "food": "Kitchen",
         "features": "",
         "open": "Monday-Thursday: 16:00 - 24:00 | Friday:    16:00 - 1:00 | Saturday: 10:00 - 1:00 | Sunday: 10:00 -22:00 | kitchen closes at 22:00",
-        "website": "https://www.beaverbrewing.at/",
+        "website": "www.beaverbrewing.at/",
         "tel": ["+43 (0) 677 610 122 53"]
     },
     {
@@ -88,7 +88,7 @@
         "food": "Small-Kitchen",
         "features": "Tschechische Biere",
         "open": "",
-        "website": "http://pivothek.at/",
+        "website": "pivothek.at/",
         "tel": ["0660/6989668"]
     },
     {
@@ -101,7 +101,7 @@
         "food": "Kitchen",
         "features": "Jeden Freitag Käsespätzle",
         "open": "Dienstag bis Donnerstag 17:30 bis 0:00 | Freitag und Samstag 17:30 bis 2:00 | Gekocht wird jeweils bis 21:30 Uhr. | Sonntag, Montag und an Feiertagen geschlossen.",
-        "website": "http://www.ue-lokal.at/",
+        "website": "ue-lokal.at/",
         "tel": ["01 9691013"]
     }
 ]
