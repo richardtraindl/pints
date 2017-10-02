@@ -25,6 +25,8 @@ body {
 #mobile-wrapper {
   margin: 0px auto;
   padding: 6px;
+  min-width: 320px;
+  max-width: 640px;
   width: 100%;
   border-radius: 6px;
   background-color: #FFE394;
