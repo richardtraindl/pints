@@ -55,13 +55,18 @@ id: index
 
     <script>
       $(document).ready(function() {
-          
-        if(location.protocol !== "https:"){
+        if(location.protocol !== "https:" && window.location.href.indexOf("127.0.0.1") == -1){
           location.href = location.href.replace(/^http:/, 'https:')
-          // location.href = "https://richardtraindl.gitgub.io/pints/index.html"
         }
 
-        display_pubs();
+        if(window.location.href.indexOf("target=") != -1){
+            var stringarr = window.location.href.split("target=");
+            var target = stringarr[1];
+            display_pubs(10, parseInt(target));
+        }
+        else{
+          display_pubs(10, null);
+        }
 
         $('#section-list').css("display", "none");
         $('#section-about').css("display", "none");

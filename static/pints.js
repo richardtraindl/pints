@@ -23,7 +23,7 @@
   };
 
 
-  function display_pubs(){
+  function display_pubs(count, target){
     var options = { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 };
 
     if(navigator.geolocation){
@@ -33,9 +33,9 @@
           location.latitude = position.coords.latitude;
           location.longitude = position.coords.longitude;
 
-          build_map(location, 10);
+          build_map(location, count, target);
 
-          build_list(location, 10);
+          build_list(location, count);
         },
         function(err){
           console.warn("ERROR: " + err.code + " " + err.message);
@@ -55,7 +55,7 @@
   };
 
 
-  function build_map(location, count){
+  function build_map(location, count, target){
     // map
     var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -88,22 +88,36 @@
         if(cnt <= count){
           var distance = rpub[0];
           var pub = rpub[1];
-          // map marker start
-          var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(mymap);
-          var popup = cnt.toString() + ") &nbsp;"
-          popup += pub.name + ", ";
-          for(category of pub.categories){
-            popup += category + " ";
-          }
-          popup += "<br>" + pub.address + "<br>"
-          for(tel of pub.tel){
-            popup += tel + " ";
-          }
-          if(pub.open.length > 0){
-            popup += "<br>" + pub.open;
-          }
-          pub1.bindPopup(popup);
-          // map marker end
+            // map marker start
+            if(target != null && cnt == target){
+              var greenIcon = L.icon({
+                iconUrl: '/styles/images/marker-green-icon.png',
+                shadowUrl: '/styles/images/marker-shadow.png',
+                iconSize:     [30, 40], // size of the icon
+                shadowSize:   [41, 41], // size of the shadow
+                iconAnchor:   [4, 38], // point of the icon which will correspond to marker's location
+                shadowAnchor: [4, 39],  // the same for the shadow
+                popupAnchor:  [10, -32] // point from which the popup should open relative to the iconAnchor
+              });
+              var pub1 = L.marker([pub.latitude, pub.longitude], {icon: greenIcon}).addTo(mymap);
+            }
+            else{
+              var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(mymap);
+            }
+            var popup = cnt.toString() + ") &nbsp;"
+            popup += pub.name + ", ";
+            for(category of pub.categories){
+              popup += category + " ";
+            }
+            popup += "<br>" + pub.address + "<br>"
+            for(tel of pub.tel){
+              popup += tel + " ";
+            }
+            if(pub.open.length > 0){
+              popup += "<br>" + pub.open;
+            }
+            pub1.bindPopup(popup);
+            // map marker end
         }
       }
       var redIcon = L.icon({
@@ -157,7 +171,7 @@
           lst += "</div>"; // cell
 
           lst += "<div style='width: 20%; margin: 0px;'>";
-          lst += "<a href='#' target='_blank' style='font-weight: bold'>" + pub.name + "</a><br>";
+          lst += "<a href='index.html?target=" + cnt + "' style='font-weight: bold'>" + pub.name + "</a><br>";
           for(category of pub.categories){
             lst += category + " ";
           }
@@ -193,4 +207,3 @@
       }
     });
   };
-
