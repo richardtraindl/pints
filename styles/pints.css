@@ -94,9 +94,12 @@ h2 {
   font-size: 24px;
 }
 
-a, a:link, a:visited, a:active, a:focus {
-  /* text-decoration: none; */
-  color: Blue;
+/* a, a:link, a:visited, a:active, a:focus {
+  text-decoration: none;
+} */
+
+a, a:active, a:focus {
+  text-decoration: none;
 }
 
 .gap {
