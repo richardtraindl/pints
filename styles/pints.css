@@ -108,6 +108,7 @@ a, a:link, a:visited, a:active, a:focus {
 
 .msg * {
   color: Red;
+  font-size: 18px;
   font-weight: bold;
 }
 
