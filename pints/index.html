@@ -9,7 +9,7 @@ id: index
         <ul>
           <li class="tab selected" id="map" style="width: 120px;">Pubs Map</li>
           <li class="tab" id="list" style="width: 120px;">Pubs List</li>
-          <li class="tab" id="settings">Settings</li>
+          <li class="tab" id="about">About</li>
         </ul>
       </nav>
 
@@ -37,10 +37,15 @@ id: index
           </div>  
         </section>
 
-        <section id='section-settings'>
-          <h2>Settings</h2>
+        <section id='section-about'>
+          <h2>About</h2>
 
-          <div>bla bla bla bla bla</div>
+          <p>
+              Diese Seite unterstützt die Bierkultur in Wien und Umland.<br>
+              Die Auswahl der Lokale erfolgte nach persönlichen Präferenzen der Seiten-Betreiber.
+              Neben Qualität liegt uns die Förderung von kleinen und engagierten Bieranbietern am Herzen.<br>
+              Hinweise auf neue Lokale oder auf Fehler sind sehr willkommen...tbd            
+          </p>
         </section>
     </article>
 
@@ -60,7 +65,7 @@ id: index
 
             $('#section-list').css("display", "none");
             $('#section-map').css("display", "none");
-            $('#section-settings').css("display", "none");
+            $('#section-about').css("display", "none");
 
             $(id).css("display", "block");
 
