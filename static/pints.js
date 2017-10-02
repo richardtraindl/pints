@@ -23,7 +23,7 @@
   };
 
 
-  function display_map(){
+  function display_pubs(){
     var options = { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 };
 
     if(navigator.geolocation){
@@ -33,9 +33,9 @@
           location.latitude = position.coords.latitude;
           location.longitude = position.coords.longitude;
 
-          show_pubs_map(location, 10);
+          build_map(location, 10);
 
-          show_pub_list(location, 10);
+          build_list(location, 10);
         },
         function(err){
           console.warn("ERROR: " + err.code + " " + err.message);
@@ -55,7 +55,7 @@
   };
 
 
-  function show_pubs_map(location, count){
+  function build_map(location, count){
     // map
     var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -121,7 +121,7 @@
   };
 
 
-  function show_pub_list(location, count){
+  function build_list(location, count){
     $.getJSON('/data/pubs.json', function(data){
       var rpubs = new Array();
 
@@ -157,12 +157,7 @@
           lst += "</div>"; // cell
 
           lst += "<div style='width: 20%; margin: 0px;'>";
-          if(pub.website.length > 0){
-            lst += "<a href='" + pub.website + "' target='_blank' style='font-weight: bold'>" + pub.name + "</a><br>";
-          }
-          else{
-            lst += "<span style='font-weight: bold'>" + pub.name + "</span><br>";
-          }
+          lst += "<a href='#' target='_blank' style='font-weight: bold'>" + pub.name + "</a><br>";
           for(category of pub.categories){
             lst += category + " ";
           }
@@ -171,19 +166,29 @@
           }
           lst += "</div>"; // cell
 
-          lst += "<div class='div-cell' style='width: 66%; margin: 0px;'>";
+          lst += "<div style='width: 66%; margin: 0px;'>";
           if(pub.features.length > 0){
-            lst += pub.features + "<br>";
+            lst += "<p>" + pub.features + "</p>";
           }
           if(pub.open.length > 0){
-            lst += pub.open + "<br>";
+            lst += "<p>" + pub.open + "</p>";
           }
           for(tel of pub.tel){
-            lst += "<a href='tel:" + tel + "' style='color: Black'>" + tel + "</a> &nbsp; ";
+            lst += "<p><a href='tel:" + tel + "' style='color: Black'>" + tel + "</a></p>";
+          }
+          if(pub.website.length > 0){
+            var strarray = pub.website.split("//");
+            if(strarray.length == 1){
+              var url = strarray[0];
+            }
+            else{
+              var url = strarray[1];
+            }
+            lst += "<p><a href='" + pub.website + "' target='_blank' style='font-weight: bold'>" + url + "</a></p>";
           }
           lst += "</div>"; // cell
 
-          lst += "<div class='div-cell' style='width: 10%; margin: 0px;'>";
+          lst += "<div style='width: 10%; margin: 0px;'>";
           lst += distance + " km";
           lst += "</div>"; // cell
           lst += "</div>"; // row

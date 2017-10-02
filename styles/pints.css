@@ -98,6 +98,10 @@ h2 {
   font-size: 24px;
 }
 
+p {
+  padding-bottom: 4px;
+}
+
 /* a, a:link, a:visited, a:active, a:focus {
   text-decoration: none;
 } */
