@@ -98,7 +98,7 @@ h2 {
   text-decoration: none;
 } */
 
-a, a:active, a:focus {
+a:active, a:focus {
   text-decoration: none;
 }
 
