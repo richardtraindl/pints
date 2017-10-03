@@ -132,6 +132,8 @@
       var userlocation = L.marker([location.latitude, location.longitude], {icon: redIcon}).addTo(mymap);
       userlocation.bindPopup("Here you are!").openPopup();
     });
+
+    return mymap;
   };
 
 
