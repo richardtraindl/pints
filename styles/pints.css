@@ -138,7 +138,6 @@ p {
 	border-bottom: 1px solid #cacaca;
 	padding: 5px 10px;
 	overflow: hidden;
-        -webkit-background-clip: padding;
 }
 
 #pub-list ul li:first-child {
