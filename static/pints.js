@@ -130,7 +130,7 @@
         shadowAnchor: [4, 39],  // the same for the shadow
         popupAnchor:  [10, -32] // point from which the popup should open relative to the iconAnchor
       });
-      var userlocation = L.marker([location.latitude, location.longitude], {icon: redIcon}).addTo(mymap);
+      var userlocation = L.marker([location.latitude, location.longitude], {icon: redIcon}).addTo(map);
       userlocation.bindPopup("Here you are!").openPopup();
     });
   };
