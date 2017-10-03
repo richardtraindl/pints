@@ -33,9 +33,11 @@
           location.latitude = position.coords.latitude;
           location.longitude = position.coords.longitude;
 
-          build_map(location, count, target);
+          var mymap = build_map(location, count, target);
 
           build_list(location, count);
+
+          return mymap;
         },
         function(err){
           console.warn("ERROR: " + err.code + " " + err.message);
@@ -44,6 +46,7 @@
           $('.msg').append(msg);
         }, 
         options);
+        return null;
     }
     else{
       // Browser doesn't support Geolocation
@@ -51,6 +54,7 @@
       $('.msg').html('');
       var msg = "<p>Browser doesn't support Geolocation. <br>Please check GPS-support!</p>";
       $('.msg').append(msg);
+      return null;
     }
   };
 
