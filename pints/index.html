@@ -63,10 +63,10 @@ id: index
         if(window.location.href.indexOf("target=") != -1){
             var stringarr = window.location.href.split("target=");
             var target = stringarr[1];
-            display_pubs(10, parseInt(target));
+            display_pubs(mymap, 10, parseInt(target));
         }
         else{
-          display_pubs(10, null);
+          display_pubs(mymap, 10, null);
         }
 
         $('#section-list').css("display", "none");
