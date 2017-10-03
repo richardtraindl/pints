@@ -59,8 +59,6 @@ id: index
           location.href = location.href.replace(/^http:/, 'https:')
         }
 
-        /* map.off();
-        map.remove(); */
         var mymap = new L.Map('mapid');
         if(window.location.href.indexOf("target=") != -1){
             var stringarr = window.location.href.split("target=");
@@ -88,6 +86,13 @@ id: index
 
             return false; 
         });
+
+      function redraw_map(cnt){
+        mymap.off();
+        mymap.remove();
+        var newmap = new L.Map('mapid');
+        display_pubs(newmap, 10, cnt);
+      };
 
     });
   </script>
