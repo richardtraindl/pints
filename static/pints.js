@@ -55,6 +55,13 @@
   };
 
 
+  function redraw_map(map, cnt){
+    map.off();
+    map.remove();
+    map = new L.Map('mapid');
+    display_pubs(map, 10, cnt);
+  };
+
   function build_map(map, location, count, target){
     // map
     // var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
