@@ -65,7 +65,7 @@
                    '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
                    'Imagery © <a href="http://mapbox.com">Mapbox</a>',
       id: 'mapbox.streets'
-    }).addTo(mymap);
+    }).addTo(map);
 
     $.getJSON('/data/pubs.json', function(data){
       var rpubs = new Array();
