@@ -90,8 +90,8 @@ id: index
       function redraw_map(cnt){
         mymap.off();
         mymap.remove();
-        var newmap = new L.Map('mapid');
-        display_pubs(newmap, 10, cnt);
+        mymap = new L.Map('mapid');
+        display_pubs(mymap, 10, cnt);
       };
 
     });
