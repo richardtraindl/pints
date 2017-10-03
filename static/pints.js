@@ -23,7 +23,7 @@
   };
 
 
-  function display_pubs(count, target){
+  function display_pubs(map, count, target){
     var options = { enableHighAccuracy: true, timeout: 5000, maximumAge: 0 };
 
     if(navigator.geolocation){
@@ -33,7 +33,7 @@
           location.latitude = position.coords.latitude;
           location.longitude = position.coords.longitude;
 
-          build_map(location, count, target);
+          build_map(map, location, count, target);
 
           build_list(location, count);
         },
@@ -55,10 +55,10 @@
   };
 
 
-  function build_map(location, count, target){
+  function build_map(map, location, count, target){
     // map
     // var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
-    mymap.setView([location.latitude, location.longitude], 13);
+    map.setView([location.latitude, location.longitude], 13);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
       maxZoom: 18,
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
