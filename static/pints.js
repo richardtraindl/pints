@@ -166,11 +166,11 @@
           var lst = "<li>";
           lst += "<div style='display: flex; align-items: center'>";
 
-          lst += "<div style='width: 4%; margin: 0px;'>";
+          lst += "<div style='width: 5%; margin: 0px;'>";
           lst += "<span style='font-size: 20px'>" + cnt + "</span>";
           lst += "</div>"; // cell
 
-          lst += "<div style='width: 20%; margin: 0px;'>";
+          lst += "<div style='width: 25%; margin: 0px;'>";
           lst += "<a href='index.html?target=" + cnt + "' style='font-weight: bold'>" + pub.name + "</a><br>";
           for(category of pub.categories){
             lst += category + " ";
@@ -180,7 +180,7 @@
           }
           lst += "</div>"; // cell
 
-          lst += "<div style='width: 66%; margin: 0px;'>";
+          lst += "<div style='width: 60%; margin: 0px;'>";
           if(pub.features.length > 0){
             lst += pub.features + "<br>";
           }
