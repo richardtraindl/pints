@@ -167,7 +167,7 @@
           lst += "<div style='display: flex; align-items: center'>";
 
           lst += "<div style='width: 4%; margin: 0px;'>";
-          lst += "<span style='font-size: 20px'>" + cnt.toString() + "</span>";
+          lst += "<span style='font-size: 20px'>" + cnt + "</span>";
           lst += "</div>"; // cell
 
           lst += "<div style='width: 20%; margin: 0px;'>";
@@ -182,16 +182,16 @@
 
           lst += "<div style='width: 66%; margin: 0px;'>";
           if(pub.features.length > 0){
-            lst += "<p>" + pub.features + "</p>";
+            lst += pub.features + "<br>";
           }
           if(pub.open.length > 0){
-            lst += "<p>" + pub.open + "</p>";
+            lst += pub.open + "<br>";
           }
           for(tel of pub.tel){
-            lst += "<p><a href='tel:" + tel + "' style='color: Black'>" + tel + "</a></p>";
+            lst += "<a href='tel:" + tel + "' style='color: Black'>" + tel + "</a><br>";
           }
           if(pub.website.length > 0){
-            lst += "<p><a href='" + pub.website + "' target='_blank' style='font-weight: bold'>" + pub.website + "</a></p>";
+            lst += "<a href='" + pub.website + "' target='_blank' style='font-weight: bold'>" + pub.website + "</a>";
           }
           lst += "</div>"; // cell
 
