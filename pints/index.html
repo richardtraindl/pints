@@ -62,11 +62,12 @@ id: index
         if(window.location.href.indexOf("target=") != -1){
             var stringarr = window.location.href.split("target=");
             var target = stringarr[1];
-            display_pubs(10, parseInt(target));
+            var mymap = display_pubs(10, parseInt(target));
         }
         else{
           var mymap = display_pubs(10, null);
         }
+        console.log("map-object " + mymap);
 
         $('#section-list').css("display", "none");
         $('#section-about').css("display", "none");
