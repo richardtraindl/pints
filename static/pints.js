@@ -172,7 +172,7 @@
           lst += "</div>"; // cell
 
           lst += "<div style='width: 25%; margin: 0px;'>";
-          lst += "<a href='#' onclick='redraw_map(" + cnt + ", " + count + "); return false;' style='font-weight: bold'>" + pub.name + "</a><br>";
+          lst += "<a href='#' onclick='redraw_map(" + cnt + "); return false;' style='font-weight: bold'>" + pub.name + "</a><br>";
           for(category of pub.categories){
             lst += category + " ";
           }
