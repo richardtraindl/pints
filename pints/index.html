@@ -59,6 +59,7 @@ id: index
           location.href = location.href.replace(/^http:/, 'https:')
         }
 
+        var mymap = L.Map('mapid');
         if(window.location.href.indexOf("target=") != -1){
             var stringarr = window.location.href.split("target=");
             var target = stringarr[1];
