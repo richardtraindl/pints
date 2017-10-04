@@ -6,7 +6,7 @@
 #  use in root / app folder:
 #    ruby script/convert.rb
 #
-#    will read in data/pubs.txt and convert data/pubs2.json
+#    will read in data/pubs.txt and convert data/o/pubs.json
 
 
 require 'pp'
@@ -155,15 +155,19 @@ end # method parse
 end  # class PubReader
 
 
-puts "reading pubs..."
 
-pubs = Pub.load_file( "./data/pubs.txt" )
-## pp pubs
 
-puts generate_json( pubs )
+if __FILE__ == $0
+  puts "reading pubs..."
 
-File.open( "./data/o/pubs.json", "w:utf-8") do |f|
-  f.write generate_json( pubs )
+  pubs = Pub.load_file( "./data/pubs.txt" )
+  ## pp pubs
+
+  puts generate_json( pubs )
+
+  File.open( "./data/o/pubs.json", "w:utf-8") do |f|
+    f.write generate_json( pubs )
+  end
+
+  puts "bye"
 end
-
-puts "bye"
