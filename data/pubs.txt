@@ -18,7 +18,7 @@
 ---
 Red Lion
 1030 Wien // Löwengasse 6
-catergories : Pub Brew-Pub
+categories  : Pub Brew-Pub
 food        : Snacks
 features    : Live Football, Ozapft is', 17.10.2017, Winterbierverkostung, genauer Termin für Dezember wird noch bekanntgegeben
 open        : Mo - Thu 18:00 – 01:00 | Friday 18:00 – 02:00 | Saturday 12:30 – 02:00 | Sunday 14:00 – 00:00
@@ -28,7 +28,7 @@ tel         : +43 - (0)676 560 53 53
 ---
 Flanagans's
 1010 Wien // Schwarzenbergstr. 1-3
-catergories : Pub
+categories  : Pub
 food        : Kitchen
 features    : New Ales in Oktober 2017
 website     : www.flanagans.at
@@ -37,53 +37,53 @@ tel         : +435137378
 ---
 O'Connors
 1030 Wien // Rennweg 95/2/1
-catergories : Pub
+categories  : Pub
 food        : Kitchen
 website     : www.oconnors.at
-tel:        : 01 236 6721
+tel         : 01 236 6721
 
 ---
 Hawidere
 1150 Wien // Ullmannstraße 31
-catergories : Pub
+categories  : Pub
 food        : Kitchen
 features    : Darts
 website     : hawidere.at
-tel:        : +43 664 150 84 29
+tel         : +43 664 150 84 29
 
 ---
-name       : Brick Makers
-location   : 1070 Wien // Zieglergasse 42
-catergories : Pub
+Brick Makers
+1070 Wien // Zieglergasse 42
+categories  : Pub
 food        : Kitchen
 features    : Big Smoke
 website     : www.brickmakers.at
-tel:        : +43(0)19974414
+tel         : +43(0)19974414
 
 ---
 Beaver Brewery
 1090 Wien // Liechtensteinstraße 69
-catergories : Brew-Pub, Pub
+categories  : Brew-Pub, Pub
 food        : Kitchen
 open        : Monday-Thursday: 16:00 - 24:00 | Friday:    16:00 - 1:00 | Saturday: 10:00 - 1:00 | Sunday: 10:00 -22:00 | kitchen closes at 22:00
 website     : www.beaverbrewing.at
-tel:        : +43 (0) 677 610 122 53
+tel         : +43 (0) 677 610 122 53
 
 ---
 Pivothek
 1030 Wien // Landstraßer Gürtel 19
-catergories : Pub
+categories  : Pub
 food        : Small-Kitchen
 features    : Tschechische Biere
 website     : pivothek.at
-tel:        : 0660/6989668
+tel         : 0660/6989668
 
 ---
 Ü-Lokal
 1020 Wien // Obere Augartenstraße 46
-catergories : Pub
+categories  : Pub
 food        : Kitchen
 features    : Jeden Freitag Käsespätzle
 open        : Dienstag bis Donnerstag 17:30 bis 0:00 | Freitag und Samstag 17:30 bis 2:00 | Gekocht wird jeweils bis 21:30 Uhr. | Sonntag, Montag und an Feiertagen geschlossen.
 website     : www.ue-lokal.at
-tel:        : 01 9691013
+tel         : 01 9691013
