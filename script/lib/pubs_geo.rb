@@ -60,7 +60,8 @@ class PubGeo
     h = {}
     table.each do |row|
       name = row['Name']
-      h[name] = { 'lat' => row['Lat'], 'lon' => row['Lon'] }
+      ## note: convert lat/lon to numbers!!!! (floating point)
+      h[name] = { 'lat' => row['Lat'].to_f, 'lon' => row['Lon'].to_f }
     end
     h
   end  # method self.load_file

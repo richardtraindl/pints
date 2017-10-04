@@ -2,8 +2,8 @@
   {
     "name": "Red Lion",
     "address": "1030 Wien, Löwengasse 6",
-    "longitude": "16.3895739",
-    "latitude": "48.211562",
+    "longitude": 16.3895739,
+    "latitude": 48.211562,
     "categories": [
       "Pub",
       "Brew-Pub"
@@ -35,8 +35,8 @@
   {
     "name": "O'Connors",
     "address": "1030 Wien, Rennweg 95/2/1",
-    "longitude": "16.4000846",
-    "latitude": "48.1888924",
+    "longitude": 16.4000846,
+    "latitude": 48.1888924,
     "categories": [
       "Pub"
     ],
@@ -51,8 +51,8 @@
   {
     "name": "Hawidere",
     "address": "1150 Wien, Ullmannstraße 31",
-    "longitude": "16.3339482",
-    "latitude": "48.1877536",
+    "longitude": 16.3339482,
+    "latitude": 48.1877536,
     "categories": [
       "Pub"
     ],
@@ -100,8 +100,8 @@
   {
     "name": "Pivothek",
     "address": "1030 Wien, Landstraßer Gürtel 19",
-    "longitude": "16.3862665",
-    "latitude": "48.1885167",
+    "longitude": 16.3862665,
+    "latitude": 48.1885167,
     "categories": [
       "Pub"
     ],
@@ -116,8 +116,8 @@
   {
     "name": "Ü-Lokal",
     "address": "1020 Wien, Obere Augartenstraße 46",
-    "longitude": "16.3770473",
-    "latitude": "48.2212083",
+    "longitude": 16.3770473,
+    "latitude": 48.2212083,
     "categories": [
       "Pub"
     ],
