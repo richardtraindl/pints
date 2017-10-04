@@ -67,11 +67,10 @@ id: index
 
         $('#section-list').css("display", "none");
         $('#section-about').css("display", "none");  
-        $('#section-list').css("display", "none");
-        $('#section-about').css("display", "none");
-
-        $('#section-map').css("display", "block");  
         $('#section-map').css("display", "block");
+
+        $('.tab').removeClass("selected");
+        $('#map').addClass("selected");
       };
 
       $(document).ready(function() {
