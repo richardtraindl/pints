@@ -168,8 +168,8 @@
 
           lst += "<h3>"
           lst += "<a href='#' onclick='redraw_map(" + cnt + "); return false;' style='font-weight: bold'>" + pub.name + "</a>";
-          lst += "<span style='font-size: 20px;'> ";
-          lst += distance + " km, ";
+          lst += "<span style='font-size: 20px;'>";
+          lst += "&nbsp;" + distance + " km,&nbsp;";
           for(category of pub.categories){
             lst += category + ", ";
           }
@@ -186,7 +186,7 @@
           }
 
           for(tel of pub.tel){
-            lst += "<a href='tel:" + tel + "' style='color: Black'>" + tel + "</a><br>";
+            lst += "<a href='tel:" + tel + "' style='color: Black'>" + tel + "</a>&nbsp;&nbsp;";
           }
 
           if(pub.website.length > 0){
