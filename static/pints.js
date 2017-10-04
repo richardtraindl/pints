@@ -175,7 +175,7 @@
             lst += category + ", ";
           }
 
-          lst += pub.food "<br>";
+          lst += pub.food + "<br>";
 
           if(pub.features.length > 0){
             lst += "Features: " + pub.features + "<br>";
