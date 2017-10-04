@@ -56,13 +56,13 @@ id: index
     <script>
       var mymap = null;
 
-      function redraw_map(map, cnt){
+      function redraw_map(cnt){
         if(mymap != null){
           mymap.off();
           mymap.remove();
         }
         mymap = new L.Map('mapid');
-        display_pubs(map, 10, cnt);
+        display_pubs(mymap, 10, cnt);
       };
 
       $(document).ready(function() {
