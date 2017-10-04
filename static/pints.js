@@ -168,15 +168,14 @@
 
           lst += "<h3>"
           lst += "<a href='#' onclick='redraw_map(" + cnt + "); return false;' style='font-weight: bold'>" + pub.name + "</a>";
-          lst += "<span style='font-size: 20px;'> &nbsp;" + distance + " km</span>";
-          lst += "</h3>";
-
-          lst += "<p style='text-align: center;'>"
+          lst += "<span style='font-size: 20px;'> ";
+          lst += distance + " km, ";
           for(category of pub.categories){
             lst += category + ", ";
           }
           lst += pub.food;
-          lst += "</p>";
+          lst += "</span>";
+          lst += "</h3>";
 
           if(pub.features.length > 0){
             lst += "Features: " + pub.features + "<br>";
