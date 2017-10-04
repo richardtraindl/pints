@@ -12,8 +12,8 @@
   text-align: left;
   font-family: Helvetica, 'Open Sans';
   font-weight: normal;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 20px;
+  line-height: 28px;
   color: #395858;
 }
 
@@ -100,6 +100,7 @@ h2 {
 
 p {
   padding-bottom: 4px;
+  font-size: 20px;
 }
 
 /* a, a:link, a:visited, a:active, a:focus {
@@ -131,8 +132,8 @@ p {
 
 #pub-list ul * {
   font-size: 20px;
-  line-height: 36px;
-  font-weight: bold;
+  line-height: 28px;
+  /* font-weight: bold; */
 }
 
 #pub-list ul li {
