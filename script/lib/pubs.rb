@@ -46,6 +46,24 @@ class Pub
     }
   end
 
+  def as_geojson    ## used for geojson conversion
+    {
+      type: "Feature",
+      geometry: {
+        type: "Point",
+        coordinates: [lon, lat]
+      },
+      properties: {
+        title: name,
+        description: address,
+        website: website,
+        "marker-color": "#ffd700",
+        "marker-size": "small"
+      }
+    }
+  end
+
+
 
   def self.load_file( path )  ## returns an array of pubs
     text   = File.open( path, 'r:bom|utf-8' ).read
@@ -54,11 +72,21 @@ class Pub
   end
 
   def self.save_file( path, pubs )   ## todo/check: rename to export_file - why? why not?
-     ## note: will save pubs as json!!!
-     pubs = pubs.map { |pub| pub.as_json }
+     ## note: will save pubs as json (or geojson)!!!
+
+     if path.include?( '.geojson' )
+       pubs = pubs.map { |pub| pub.as_geojson }
+
+       data = {
+         type:     "FeatureCollection",
+         features: pubs
+       }
+     else
+       data = pubs.map { |pub| pub.as_json }
+     end
 
      File.open( path, "w:utf-8") do |f|
-        f.write JSON.pretty_generate( pubs )
+        f.write JSON.pretty_generate( data )
      end
   end
 

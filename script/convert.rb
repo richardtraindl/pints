@@ -21,7 +21,8 @@ pubs = Pub.load_file( "./data/pubs.txt" )
 geos = PubGeo.load_file( "./data/pubs.geo.csv" )
 Pub.update_geos( pubs, geos )
 
-##  convert/save to json
-Pub.save_file( "./data/o/pubs.json", pubs )
+
+Pub.save_file( "./data/o/pubs.json", pubs )     ##  convert/save to json
+Pub.save_file( "./data/o/pubs.geojson", pubs)   ##  save to geojson too
 
 puts "bye"
