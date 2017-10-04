@@ -57,6 +57,7 @@ id: index
       var mymap = null;
 
       function redraw_map(cnt){
+        $('#mapid').html("");
         if(mymap != null){
           mymap.off();
           mymap.remove();
