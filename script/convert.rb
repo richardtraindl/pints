@@ -9,6 +9,7 @@
 
 
 require_relative 'lib/pubs'
+require_relative 'lib/pubs_geo'
 
 
 
@@ -16,6 +17,9 @@ puts "reading pubs..."
 
 pubs = Pub.load_file( "./data/pubs.txt" )
 ## pp pubs
+
+geos = PubGeo.load_file( "./data/pubs.geo.csv" )
+Pub.update_geos( pubs, geos )
 
 ##  convert/save to json
 Pub.save_file( "./data/o/pubs.json", pubs )

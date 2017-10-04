@@ -79,13 +79,19 @@ puts "reading pubs..."
 
 pubs = Pub.load_file( "./data/pubs.txt" )
 
-geos = []
+known_geos = PubGeo.load_file( "./data/pubs.geo.csv" )
+Pub.update_geos( pubs, known_geos )
 
-geos += search_pub( pubs[0] )
-geos += search_pub( pubs[1] )
-geos += search_pub( pubs[2] )
-geos += search_pub( pubs[3] )
-geos += search_pub( pubs[4] )
+
+## search pubs (only) with missing lat/lon (geos)
+geos = []
+pubs.each do |pub|
+  if pub.lat && pub.lon
+    puts "  Skipping #{pub.name} (using cached lat/lon)..."
+  else
+    geos += search_pub( pub )
+  end
+end
 
 pp geos
 

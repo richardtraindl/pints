@@ -16,6 +16,8 @@ class Pub
   attr_accessor :website       ## e.g. www.redlion-vienna.at
   attr_accessor :tel           ## e.g.+43 - (0)676 560 53 53
 
+  attr_accessor :lat
+  attr_accessor :lon
 
   def address_str
      if @address
@@ -33,6 +35,8 @@ class Pub
     {
       name:       name         || "",
       address:    address_str  || "",     ## note: use pretty formatted version (_str)
+      longitude:  lon          || "?",
+      latitude:   lat          || "?",
       categories: categories   || [],
       food:       food         || "",
       features:   features     || "",
@@ -57,6 +61,19 @@ class Pub
         f.write JSON.pretty_generate( pubs )
      end
   end
+
+
+  def self.update_geos( pubs, geos )
+    pubs.each do |pub|
+      geo = geos[ pub.name ]
+      if geo
+        pub.lat = geo['lat']
+        pub.lon = geo['lon']
+        puts "update #{pub.name} => #{geo.inspect} lat=#{pub.lat}, lon=#{pub.lon}"
+      end
+    end
+  end # method update_geos
+
 end  # class Pub
 
 

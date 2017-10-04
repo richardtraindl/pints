@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 
+require 'pp'
 require 'csv'
 
 
@@ -46,6 +47,26 @@ class PubGeo
   end
 
 
+  def self.load_file( path )
+    text = File.open( path, "r:utf-8").read
+    table = CSV.parse( text, headers: true)
+
+    ## pp table
+    ## table.each do |row|
+    ##   pp row
+    ## end
+
+    ## return hash for lookup by name
+    h = {}
+    table.each do |row|
+      name = row['Name']
+      h[name] = { 'lat' => row['Lat'], 'lon' => row['Lon'] }
+    end
+    h
+  end  # method self.load_file
+
+
+
   def self.save_file( path, lines )
     CSV.open( path, "w:utf-8") do |csv|
        csv << self.headers
@@ -56,3 +77,9 @@ class PubGeo
   end  # method self.save_file
 
 end   ## class PubGeo
+
+
+
+if __FILE__ == $0
+  pp PubGeo.load_file( "./data/pubs.geo.csv" )
+end
