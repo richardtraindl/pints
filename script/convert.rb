@@ -24,15 +24,28 @@ class Pub
   attr_accessor :website       ## e.g. www.redlion-vienna.at
   attr_accessor :tel           ## e.g.+43 - (0)676 560 53 53
 
+
+  def address_str
+     if @address
+       ## e.g. convert  1030 Wien // Löwengasse 6  to
+       ##               1030 Wien, Löwengasse 6
+       lines = @address.split( %r{\s*//\s*} )
+       lines.join( ', ' )
+     else
+       nil
+     end
+  end
+
+
   def as_json    ## used for json conversion
     {
       name:       name         || "",
-      address:    address      || "",
+      address:    address_str  || "",     ## note: use pretty formatted version (_str)
       categories: categories   || [],
       food:       food         || "",
       features:   features     || "",
       open:       open         || "",
-      website:    website      || "", 
+      website:    website      || "",
       tel:        tel          || []
     }
   end
@@ -149,7 +162,7 @@ pubs = Pub.load_file( "./data/pubs.txt" )
 
 puts generate_json( pubs )
 
-File.open( "./data/pubs2.json", "w:utf-8") do |f|
+File.open( "./data/o/pubs.json", "w:utf-8") do |f|
   f.write generate_json( pubs )
 end
 
