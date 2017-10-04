@@ -12,7 +12,6 @@ require 'cgi'
 require 'net/http'
 require 'uri'
 require 'json'
-require 'csv'
 
 
 class Nominatim

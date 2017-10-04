@@ -3,3 +3,4 @@ Status,N,Name,City,Street,Lat,Lon,Type,Display
 200,0/0,Flanagans's,Wien,Schwarzenbergstr.,?,?,?,?
 200,1/1,O'Connors,Wien,Rennweg,48.1888924,16.4000846,amenity/pub,"O’Connor’s Old Oak Irish Pub, 95/2/1, Rennweg, St. Marx, Erdberg, Landstraße, Wien, 1030, Österreich"
 200,1/1,Hawidere,Wien,Ullmannstraße,48.1877536,16.3339482,amenity/pub,"Hawidere, 31, Ullmannstraße, Reindorf, Sechshaus, Rudolfsheim-Fünfhaus, Wien, 1150, Österreich"
+200,0/0,Brick Makers,Wien,Zieglergasse,?,?,?,?

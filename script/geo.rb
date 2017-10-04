@@ -11,51 +11,9 @@
 
 
 require_relative 'lib/pubs'
+require_relative 'lib/pubs_geo.rb'
 require_relative 'lib/nominatim'
 
-
-
-class GeoLine
-  def initialize( status:'?', n:'?', name:'?', city:'?', street:'?',  lat:'?', lon:'?', type:'?', display: '?')
-    @status  = status
-    @n       = n
-
-    @name    = name
-    @city    = city
-    @street  = street
-
-    @lat     = lat
-    @lon     = lon
-    @type    = type
-    @display = display
-  end
-
-
-  def self.headers
-    ['Status',
-     'N',
-     'Name',
-     'City',
-     'Street',
-     'Lat',
-     'Lon',
-     'Type',
-     'Display']
-  end
-
-  def data
-    [@status,
-     @n,
-     @name,
-     @city,
-     @street,
-     @lat,
-     @lon,
-     @type,
-     @display
-    ]
-  end
-end   ## class ResultLine
 
 
 
@@ -74,21 +32,20 @@ def search_pub( pub )
   status, data = Nominatim.search( q: "#{name}, #{city}, #{street}" )
 
 
-  lines = []
+  geos = []
 
   if status == 200
-    if data.size == 0
-      ## nothing found
-     lines << GeoLine.new(
+    if data.size == 0   ## nothing found
+     geos << PubGeo.new(
                 status: status,
                 n:      "0/0",
                 name:   name,
                 city:   city,
                 street: street
               )
-    else
+    else   ## loop over result records (might be more than one)
      data.each_with_index do |h,i|
-       lines << GeoLine.new(
+       geos << PubGeo.new(
                 status:  status,
                 n:       "#{i+1}/#{data.size}",
                 name:    name,
@@ -102,7 +59,7 @@ def search_pub( pub )
       end  # each data
     end
   else
-     lines << GeoLine.new(
+     geos << PubGeo.new(
                 status: status,
                 name:   name,
                 city:   city,
@@ -113,29 +70,25 @@ def search_pub( pub )
   ## throttle; do NOT overload nominatim service; be kind
   sleep( 0.5 )   # sleep 0.5 seconds (half a second)
 
-  lines
-end
+  geos
+end  # method search_pub
+
 
 
 puts "reading pubs..."
 
 pubs = Pub.load_file( "./data/pubs.txt" )
 
-lines = []
+geos = []
 
-lines += search_pub( pubs[0] )
-lines += search_pub( pubs[1] )
-lines += search_pub( pubs[2] )
-lines += search_pub( pubs[3] )
+geos += search_pub( pubs[0] )
+geos += search_pub( pubs[1] )
+geos += search_pub( pubs[2] )
+geos += search_pub( pubs[3] )
+geos += search_pub( pubs[4] )
 
-pp lines
+pp geos
 
-
-CSV.open( "./data/o/pubs.geo.csv", "w:utf-8") do |csv|
-  csv << GeoLine.headers
-  lines.each do |line|
-    csv << line.data
-  end
-end
+PubGeo.save_file( "./data/o/pubs.geo.csv", geos )
 
 puts "bye"
