@@ -165,43 +165,36 @@
           var pub = rpub[1];
           // list-item start
           var lst = "<li>";
-          lst += "<div style='display: flex; align-items: center'>";
 
-          lst += "<div style='width: 5%;'>";
-          lst += "<span style='font-size: 20px'>" + cnt + "</span>";
-          lst += "</div>"; // cell
+          lst += distance + " km ";
+          lst += "<a href='#' onclick='redraw_map(" + cnt + "); return false;' style='font-weight: bold'>" + pub.name + "</a>";
 
-          lst += "<div style='width: 25%;'>";
-          lst += "<a href='#' onclick='redraw_map(" + cnt + "); return false;' style='font-weight: bold'>" + pub.name + "</a><br>";
           for(category of pub.categories){
-            lst += category + " ";
+            lst += ", " + category + " ";
           }
-          if(pub.food.length > 0){
-            lst += "<br>" + pub.food;
-          }
-          lst += "</div>"; // cell
 
-          lst += "<div style='width: 60%;'>";
-          if(pub.features.length > 0){
-            lst += pub.features + "<br>";
+          if(pub.food.length > 0){
+            lst += ", " + pub.food;
           }
+          lst += "<br>";
+
+          if(pub.features.length > 0){
+            lst += "Features: " + pub.features + "<br>";
+          }
+
           if(pub.open.length > 0){
             lst += pub.open + "<br>";
           }
+
           for(tel of pub.tel){
             lst += "<a href='tel:" + tel + "' style='color: Black'>" + tel + "</a><br>";
           }
+
           if(pub.website.length > 0){
             lst += "<a href='" + pub.website + "' target='_blank' style='color: Black'>" + pub.website + "</a>";
           }
-          lst += "</div>"; // cell
 
-          lst += "<div style='width: 10%;'>";
-          lst += distance + " km";
-          lst += "</div>"; // cell
-          lst += "</div>"; // row
           lst += "</li>";
-
           $('#pub-list').find('ul').append(lst);
           // list-item end
         }
