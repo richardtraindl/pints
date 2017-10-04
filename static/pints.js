@@ -171,11 +171,12 @@
           lst += "<span style='font-size: 20px;'> &nbsp;" + distance + " km</span>";
           lst += "</h3>";
 
+          lst += "<p style='text-align: center;'>"
           for(category of pub.categories){
             lst += category + ", ";
           }
-
-          lst += pub.food + "<br>";
+          lst += pub.food;
+          lst += "</p>";
 
           if(pub.features.length > 0){
             lst += "Features: " + pub.features + "<br>";
