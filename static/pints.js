@@ -167,7 +167,7 @@
           var lst = "<li>";
 
           lst += "<h3>"
-          lst += <a href='#' onclick='redraw_map(" + cnt + "); return false;' style='font-weight: bold'>" + pub.name + "</a>";
+          lst += "<a href='#' onclick='redraw_map(" + cnt + "); return false;' style='font-weight: bold'>" + pub.name + "</a>";
           lst += "<span style='font-size: 20px;'>" + distance + " km</span>";
           lst += "</h3>";
 
