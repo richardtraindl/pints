@@ -62,8 +62,8 @@ end   ## class ResultLine
 def search_pub( pub )
 
   address_lines  = pub.address.split( %r{\s*//\s*} )
-  city   = address_lines[0].gsub( /[0-9]/, '' ).strip    ## remove all numbers e.g. postal code
-  street = address_lines[1].gsub( /[0-9]/, '' ).strip
+  city   = address_lines[0].gsub( /[0-9]+/, '' ).strip    ## remove all numbers e.g. postal code
+  street = address_lines[1].gsub( /[0-9]([0-9\/\-]+)?/, '' ).strip    ## incl. 1-3 or 95/2/1
 
   name   = pub.name
 
