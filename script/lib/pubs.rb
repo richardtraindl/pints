@@ -75,8 +75,10 @@ class Pub
      ## note: will save pubs as json (or geojson)!!!
 
      if path.include?( '.geojson' )
-       pubs = pubs.map { |pub| pub.as_geojson }
-
+        ## note: filter/remove pubs without lat/lon for now
+        pubs = pubs.find_all { |pub| pub.lat && pub.lon }
+        pubs = pubs.map { |pub| pub.as_geojson }
+ 
        data = {
          type:     "FeatureCollection",
          features: pubs
