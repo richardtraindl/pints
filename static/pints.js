@@ -167,11 +167,11 @@
           var lst = "<li>";
           lst += "<div style='display: flex; align-items: center'>";
 
-          lst += "<div style='width: 5%; margin: 0px;'>";
+          lst += "<div style='width: 5%;'>";
           lst += "<span style='font-size: 20px'>" + cnt + "</span>";
           lst += "</div>"; // cell
 
-          lst += "<div style='width: 25%; margin: 0px;'>";
+          lst += "<div style='width: 25%;'>";
           lst += "<a href='#' onclick='redraw_map(" + cnt + "); return false;' style='font-weight: bold'>" + pub.name + "</a><br>";
           for(category of pub.categories){
             lst += category + " ";
@@ -181,7 +181,7 @@
           }
           lst += "</div>"; // cell
 
-          lst += "<div style='width: 60%; margin: 0px;'>";
+          lst += "<div style='width: 60%;'>";
           if(pub.features.length > 0){
             lst += pub.features + "<br>";
           }
@@ -196,7 +196,7 @@
           }
           lst += "</div>"; // cell
 
-          lst += "<div style='width: 10%; margin: 0px;'>";
+          lst += "<div style='width: 10%;'>";
           lst += distance + " km";
           lst += "</div>"; // cell
           lst += "</div>"; // row
