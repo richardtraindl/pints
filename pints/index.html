@@ -54,12 +54,14 @@ id: index
     </article>
 
     <script>
+      var mymap;
+
       $(document).ready(function() {
         if(location.protocol !== "https:" && window.location.href.indexOf("127.0.0.1") == -1){
           location.href = location.href.replace(/^http:/, 'https:')
         }
 
-        var mymap = new L.Map('mapid');
+        mymap = new L.Map('mapid');
         if(window.location.href.indexOf("target=") != -1){
             var stringarr = window.location.href.split("target=");
             var target = stringarr[1];
