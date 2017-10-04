@@ -54,7 +54,16 @@ id: index
     </article>
 
     <script>
-      var mymap;
+      var mymap = null;
+
+      function redraw_map(map, cnt){
+        if(mymap != null){
+          mymap.off();
+          mymap.remove();
+        }
+        mymap = new L.Map('mapid');
+        display_pubs(map, 10, cnt);
+      };
 
       $(document).ready(function() {
         if(location.protocol !== "https:" && window.location.href.indexOf("127.0.0.1") == -1){
