@@ -192,7 +192,7 @@
             lst += "<a href='tel:" + tel + "' style='color: Black'>" + tel + "</a><br>";
           }
           if(pub.website.length > 0){
-            lst += "<a href='" + pub.website + "' target='_blank' style='font-weight: bold'>" + pub.website + "</a>";
+            lst += "<a href='" + pub.website + "' target='_blank' style='color: Black'>" + pub.website + "</a>";
           }
           lst += "</div>"; // cell
 
