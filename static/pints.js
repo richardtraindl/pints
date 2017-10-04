@@ -166,8 +166,10 @@
           // list-item start
           var lst = "<li>";
 
-          lst += distance + " km ";
-          lst += "<a href='#' onclick='redraw_map(" + cnt + "); return false;' style='font-weight: bold'>" + pub.name + "</a>";
+          lst += "<h3>"
+          lst += <a href='#' onclick='redraw_map(" + cnt + "); return false;' style='font-weight: bold'>" + pub.name + "</a>";
+          lst += "<span style='font-size: 20px;'>" + distance + " km</span>";
+          lst += "</h3>";
 
           for(category of pub.categories){
             lst += ", " + category + " ";
@@ -176,7 +178,6 @@
           if(pub.food.length > 0){
             lst += ", " + pub.food;
           }
-          lst += "<br>";
 
           if(pub.features.length > 0){
             lst += "Features: " + pub.features + "<br>";
