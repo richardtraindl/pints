@@ -121,40 +121,43 @@ p {
 }
 
 #pub-list ul {
-	padding: 0;
-	/* margin: 9px; */
-	list-style: none;
-	border: 1px solid #a1a7ad;
-	border-radius: 8px;
-	font-size: 20px;
-	line-height: 36px;
-	font-weight: bold;
-	box-shadow: 0 1px 0 #fff;
+  padding: 0;
+  /* margin: 9px; */
+  list-style: none;
+  border: 1px solid #a1a7ad;
+  border-radius: 8px;
+  box-shadow: 0 1px 0 #fff;
+}
+
+#pub-list ul * {
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: bold;
 }
 
 #pub-list ul li {
-	background: #f7f7f7;
-	border-top: 1px solid #fdfdfd;
-	border-bottom: 1px solid #cacaca;
-	padding: 5px 10px;
-	overflow: hidden;
+  background: #f7f7f7;
+  border-top: 1px solid #fdfdfd;
+  border-bottom: 1px solid #cacaca;
+  padding: 5px 10px;
+  overflow: hidden;
 }
 
 #pub-list ul li:first-child {
-	border-top-left-radius: 8px;
-	border-top-right-radius: 8px;
-	border-top-color: #e5e5e5;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  border-top-color: #e5e5e5;
 }
 
 #pub-list ul li:last-child {
-	border-bottom-left-radius: 8px;
-	border-bottom-right-radius: 8px;
-	border-bottom-width: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-width: 0;
 }
 
 /* Optionen Liste */
 #optionen li input {
-	height: 34px;
-	width: 34px;
-	margin: 0;
+  height: 34px;
+  width: 34px;
+  margin: 0;
 }
