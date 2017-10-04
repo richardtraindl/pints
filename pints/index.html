@@ -64,6 +64,10 @@ id: index
         }
         mymap = new L.Map('mapid');
         display_pubs(mymap, 10, cnt);
+
+        $('#section-list').css("display", "none");
+        $('#section-about').css("display", "none");
+        $('#section-map').css("display", "block");
       };
 
       $(document).ready(function() {
