@@ -23,6 +23,23 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
+          16.3736441,
+          48.2031658
+        ]
+      },
+      "properties": {
+        "title": "Flanagans",
+        "description": "1010 Wien // Schwarzenbergstr. 1-3",
+        "website": "www.flanagans.at",
+        "marker-color": "#ffd700",
+        "marker-size": "small"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
           16.4000846,
           48.1888924
         ]
@@ -48,6 +65,40 @@
         "title": "Hawidere",
         "description": "1150 Wien // Ullmannstraße 31",
         "website": "hawidere.at",
+        "marker-color": "#ffd700",
+        "marker-size": "small"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.3451123,
+          48.2021426
+        ]
+      },
+      "properties": {
+        "title": "Brickmakers",
+        "description": "1070 Wien // Zieglergasse 42",
+        "website": "www.brickmakers.at",
+        "marker-color": "#ffd700",
+        "marker-size": "small"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          16.3569822,
+          48.2245756
+        ]
+      },
+      "properties": {
+        "title": "Beaver Brewing Company",
+        "description": "1090 Wien // Liechtensteinstraße 69",
+        "website": "www.beaverbrewing.at",
         "marker-color": "#ffd700",
         "marker-size": "small"
       }
