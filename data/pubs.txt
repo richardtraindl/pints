@@ -26,7 +26,7 @@ website     : www.redlion-vienna.at
 tel         : +43 - (0)676 560 53 53
 
 ---
-Flanagans's
+Flanagans
 1010 Wien // Schwarzenbergstr. 1-3
 categories  : Pub
 food        : Kitchen
@@ -52,7 +52,7 @@ website     : hawidere.at
 tel         : +43 664 150 84 29
 
 ---
-Brick Makers
+Brickmakers
 1070 Wien // Zieglergasse 42
 categories  : Pub
 food        : Kitchen
@@ -61,7 +61,7 @@ website     : www.brickmakers.at
 tel         : +43(0)19974414
 
 ---
-Beaver Brewery
+Beaver Brewing Company
 1090 Wien // Liechtensteinstraße 69
 categories  : Brew-Pub, Pub
 food        : Kitchen
