@@ -17,10 +17,10 @@
     ]
   },
   {
-    "name": "Flanagans's",
+    "name": "Flanagans",
     "address": "1010 Wien, Schwarzenbergstr. 1-3",
-    "longitude": "16.3895739",
-    "latitude": "48.1888924",
+    "longitude": 16.3736441,
+    "latitude": 48.2031658,
     "categories": [
       "Pub"
     ],
@@ -65,10 +65,10 @@
     ]
   },
   {
-    "name": "Brick Makers",
+    "name": "Brickmakers",
     "address": "1070 Wien, Zieglergasse 42",
-    "longitude": "16.3895739",
-    "latitude": "48.1888924",
+    "longitude": 16.3451123,
+    "latitude": 48.2021426,
     "categories": [
       "Pub"
     ],
@@ -81,10 +81,10 @@
     ]
   },
   {
-    "name": "Beaver Brewery",
+    "name": "Beaver Brewing Company",
     "address": "1090 Wien, Liechtensteinstraße 69",
-    "longitude": "16.3895739",
-    "latitude": "48.1888924",
+    "longitude": 48.2031658,
+    "latitude": 16.3736441,
     "categories": [
       "Brew-Pub",
       "Pub"
