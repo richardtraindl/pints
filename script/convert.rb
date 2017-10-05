@@ -18,12 +18,11 @@ puts "reading pubs..."
 pubs = Pub.load_file( "./data/pubs.txt" )
 ## pp pubs
 
-geos = PubGeo.load_file( "./data/pubs.geo.csv" )
-Pub.update_geos( pubs, geos )
-
 geos_ii = PubGeo.load_file( "./data/pubs.alt.geo.csv" )
 Pub.update_geos( pubs, geos_ii )
 
+geos = PubGeo.load_file( "./data/pubs.geo.csv" )
+Pub.update_geos( pubs, geos )
 
 
 Pub.save_file( "./data/o/pubs.json", pubs )     ##  convert/save to json
