@@ -56,11 +56,9 @@
 
 
   function build_map(map, location, count, target){
+    var dest, dest_lat, dest_long;
     // map
     // var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
-    if(target == null){
-      map.setView([location.latitude, location.longitude], 13);
-    }
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
       maxZoom: 18,
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
@@ -103,8 +101,9 @@
                 popupAnchor:  [10, -32] // point from which the popup should open relative to the iconAnchor
               });
               var pub1 = L.marker([pub.latitude, pub.longitude], {icon: greenIcon}).addTo(map);
-              pub1.bindPopup("Here you go!").openPopup();
-              map.setView([pub.latitude, pub.longitude], 13);
+              dest = pub1;
+              dest_lat = pub.latitude;
+              dest_long = pub.longitude;
             }
             else{
               var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(map);
@@ -136,7 +135,12 @@
       });
       var userlocation = L.marker([location.latitude, location.longitude], {icon: redIcon}).addTo(map);
       if(target == null){
+        map.setView([location.latitude, location.longitude], 13);
         userlocation.bindPopup("Here you are!").openPopup();
+      }
+      else{
+        map.setView([dest_lat, dest_long], 13);
+        dest.openPopup();
       }
     });
   };
