@@ -1,4 +1,6 @@
-
+---
+# note: uses relative_url filter for auto-adding /pints to urls
+---
 
   function calc_distance(long, lat, long1, lat1){
     erdRadius = 6371;
@@ -67,7 +69,7 @@
       id: 'mapbox.streets'
     }).addTo(map);
 
-    $.getJSON('/data/o/pubs.json', function(data){
+    $.getJSON(" {{'/data/o/pubs.json' | relative_url }}", function(data){
       var rpubs = new Array();
 
       $.each(data, function(index, pub){
@@ -92,8 +94,8 @@
             // map marker start
             if(target != null && cnt == target){
               var greenIcon = L.icon({
-                iconUrl: '/styles/images/marker-green-icon.png',
-                shadowUrl: '/styles/images/marker-shadow.png',
+                iconUrl:   "{{ '/styles/images/marker-green-icon.png' | relative_url }}",
+                shadowUrl: "{{ '/styles/images/marker-shadow.png'     | relative_url }}",
                 iconSize:     [30, 40], // size of the icon
                 shadowSize:   [41, 41], // size of the shadow
                 iconAnchor:   [4, 38], // point of the icon which will correspond to marker's location
@@ -124,8 +126,8 @@
         }
       }
       var redIcon = L.icon({
-        iconUrl: '/styles/images/marker-red-icon.png',
-        shadowUrl: '/styles/images/marker-shadow.png',
+        iconUrl:   "{{ '/styles/images/marker-red-icon.png' | relative_url }}",
+        shadowUrl: "{{ '/styles/images/marker-shadow.png'   | relative_url }}",
         iconSize:     [30, 40], // size of the icon
         shadowSize:   [41, 41], // size of the shadow
         iconAnchor:   [4, 38], // point of the icon which will correspond to marker's location
@@ -146,7 +148,7 @@
 
 
   function build_list(location, count){
-    $.getJSON('/data/o/pubs.json', function(data){
+    $.getJSON( "{{ '/data/o/pubs.json' | relative_url }}", function(data){
       var rpubs = new Array();
 
       $.each(data, function(index, pub){
