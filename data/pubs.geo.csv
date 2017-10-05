@@ -4,3 +4,6 @@ Status,N,Name,City,Street,Lat,Lon,Type,Display
 200,1/1,Hawidere,Wien,Ullmannstraße,48.1877536,16.3339482,amenity/pub,"Hawidere, 31, Ullmannstraße, Reindorf, Sechshaus, Rudolfsheim-Fünfhaus, Wien, 1150, Österreich"
 200,1/1,Pivothek,Wien,Landstraßer Gürtel,48.1885167,16.3862665,amenity/pub,"Pivothek, 19, Landstraßer Gürtel, Fasanviertel, Landstraße, Wien, 1030, Österreich"
 200,1/1,Ü-Lokal,Wien,Obere Augartenstraße,48.2212083,16.3770473,amenity/restaurant,"Ü Lokal, 46, Obere Augartenstraße, Rembrandtviertel, Leopoldstadt, Wien, 1020, Österreich"
+200,1/1,Brickmakers,Wien,Zieglergasse,48.2021426,16.3451123,amenity/bar,"The Brickmakers, 42, Zieglergasse, Lerchenfeld, Schottenfeld, Neubau, Wien, 1070, Österreich"
+200,1/1,Beaver Brewing Company,Wien,Liechtensteinstraße,48.2245756,16.3569822,amenity/restaurant,"Beaver Brewing Company, 69, Liechtensteinstraße, Thurygrund II, Thurygrund, Alsergrund, Wien, 1090, Österreich"
+200,1/1,Flanagans,Wien,Schwarzenbergstr.,48.2031658,16.3736441,amenity/pub,"Flanagans, 1-3, Schwarzenbergstraße, Kärntner Viertel, Innere Stadt, Wien, 1010, Österreich"
