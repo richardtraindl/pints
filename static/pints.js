@@ -108,8 +108,7 @@
             else{
               var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(map);
             }
-            var popup = cnt.toString() + ") &nbsp;"
-            popup += pub.name + ", ";
+            var popup = pub.name + ", ";
             for(category of pub.categories){
               popup += category + " ";
             }
