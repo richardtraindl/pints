@@ -135,6 +135,7 @@ p {
 }
 
 #pub-list ul * {
+  text-align: center;
   font-size: 20px;
   line-height: 28px;
   /* font-weight: bold; */
