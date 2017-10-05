@@ -58,7 +58,6 @@
   function build_map(map, location, count, target){
     // map
     // var mymap = L.map('mapid').setView([location.latitude, location.longitude], 13);
-    map.setView([location.latitude, location.longitude], 13);
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
       maxZoom: 18,
       attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
@@ -101,9 +100,11 @@
                 popupAnchor:  [10, -32] // point from which the popup should open relative to the iconAnchor
               });
               var pub1 = L.marker([pub.latitude, pub.longitude], {icon: greenIcon}).addTo(map);
+              map.setView([pub.latitude, pub.longitude], 13);
             }
             else{
               var pub1 = L.marker([pub.latitude, pub.longitude]).addTo(map);
+              map.setView([location.latitude, location.longitude], 13);
             }
             var popup = cnt.toString() + ") &nbsp;"
             popup += pub.name + ", ";
@@ -114,8 +115,8 @@
             for(tel of pub.tel){
               popup += tel + " ";
             }
-            if(pub.open.length > 0){
-              popup += "<br>" + pub.open;
+            if(pub.website.length > 0){
+              popup += "<br>" + pub.website;
             }
             pub1.bindPopup(popup);
             // map marker end
