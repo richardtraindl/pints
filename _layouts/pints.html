@@ -1,23 +1,22 @@
-
 <!DOCTYPE html>
 
 <html lang="de">
 
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
         <!-- link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" / -->
         
-        <link rel="stylesheet" href="/styles/leaflet.css" >
+        <link rel="stylesheet" href="{{ '/styles/leaflet.css' | relative_url }}">
 
-        <link rel="stylesheet" href="/styles/pints.css" media="all">
+        <link rel="stylesheet" href="{{ '/styles/pints.css' | relative_url }}" media="all">
 
-        <script src="/static/jquery-1.11.1.min.js"></script>
+        <script src="{{ '/static/jquery-1.11.1.min.js' | relative_url }}"></script>
 
-        <script src="/static/leaflet.js" ></script>
+        <script src="{{ '/static/leaflet.js' | relative_url }}"></script>
         
-        <script src="/static/pints.js"></script>
+        <script src="{{ '/static/pints.js' | relative_url }}"></script>
 
         <title>Pints</title>
     </head>
@@ -25,7 +24,7 @@
     <body>
         <div id="mobile-wrapper">
           <header id="mobile-header">
-            <h1><a href="/pints/index.html">Pints</a></h1>
+            <h1><a href="{{ '/pints/index.html' | relative_url }}">Pints</a></h1>
           </header>
 
           <div id="mobile-content">
