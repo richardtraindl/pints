@@ -83,8 +83,8 @@
   {
     "name": "Beaver Brewing Company",
     "address": "1090 Wien, Liechtensteinstraße 69",
-    "longitude": 48.2031658,
-    "latitude": 16.3736441,
+    "longitude": 16.3736441,
+    "latitude": 48.2031658,
     "categories": [
       "Brew-Pub",
       "Pub"
