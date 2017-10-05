@@ -178,19 +178,27 @@
           lst += "</h3>";
 
           if(pub.features.length > 0){
-            lst += "Features: " + pub.features + "<br>";
+            lst += "<p>" + pub.features + "</p>";
           }
 
-          if(pub.open.length > 0){
+          /* if(pub.open.length > 0){
             lst += pub.open + "<br>";
+          } */
+
+          if(pub.address.length > 0){
+            lst += "<p>" + pub.address + "</p>";
           }
 
-          for(tel of pub.tel){
-            lst += "<a href='tel:" + tel + "' style='color: Black'>" + tel + "</a>&nbsp;&nbsp;";
+          if(pub.tel.length > 0){
+            lst += "<p>";
+            for(tel of pub.tel){
+              lst += "<a href='tel:" + tel + "' style='color: Black'>" + tel + "</a>&nbsp;&nbsp;";
+            }
+            lst += "</p>";
           }
 
           if(pub.website.length > 0){
-            lst += "<a href='" + pub.website + "' target='_blank' style='color: Black'>" + pub.website + "</a>";
+            lst += "<p><a href='" + pub.website + "' target='_blank' style='color: Black'>" + pub.website + "</a></p>";
           }
 
           lst += "</li>";
