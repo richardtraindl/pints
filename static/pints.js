@@ -168,7 +168,7 @@
 
           lst += "<h3>"
           lst += "<a href='#' onclick='redraw_map(" + cnt + "); return false;' style='font-weight: bold'>" + pub.name + "</a>";
-          lst += "<span style='font-size: 20px;'>";
+          lst += "<br><span style='font-size: 20px;'>";
           lst += "&nbsp;" + distance + " km,&nbsp;";
           for(category of pub.categories){
             lst += category + ", ";
