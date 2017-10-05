@@ -67,7 +67,7 @@
       id: 'mapbox.streets'
     }).addTo(map);
 
-    $.getJSON('/data/pubs.json', function(data){
+    $.getJSON('/data/o/pubs.json', function(data){
       var rpubs = new Array();
 
       $.each(data, function(index, pub){
@@ -137,7 +137,7 @@
 
 
   function build_list(location, count){
-    $.getJSON('/data/pubs.json', function(data){
+    $.getJSON('/data/o/pubs.json', function(data){
       var rpubs = new Array();
 
       $.each(data, function(index, pub){
