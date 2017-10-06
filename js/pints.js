@@ -209,8 +209,7 @@
           }
 
           if(pub.website.length > 0){
-            // pub.website
-            lst += "<p><a href='" + "{{ 'uniqa.at' | url }}" + "' target='_blank' style='color: Black'>" + pub.website + "</a></p>";
+            lst += "<p><a href='" + pub.website + "' target='_blank' style='color: Black'>" + pub.website + "</a></p>";
           }
 
           lst += "</li>";
