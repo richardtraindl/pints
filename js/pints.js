@@ -209,7 +209,8 @@
           }
 
           if(pub.website.length > 0){
-            lst += "<p><a href='" + "{{ pub.website | external_url }}" + "' target='_blank' style='color: Black'>" + pub.website + "</a></p>";
+            // pub.website
+            lst += "<p><a href='" + "{{ 'orf.at' | external_url }}" + "' target='_blank' style='color: Black'>" + pub.website + "</a></p>";
           }
 
           lst += "</li>";
