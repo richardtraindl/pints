@@ -1,6 +1,6 @@
-# ---
+/* ---
 # note: uses relative_url filter for auto-adding /pints to urls
-# ---
+--- */
 
   function calc_distance(long, lat, long1, lat1){
     erdRadius = 6371;
