@@ -210,7 +210,7 @@
 
           if(pub.website.length > 0){
             // pub.website
-            lst += "<p><a href='" + "{{ 'orf.at' | external_url }}" + "' target='_blank' style='color: Black'>" + pub.website + "</a></p>";
+            lst += "<p><a href='" + "{{ 'orf.at' | url }}" + "' target='_blank' style='color: Black'>" + pub.website + "</a></p>";
           }
 
           lst += "</li>";
