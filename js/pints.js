@@ -209,7 +209,7 @@
           }
 
           if(pub.website.length > 0){
-            lst += "<p><a href='#{pub.website}' target='_blank' style='color: Black'>" + pub.website + "</a></p>";
+            lst += "<p><a href='" + pub.website + "' target='_blank' style='color: Black'>" + pub.website + "</a></p>";
           }
 
           lst += "</li>";
