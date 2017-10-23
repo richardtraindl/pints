@@ -197,7 +197,7 @@
           } */
 
           if(pub.address.length > 0){
-            lst += "<p>" + pub.address + "</p>";
+            lst += "<p>" + "http://" + pub.address + "</p>";
           }
 
           if(pub.tel.length > 0){
