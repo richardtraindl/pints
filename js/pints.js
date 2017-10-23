@@ -197,7 +197,7 @@
           } */
 
           if(pub.address.length > 0){
-            lst += "<p>" + "http://" + pub.address + "</p>";
+            lst += "<p>" + pub.address + "</p>";
           }
 
           if(pub.tel.length > 0){
@@ -209,7 +209,7 @@
           }
 
           if(pub.website.length > 0){
-            lst += "<p><a href='" + pub.website + "' target='_blank' style='color: Black'>" + pub.website + "</a></p>";
+            lst += "<p><a href='http://" + pub.website + "' target='_blank' style='color: Black'>" + pub.website + "</a></p>";
           }
 
           lst += "</li>";
